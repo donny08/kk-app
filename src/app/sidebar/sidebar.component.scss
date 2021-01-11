@@ -1,0 +1,111 @@
+RadSideDrawer .nt-drawer__header,
+.nt-drawer .nt-drawer__header {
+	width: 100%;
+	vertical-align: top;
+	padding: 35 0
+}
+
+RadSideDrawer .nt-drawer__header Label,
+.nt-drawer .nt-drawer__header Label {
+	padding: 0
+}
+
+RadSideDrawer .nt-drawer__header>Label,
+.nt-drawer .nt-drawer__header>Label {
+	font-size: 18
+}
+
+RadSideDrawer .nt-drawer__header-image,
+.nt-drawer .nt-drawer__header-image {
+	height: 74;
+	width: 74;
+	border-radius: 50%
+}
+
+RadSideDrawer .nt-drawer__header-footnote,
+.nt-drawer .nt-drawer__header-footnote {
+	opacity: .5
+}
+
+RadSideDrawer .nt-drawer__header>Label,
+RadSideDrawer .nt-drawer__header-image,
+.nt-drawer .nt-drawer__header>Label,
+.nt-drawer .nt-drawer__header-image {
+	margin-left: 15;
+	margin-right: 15;
+	horizontal-align: center;
+	text-align: center
+}
+
+RadSideDrawer .nt-drawer__header.-left>Label,
+RadSideDrawer .nt-drawer__header.-left .nt-drawer__header-image,
+.nt-drawer .nt-drawer__header.-left>Label,
+.nt-drawer .nt-drawer__header.-left .nt-drawer__header-image {
+	horizontal-align: left
+}
+
+RadSideDrawer.ns-dark .nt-drawer__header,
+.nt-drawer.ns-dark .nt-drawer__header {
+	background-color: #1e1e1e
+}
+
+RadSideDrawer.ns-dark .nt-drawer__header Label,
+.nt-drawer.ns-dark .nt-drawer__header Label {
+	color: #fff
+}
+
+.t-36 {
+	font-size: 36
+}
+
+.nt-icon {
+	font-size: 14
+}
+
+ListView .nt-icon,
+RadListView .nt-icon,
+.nt-list-view .nt-icon {
+	font-size: 16;
+	width: 56;
+	height: 100%;
+	text-align: center
+}
+
+RadSideDrawer .nt-drawer__list-item .nt-icon,
+.nt-drawer .nt-drawer__list-item .nt-icon {
+	font-size: 12;
+	width: 30
+}
+
+.nt-input>.nt-icon {
+	font-size: 16;
+	vertical-align: center;
+	horizontal-align: right;
+	margin: -15 10 0 0
+}
+
+RadSideDrawer .nt-drawer__list-item,
+.nt-drawer .nt-drawer__list-item {
+	padding-left: 15;
+	height: 48;
+	horizontal-align: left;
+	width: 100%;
+	orientation: horizontal
+}
+
+RadSideDrawer .nt-drawer__list-item Label,
+.nt-drawer .nt-drawer__list-item Label {
+	vertical-align: center
+}
+
+.p-b-10 {
+	padding-bottom: 10
+}
+
+.hr {
+	height: 1;
+	width: 100%;
+	margin: 9 0 10;
+	border-width: 0 0 1;
+	border-style: solid
+}

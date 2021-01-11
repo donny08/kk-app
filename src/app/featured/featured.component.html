@@ -1,0 +1,64 @@
+<ActionBar>
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
+    </ActionItem>
+    <Label text="Featured"></Label>
+</ActionBar>
+
+<GridLayout class="page__content">
+    <TabView>
+        <!-- Tab1: Checkboxes  -->
+        <StackLayout *tabItem="{ title: 'Checkboxes' }">
+            <StackLayout class="page">
+                <StackLayout orientation="horizontal" class="p-10">
+                    <!-- boxType="square" is the default, just testing this works as well -->
+                    <CheckBox #modelCheck [(ngModel)]="checkTest" class="checkbox" boxType="square"
+                        (checkedChange)="checkedChange(modelCheck)"></CheckBox>
+                    <Label text="Test NgModel" (tap)="modelCheck.toggle()"></Label>
+                </StackLayout>
+                <StackLayout class="form-group" [formGroup]="formGroup" orientation="horizontal" class="p-10">
+                    <CheckBox #reactiveCheck class="checkbox" formControlName="testCheck" class="checkbox"></CheckBox>
+                    <Label text="Test Reactive FormGroup" (tap)="reactiveCheck.toggle()"></Label>
+                </StackLayout>
+
+                <StackLayout class="p-10">
+                    <Button text="Submit Values" (tap)="submit()" class="btn btn-primary"></Button>
+                </StackLayout>
+
+                <!-- <ListView [items]="items" class="list-group">
+                    <ng-template let-item="item">
+                        <Label [nsRouterLink]="['/item', item.id]" [text]="item.name" class="list-group-item"></Label>
+                    </ng-template>
+                </ListView> -->
+            </StackLayout>
+        </StackLayout>
+
+        <!-- Tab2: Radiobuttons  -->
+        <StackLayout *tabItem="{ title: 'Radiobuttons' }">
+            <Label class="p-10"
+                text="Tap either the buttons or the labels. You can even unselect the radiobutton selection."
+                textWrap="true"></Label>
+            <StackLayout class="p-10" *ngFor="let option of radioOptions">
+                <StackLayout orientation="horizontal" verticalAlignment="center">
+                    <CheckBox #elem [checked]="option.selected" (checkedChange)="
+                  elem.checked !== option.selected && changeCheckedRadio(option)
+                " class="checkbox" boxType="circle"></CheckBox>
+                    <StackLayout verticalAlignment="center">
+                        <Label [text]="option.text" textWrap="true" (tap)="changeCheckedRadio(option)"></Label>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </TabView>
+    <!-- <Label class="page__content-icon fas" text="&#xf005;"></Label>
+    <Label class="page__content-placeholder" text=""></Label> -->
+</GridLayout>

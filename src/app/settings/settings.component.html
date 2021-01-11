@@ -1,0 +1,128 @@
+<ActionBar>
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
+    </ActionItem>
+    <Label text="Questionnaire"></Label>
+</ActionBar>
+
+<GridLayout class="page__content">
+    <ScrollView height="100%" scrollBarIndicatorVisible="true">
+        <StackLayout class="page">
+            <Label class="h3 m-b-20 c-black" [text]="title" textWrap="true"></Label>
+            <StackLayout class="item m-b-20" marginRight="10">
+                <Label textWrap="true" class="_subtitle" text="1. Name of the location?"></Label>
+                <TextField hint="" class="input" editable="true"></TextField>
+            </StackLayout>
+            <StackLayout class="item m-b-20" marginRight="10">
+                <Label textWrap="true" class="_subtitle"
+                    text="2. What is the street name and situation of the street?"></Label>
+                <TextField hint="" class="input" editable="true"></TextField>
+            </StackLayout>
+            <StackLayout class="item m-b-20" marginRight="10">
+                <Label textWrap="true" class="_subtitle"
+                    text="3. What is the nearest location or any building near me and how much is the distance?"></Label>
+                <TextField hint="" class="input" editable="true"></TextField>
+            </StackLayout>
+            <StackLayout class="item m-b-20" marginRight="10">
+                <FlexboxLayout>
+                    <Label textWrap="true" class="_subtitle"
+                    text="4. Are there any external installations or sites that could reveal the internal location of the building?"></Label>
+                    <Switch checked="true" marginLeft="5" size="30" backgroundColor="#3a53ff" checked="{{externalInstallatioinsFound}}" (checkedChange)="onCheckedChange($event, 'externalInstallatioinsFound')"></Switch>
+                </FlexboxLayout>
+                <TextField hint="" class="input" [(ngModel)]="externalInstallatioinsFoundText" editable="true"></TextField>
+            </StackLayout>
+            <StackLayout class="item m-b-20" marginRight="10">
+                <Label textWrap="true" class="_subtitle"
+                    text="5. What are the main landmarks near the building?"></Label>
+                <TextField hint="" class="input" editable="true"></TextField>
+            </StackLayout>
+            <StackLayout class="item m-b-20" marginRight="10">
+                <FlexboxLayout>
+                    <Label textWrap="true" class="_subtitle" text="6. Is the building located near water body?"></Label>
+                    <Switch checked="true" marginLeft="5" size="30" checked="{{waterBody}}" backgroundColor="#3a53ff" (checkedChange)="onCheckedChange($event, 'waterBody')"></Switch>
+                </FlexboxLayout>
+                <TextField hint="" class="input" (ngModel)]="waterBodyText" editable="true"></TextField>
+            </StackLayout>
+            <StackLayout class="item m-b-20" marginRight="10">
+                <Label textWrap="true" class="_subtitle" text="7. How many floor building consisting of?"></Label>
+                <TextField hint="" class="input" editable="true"></TextField>
+            </StackLayout>
+            <StackLayout class="item m-b-20" marginRight="10">
+                <!-- <Label textWrap="true" class="_subtitle" text="Please specify the weakness here...?"></Label> -->
+                <Button text="Weakness" width="150" (tap)="showWeakness()" horizontalAlignment="right" class="weakness-button m-t-16"></Button>
+                <TextField *ngIf="weakness" hint="Please specify the weakness here..." class="input" editable="true"></TextField>
+            </StackLayout>
+            <!-- <StackLayout marginRight="10" class="m-b-10">
+                <TextField hint="Select the reason" class="input" (tap)="showPicker()" [text]="reason" editable="false">
+                </TextField>
+            </StackLayout>
+            <StackLayout class="item m-b-20" marginRight="10">
+                <Label textWrap="true" class="_subtitle" text="Upload images"></Label>
+                <StackLayout width="100%" class="_card">
+                    <WrapLayout orientation="horizontal" width="100%">
+                        <WrapLayout orientation="vertical" *ngFor="let image of signedApplication;let i = index"
+                            class="m-b-10">
+                            <Image [src]="image" decodeWidth="100" decodeHeight="100" width="60" height="60"
+                                loadMode="async"></Image>
+                            <Label *ngIf="i == signedApplication.length - 1" text="Delete"
+                                (tap)="deleteImage('APPFORM',i,signedApplication)" fontSize="12" marginLeft="10"
+                                textWrap="true"></Label>
+                        </WrapLayout>
+                        <WrapLayout orientation="horizontal" (tap)="takeSnap('APPFORM',signedApplication.length)">
+                            <Image visibility="{{signedApplication.length < 100 ? 'visible' : 'collapsed'}}"
+                                src="~/app/images/addimage.png" height="70" width="70" loadMode="async"></Image>
+                        </WrapLayout>
+                    </WrapLayout>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout class="item m-b-20" marginRight="10">
+                <Label textWrap="true" class="_subtitle" text="Choose the items"></Label>
+                <WrapLayout orientation="horizontal" class="p-5">
+                    <CheckBox #battery class="checkbox" fillColor="#3a53ff"
+                        onCheckColor="white" boxType="square" (checkedChange)="checkedChange(battery, 'battery')">
+                    </CheckBox>
+                    <Label text="battery" fontSize="16" textWrap="true" (tap)="battery.toggle()" marginRight="10"></Label>
+                    <CheckBox #switch class="checkbox" fillColor="#3a53ff"
+                        onCheckColor="white" boxType="square" (checkedChange)="checkedChange(switch, 'switch')">
+                    </CheckBox>
+                    <Label text="switch" fontSize="16" textWrap="true" (tap)="switch.toggle()" marginRight="10"></Label>
+                    <CheckBox #cable class="checkbox" fillColor="#3a53ff"
+                        onCheckColor="white" boxType="square" (checkedChange)="checkedChange(cable, 'cable')">
+                    </CheckBox>
+                    <Label text="cable" fontSize="16" textWrap="true" (tap)="cable.toggle()" marginRight="10"></Label>
+                    <CheckBox #circuit class="checkbox" fillColor="#3a53ff"
+                        onCheckColor="white" boxType="square" (checkedChange)="checkedChange(circuit, 'circuit')">
+                    </CheckBox>
+                    <Label text="circuit" fontSize="16" textWrap="true" (tap)="circuit.toggle()" marginRight="10"></Label>
+                    <CheckBox #laptop class="checkbox" fillColor="#3a53ff"
+                        onCheckColor="white" boxType="square" (checkedChange)="checkedChange(laptop, 'laptop')">
+                    </CheckBox>
+                    <Label text="laptop" fontSize="16" textWrap="true" (tap)="laptop.toggle()" marginRight="10"></Label>
+                    <CheckBox #other class="checkbox" fillColor="#3a53ff"
+                        onCheckColor="white" boxType="square" (checkedChange)="checkedChange(other, 'other')">
+                    </CheckBox>
+                    <Label text="other" fontSize="16" textWrap="true" (tap)="other.toggle()" marginRight="10"></Label>
+                </WrapLayout>
+            </StackLayout>
+            <StackLayout class="item m-b-20" marginRight="10">
+                <Label textWrap="true" class="_subtitle" text="Add Comments"></Label>
+                <TextField flexGrow="1" class="input" hint="" #name secure="false" [(ngModel)]="comment" returnKeyType="done"></TextField>
+                <FlexboxLayout *ngFor="let item of commentList; let i = index">
+                    <TextField flexGrow="1" class="input" hint="" secure="false" returnKeyType="done"></TextField>
+                    <Image *ngIf="i == commentList.length - 1" src="~/app/images/add-card.png" height="30" width="30" marginLeft="2" (tap)="addMoreComments(i)" loadMode="async"></Image>
+                </FlexboxLayout>
+            </StackLayout> -->
+        </StackLayout>
+    </ScrollView>
+    <FilterableListpicker #myfilter blur="dark" hintText="Type to filter..." [source]="listitems"
+        (itemTapped)="itemTapped($event)"></FilterableListpicker>
+</GridLayout>

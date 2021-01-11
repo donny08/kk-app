@@ -1,0 +1,35 @@
+<ActionBar>
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" fontSize="16" textWrap="true" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://menu" android:visibility="collapsed" fontSize="16" textWrap="true" (tap)="onDrawerButtonTap()" ios.position="left">
+    </ActionItem>
+    <Label text="Questionnaire"></Label>
+</ActionBar>
+
+<GridLayout class="page__content">
+    <ScrollView height="90%" scrollBarIndicatorVisible="true">
+        <StackLayout class="page">
+            <Label class="h3 m-b-10 c-black" text="Please choose question and click on next"></Label>
+            <StackLayout orientation="horizontal" *ngFor="let option of questArr" class="p-5 m-b-10">
+                    <CheckBox #elem class="checkbox" [checked]="option.selected" fillColor="#3a53ff" onCheckColor="white" boxType="circle"
+                        (checkedChange)="elem.checked !== option.selected && changeCheckedRadio(option)"></CheckBox>
+                    <Label [text]="option.text" fontSize="16" textWrap="true" (tap)="changeCheckedRadio(option)"></Label>
+            </StackLayout>
+            <Button text="Next" width="150" (tap)="goNext()" class="next-button m-t-16"></Button>
+        </StackLayout>
+    </ScrollView>
+    <!-- <FlexboxLayout flexWrap="wrap" width="300">
+        <FlexboxLayout flexDirection="column">
+            <Image [src]="image" decodeWidth="100" decodeHeight="100" width="200" height="200"
+                loadMode="async"></Image>
+        </FlexboxLayout>
+    </FlexboxLayout> -->
+</GridLayout>
