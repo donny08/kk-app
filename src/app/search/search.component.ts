@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import { Application } from "@nativescript/core";
+import {
+    getString
+} from "@nativescript/core/application-settings";
 
 @Component({
     selector: "Search",
@@ -8,6 +11,7 @@ import { Application } from "@nativescript/core";
 })
 export class SearchComponent implements OnInit {
     @ViewChild('myfilter') myfilter: ElementRef;
+    questionOneWeakness: string;
 
     public listitems = [
         {
@@ -30,16 +34,21 @@ export class SearchComponent implements OnInit {
 
     ngOnInit(): void {
         // Init your component properties here.
+        if (getString('Q1')) {
+            console.log(JSON.parse(getString('Q1')))
+            const q1 = JSON.parse(getString('Q1'));
+            this.questionOneWeakness = q1.weakness;
+        }
     }
 
     cancelFilterableList() {
         console.log('canceled');
     }
-     
+
     itemTapped(args) {
         console.log(args.selectedItem)
     }
-     
+
     showPicker() {
         this.myfilter.nativeElement.show();
     }

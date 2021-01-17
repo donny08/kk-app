@@ -3,16 +3,48 @@ import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import { Application, Image, alert, ImageSource, confirm } from "@nativescript/core";
 import { isAvailable, requestCameraPermissions, takePicture } from '@nativescript/camera';
 import {
-    getString
+    getString,
+    setString
 } from "@nativescript/core/application-settings";
+import {
+    trigger,
+    style,
+    animate,
+    transition
+} from '@angular/animations';
 
 interface RadioOption {
     text: string;
     selected: boolean;
 }
 
+class formValues {
+    nameOfLocation: string;
+    streetSituation: string;
+    nearestLocationDistance: string;
+    externalInstallatioinsFound: boolean = false;
+    externalInstallatioinsFoundText: string;
+    waterBody: boolean = false;
+    waterBodyText: string;
+    floorOfBuilding: string;
+    mainLandmarks: string;
+    weakness: string;
+}
+
 @Component({
     selector: "Settings",
+    animations: [
+        trigger('fadeAndSlide', [
+            transition(':enter', [
+                style({ opacity: 0, transform: "translateY(20)" }),
+                animate('1s ease-out', style({ opacity: 1, transform: "translateY(0)" }))
+            ]),
+            transition(':leave', [
+                style({ opacity: 1, transform: "translateY(0)" }),
+                animate('1s ease-in', style({ opacity: 0, transform: "translateY(20)" }))
+            ])
+        ])
+    ],
     templateUrl: "./settings.component.html"
 })
 export class SettingsComponent implements OnInit {
@@ -26,11 +58,13 @@ export class SettingsComponent implements OnInit {
         "comment": ""
     }];
     comment: string;
-    externalInstallatioinsFound: boolean = false;
-    externalInstallatioinsFoundText: string;
+    //externalInstallatioinsFound: boolean = false;
+    //externalInstallatioinsFoundText: string;
     waterBody: boolean = false;
     waterBodyText: string;
     weakness: boolean = false;
+    formValues: formValues = new formValues();
+    category: string;
     @ViewChild('myfilter') myfilter: ElementRef;
 
     public listitems = [
@@ -59,15 +93,32 @@ export class SettingsComponent implements OnInit {
 
     ngOnInit(): void {
         // Init your component properties here.
+        if (getString('questions')) {
+            const questArr: Array<RadioOption> = JSON.parse(getString('questions'));
+            console.log(questArr);
+            questArr.forEach((option, index) => {
+                if (option.selected) {
+                    const q = "Q" + (index + 1);
+                    this.category = q;
+                    this.title = q + '. ' + option.text;
+                    if (getString(q)) {
+                        const answers: formValues = JSON.parse(getString(q));
+                        this.formValues.nameOfLocation = answers.nameOfLocation;
+                        this.formValues.streetSituation = answers.streetSituation;
+                        this.formValues.nearestLocationDistance = answers.nearestLocationDistance;
+                        this.formValues.externalInstallatioinsFound = answers.externalInstallatioinsFound;
+                        this.formValues.externalInstallatioinsFoundText = answers.externalInstallatioinsFoundText;
+                        this.formValues.waterBody = answers.waterBody;
+                        this.formValues.waterBodyText = answers.waterBodyText;
+                        this.formValues.floorOfBuilding = answers.floorOfBuilding;
+                        this.formValues.mainLandmarks = answers.mainLandmarks;
+                        this.formValues.weakness = answers.weakness;
+                        this.weakness = true;
+                    }
+                }
+            });
+        }
 
-        const questArr: Array<RadioOption> = JSON.parse(getString('questions'));
-        console.log(questArr);
-        questArr.forEach((option, index) => {
-            if (option.selected) {
-                const q = "Q" + (index + 1);
-                this.title = q + '. ' + option.text;
-            }
-        });
 
         if (isAvailable()) {
             requestCameraPermissions()
@@ -95,8 +146,8 @@ export class SettingsComponent implements OnInit {
 
     onCheckedChange(args, key) {
         console.log(args.value);
-        key = args.value;
-        console.log(this.externalInstallatioinsFoundText);
+        this.formValues[key] = args.value;
+        //console.log(this.externalInstallatioinsFoundText);
     }
 
     takeSnap(type, count) {
@@ -161,6 +212,14 @@ export class SettingsComponent implements OnInit {
                 }
             }
         });
+    }
+
+    submit(valid) {
+        if (valid) {
+            console.log(this.formValues)
+            setString(this.category, JSON.stringify(this.formValues));
+            console.log(this.category)
+        }
     }
 
     showWeakness() { this.weakness = !this.weakness; }

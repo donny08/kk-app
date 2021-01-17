@@ -24,6 +24,11 @@
     rxjs "6.5.5"
     source-map "0.7.3"
 
+"@angular/animation@^4.0.0-beta.8":
+  version "4.0.0-beta.8"
+  resolved "https://registry.yarnpkg.com/@angular/animation/-/animation-4.0.0-beta.8.tgz#9f61b4ee84ff4e8f48abb0eb49fff02bdedccc2e"
+  integrity sha1-n2G07oT/To9Iq7DrSf/wK97czC4=
+
 "@angular/animations@~11.0.0":
   version "11.0.5"
   resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-11.0.5.tgz#44157c8bbb3f20ce1d3d6386eae956659cefd9d7"
@@ -336,6 +341,11 @@
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/@nativescript/ios/-/ios-7.1.0.tgz#148ddd75b7b83e00e5d448224bccb3bc6c5d1b92"
   integrity sha512-sHW7Y907AJoOtv/v2mpG0xlC4g++w/63wIN4m8TvIQq1ZChI/NH4BlJeR23XDaV1eE8oHQMIGl+WT4aWdFO0JQ==
+
+"@nativescript/iqkeyboardmanager@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@nativescript/iqkeyboardmanager/-/iqkeyboardmanager-2.0.0.tgz#acaa2b292ca9e58c29938a052e80853fffe141d7"
+  integrity sha512-lChW1Bwdk1Y1kLP4uZC5K/FuulM8g5sX6q08vO07pb/Hjx4JMsTjYJ971Y1MbN/0kDt3g/+yc4maxXsr6akfxw==
 
 "@nativescript/theme@~2.3.0":
   version "2.3.4"

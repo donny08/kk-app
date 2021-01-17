@@ -90,6 +90,19 @@
   font-size: 16;
   font-weight: normal;
   padding: 5 5;
+  margin-bottom: 10;
+}
+
+.submit-button {
+  background-color: #3a53ff;
+  border-color: #3a53ff;
+  border-radius: 10;
+  border-width: 1;
+  color: #fff;
+  font-size: 16;
+  font-weight: normal;
+  padding: 10 10;
+  margin-bottom: 20;
 }
 
 .input {
@@ -98,12 +111,32 @@
   padding-left: 10;
   padding-bottom: 17;
   line-height: 25;
-  placeholder-color: #585555;
+  placeholder-color: #a09999;
   border-width: 0;
   background-color: #d1c6c6;
   border-radius: 10;
   margin-bottom: 15;
   margin-top: 5;
+}
+
+.input-area {
+  font-size: 16;
+  padding-top: 15;
+  padding-left: 10;
+  padding-bottom: 17;
+  line-height: 25;
+  placeholder-color: #251f1f;
+  border-width: 0;
+  background-color: #d1c6c6;
+  border-radius: 10;
+  margin-bottom: 15;
+  margin-top: 5;
+}
+
+.table {
+  border-radius: 10;
+  border-width: 1;
+  border-color: rgb(28, 34, 29);
 }
 
 .input.ng-dirty {

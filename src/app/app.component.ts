@@ -7,6 +7,7 @@ import { Application } from "@nativescript/core";
 import { FilterableListpicker } from '@nstudio/nativescript-filterable-listpicker';
 
 registerElement("FilterableListpicker", () => FilterableListpicker);
+registerElement("PreviousNextView", () => require("@nativescript/iqkeyboardmanager").PreviousNextView);
 
 @Component({
     selector: "ns-app",

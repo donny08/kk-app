@@ -8,9 +8,14 @@
         <GridLayout columns="auto, *" class="nt-drawer__list-item"
             [class.-selected]="appComponent.isComponentSelected('/home')" (tap)="appComponent.onNavItemTap('/home')">
             <Label col="0" text="&#xf015;" class="nt-icon fas"></Label>
-            <Label col="1" text="Home" class="p-r-10"></Label>
+            <Label col="1" text="Questionnaire" class="p-r-10"></Label>
         </GridLayout>
-
+        <GridLayout columns="auto, *" class="nt-drawer__list-item"
+            [class.-selected]="appComponent.isComponentSelected('/search')"
+            (tap)="appComponent.onNavItemTap('/search')">
+            <Label col="0" text="&#xf005;" class="nt-icon fas"></Label>
+            <Label col="1" text="Weakness" class="p-r-10"></Label>
+        </GridLayout>
         <!-- <GridLayout columns="auto, *" class="nt-drawer__list-item"
             [class.-selected]="appComponent.isComponentSelected('/browse')"
             (tap)="appComponent.onNavItemTap('/browse')">
@@ -18,12 +23,7 @@
             <Label col="1" text="Browse" class="p-r-10"></Label>
         </GridLayout>
 
-        <GridLayout columns="auto, *" class="nt-drawer__list-item"
-            [class.-selected]="appComponent.isComponentSelected('/search')"
-            (tap)="appComponent.onNavItemTap('/search')">
-            <Label col="0" text="&#xf002;" class="nt-icon fas"></Label>
-            <Label col="1" text="Search" class="p-r-10"></Label>
-        </GridLayout>
+        
 
         <GridLayout columns="auto, *" class="nt-drawer__list-item"
             [class.-selected]="appComponent.isComponentSelected('/featured')"
