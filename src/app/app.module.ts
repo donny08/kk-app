@@ -6,6 +6,8 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { ReactiveFormsModule } from '@angular/forms'
 import { SideBarComponent } from "./sidebar/sidebar.component";
+import { ReferralStore } from './store/referral/referral.store';
+import { QuestionnaireStore } from "./store/questionnaire/questionnaire.store";
 
 @NgModule({
     bootstrap: [
@@ -13,7 +15,7 @@ import { SideBarComponent } from "./sidebar/sidebar.component";
     ],
     imports: [
         NativeScriptModule,
-      //  NativeScriptFormsModule,
+        //  NativeScriptFormsModule,
         NativeScriptUISideDrawerModule,
         NativeScriptAnimationsModule,
         AppRoutingModule,
@@ -24,6 +26,7 @@ import { SideBarComponent } from "./sidebar/sidebar.component";
         AppComponent,
         SideBarComponent
     ],
+    providers: [QuestionnaireStore],
     schemas: [
         NO_ERRORS_SCHEMA
     ]

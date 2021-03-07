@@ -14,10 +14,10 @@
     <Label text="Questionnaire"></Label>
 </ActionBar>
 
-<GridLayout class="page__content">
+<GridLayout class="page__content m-t-20">
     <ScrollView height="100%" scrollBarIndicatorVisible="true">
         <PreviousNextView>
-            <StackLayout class="page m-t-16">
+            <StackLayout class="page">
                 <form name="form" #f="ngForm" novalidate>
                     <Label class="h3 m-b-20 c-black" [text]="title" textWrap="true"></Label>
                     <StackLayout class="item m-b-20" marginRight="10">
@@ -39,7 +39,7 @@
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <FlexboxLayout>
-                            <Label textWrap="true" class="_subtitle"
+                            <Label textWrap="true" width="700" class="_subtitle"
                                 text="4. Are there any external installations or sites that could reveal the internal location of the building?"></Label>
                             <Switch checked="true" marginLeft="5" size="30" backgroundColor="#3a53ff"
                                 checked="{{formValues.externalInstallatioinsFound}}"
@@ -73,11 +73,30 @@
                             editable="true" returnKeyType="done" required></TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
+                        <Label textWrap="true" class="_subtitle" text="Upload images"></Label>
+                        <StackLayout width="100%" class="_card">
+                            <WrapLayout orientation="horizontal" width="100%">
+                                <WrapLayout orientation="vertical" *ngFor="let image of signedApplication;let i = index"
+                                    class="m-b-10">
+                                    <Image [src]="image" decodeWidth="100" decodeHeight="100" width="60" height="60"
+                                        loadMode="async"></Image>
+                                    <Label *ngIf="i == signedApplication.length - 1" text="Delete"
+                                        (tap)="deleteImage('APPFORM',i,signedApplication)" fontSize="12" marginLeft="10"
+                                        textWrap="true"></Label>
+                                </WrapLayout>
+                                <WrapLayout orientation="horizontal" (tap)="takeSnap('APPFORM',signedApplication.length)">
+                                    <Image visibility="{{signedApplication.length < 100 ? 'visible' : 'collapsed'}}"
+                                        src="~/app/images/addimage.png" height="70" width="70" loadMode="async"></Image>
+                                </WrapLayout>
+                            </WrapLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
                         <!-- <Label textWrap="true" class="_subtitle" text="Please specify the weakness here...?"></Label> -->
                         <Button text="Weakness" width="150" (tap)="showWeakness()" horizontalAlignment="right"
                             class="weakness-button m-t-16"></Button>
                         <TextView @fadeAndSlide *ngIf="weakness" name="weakness" hint="Please specify the weakness here..." [(ngModel)]="formValues.weakness"
-                             class="input" lineHeight="5" height="100" editable="true" required>
+                             class="input" lineHeight="5" height="100" required>
                         </TextView>
                     </StackLayout>
                 </form>

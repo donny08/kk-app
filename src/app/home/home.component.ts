@@ -12,9 +12,15 @@ import {
     setString
 } from "@nativescript/core/application-settings";
 import { RouterExtensions } from "@nativescript/angular";
+//import { ReferralStore } from '../store/referral/referral.store';
+import { QuestionnaireStore } from "../store/questionnaire/questionnaire.store";
+
+
 
 class RadioOption {
+    index: number;
     text: string;
+    answers: string;
     selected: boolean = false;
 
     constructor(text: string) {
@@ -37,37 +43,25 @@ export class HomeComponent implements OnInit {
     question7: boolean = false;
     question8: boolean = false;
     questArr: Array<RadioOption> = [{
+        "index": 1,
         "text": "Evaluate the location of the building?",
+        "answers": '',
         "selected": false
     }, {
-        "text": "Which of the following can only generate “sensible heat” (rather than “latent heat”) inside a building?",
-        "selected": false
-    }, {
-        "text": "What does the unit W /m²K in respect of the performance of building materials refer to?",
-        "selected": false
-    }, {
-        "text": "Which of the following is not an assessment criteria for green assessment system BEAM Plus?",
-        "selected": false
-    }, {
-        "text": "Which of the following is least effective to reduce “heat island effects” in designing an open air car parking lot?",
-        "selected": false
-    }, {
-        "text": "Which of the following is not a benchmark for environmental performance assessment?",
-        "selected": false
-    }, {
-        "text": "Which of the following actions may best help maintain human comfort even in an increased indoor temperature?",
-        "selected": false
-    }, {
-        "text": "Which of the following premises should be provided with smoke extraction system?",
+        "index": 2,
+        "text": "Evaluate the external facility of the building?",
+        "answers": '',
         "selected": false
     }];
 
-    constructor(private homeService: HomeService, private loaderService: LoaderService, private router: RouterExtensions) {
+    constructor(private homeService: HomeService, private loaderService: LoaderService, private router: RouterExtensions, private store: QuestionnaireStore) {
         // Use the component constructor to inject providers.
     }
 
     ngOnInit(): void {
         setTimeout(() => {
+           // console.log(this.store.getQuestions())
+            // this.store.setToken('', '');
             //   this.loaderService.show('Please wait, this may take a few minutes...');
             //  setTimeout(() => { this.loaderService.hide(); }, 3000)
             // geolocation.enableLocationRequest();
@@ -94,12 +88,12 @@ export class HomeComponent implements OnInit {
 
         //console.log("Result is an image asset instance", isAvailable());
         // Init your component properties here.
-        
+
     }
 
     public checkedChange(modelRef, key) {
         //console.log('checkedChange:', key);
-       // this[key] = modelRef.checked;
+        // this[key] = modelRef.checked;
     }
 
     onDrawerButtonTap(): void {
@@ -154,3 +148,28 @@ export class HomeComponent implements OnInit {
         //console.log(getString('questions'));
     }
 }
+
+
+/*
+, {
+        "text": "Which of the following can only generate “sensible heat” (rather than “latent heat”) inside a building?",
+        "selected": false
+    }, {
+        "text": "What does the unit W /m²K in respect of the performance of building materials refer to?",
+        "selected": false
+    }, {
+        "text": "Which of the following is not an assessment criteria for green assessment system BEAM Plus?",
+        "selected": false
+    }, {
+        "text": "Which of the following is least effective to reduce “heat island effects” in designing an open air car parking lot?",
+        "selected": false
+    }, {
+        "text": "Which of the following is not a benchmark for environmental performance assessment?",
+        "selected": false
+    }, {
+        "text": "Which of the following actions may best help maintain human comfort even in an increased indoor temperature?",
+        "selected": false
+    }, {
+        "text": "Which of the following premises should be provided with smoke extraction system?",
+        "selected": false
+    }*/

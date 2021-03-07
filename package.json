@@ -28,7 +28,8 @@
     "url": "https://github.com/NativeScript/NativeScript/issues"
   },
   "scripts": {
-    "lint": "tslint \"src/**/*.ts\""
+    "lint": "tslint \"src/**/*.ts\"",
+    "ios": "tns run ios --no-hmr"
   },
   "dependencies": {
     "@angular/animation": "^4.0.0-beta.8",
