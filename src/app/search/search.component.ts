@@ -12,6 +12,8 @@ import {
 export class SearchComponent implements OnInit {
     @ViewChild('myfilter') myfilter: ElementRef;
     questionOneWeakness: string;
+    questionOneWeaknessTwo: string;
+    questionOneWeaknessThree: string;
 
     public listitems = [
         {
@@ -38,6 +40,18 @@ export class SearchComponent implements OnInit {
             console.log(JSON.parse(getString('Q1')))
             const q1 = JSON.parse(getString('Q1'));
             this.questionOneWeakness = q1.weakness;
+        }
+
+        if (getString('Q2')) {
+            console.log(JSON.parse(getString('Q2')))
+            const q2 = JSON.parse(getString('Q2'));
+            this.questionOneWeaknessTwo = q2.weakness;
+        }
+
+        if (getString('Q3')) {
+            console.log(JSON.parse(getString('Q3')))
+            const q3 = JSON.parse(getString('Q3'));
+            this.questionOneWeaknessThree = q3.weakness;
         }
     }
 

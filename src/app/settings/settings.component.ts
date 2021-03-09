@@ -12,6 +12,7 @@ import {
     animate,
     transition
 } from '@angular/animations';
+import { RouterExtensions } from "@nativescript/angular";
 
 interface RadioOption {
     text: string;
@@ -31,6 +32,41 @@ class formValues {
     weakness: string;
 }
 
+class formValuesTwo {
+    externalMonitorEnv: boolean = false;
+    externalMonitorEnvText: string;
+    externalPowerStat: boolean = false;
+    externalPowerStatText: string;
+    externalPerimeter: boolean = false;
+    externalPerimeterText: string;
+    warningSigns: boolean = false;
+    warningSignsText: string;
+    roadLeading: boolean = false;
+    roadLeadingText: string;
+    weakness: string;
+}
+
+class formValuesThree {
+    heightOuterWall: string;
+    surveillanceAlarm: boolean = false;
+    surveillanceAlarmText: string;
+    secureCCTV: boolean = false;
+    secureCCTVText: string;
+    moreFence: boolean = false;
+    moreFenceText: string;
+    lighting: boolean = false;
+    lightingText: string;
+    adjacent: boolean = false;
+    adjacentText: string;
+    climbFacility: boolean = false;
+    climbFacilityText: string;
+    barrier: boolean = false;
+    barrierText: string;
+    barbedWire: boolean = false;
+    barbedWireText: string;
+    weakness: string;
+}
+
 @Component({
     selector: "Settings",
     animations: [
@@ -47,10 +83,13 @@ class formValues {
     ],
     templateUrl: "./settings.component.html"
 })
+
 export class SettingsComponent implements OnInit {
     title: string;
     reason: string;
     public signedApplication: Array<any> = [];
+    public signedApplicationTwo: Array<any> = [];
+    public signedApplicationThree: Array<any> = [];
     documents = [];
     availableItems: any = [];
     commentList = [{
@@ -64,6 +103,8 @@ export class SettingsComponent implements OnInit {
     waterBodyText: string;
     weakness: boolean = false;
     formValues: formValues = new formValues();
+    formValuesTwo: formValuesTwo = new formValuesTwo();
+    formValuesThree: formValuesThree = new formValuesThree();
     category: string;
     @ViewChild('myfilter') myfilter: ElementRef;
 
@@ -87,7 +128,7 @@ export class SettingsComponent implements OnInit {
         "selected": false
     }]
 
-    constructor() {
+    constructor(private router: RouterExtensions) {
         // Use the component constructor to inject providers.
     }
 
@@ -101,8 +142,18 @@ export class SettingsComponent implements OnInit {
                     const q = "Q" + (index + 1);
                     this.category = q;
                     this.title = q + '. ' + option.text;
-                    if (getString(q)) {
+
+                    if (q == "Q1" && getString(q)) {
                         const answers: formValues = JSON.parse(getString(q));
+                        //console.log("_images", getString(this.category + '_images'))
+                        if (getString(this.category + '_images')) {
+                            const documents = JSON.parse(getString(this.category + '_images'));
+                            this.documents = documents;
+                            documents.forEach((item, index: number) => {
+                                this.signedApplication.push(item.image);
+                            });
+                        }
+
                         this.formValues.nameOfLocation = answers.nameOfLocation;
                         this.formValues.streetSituation = answers.streetSituation;
                         this.formValues.nearestLocationDistance = answers.nearestLocationDistance;
@@ -113,6 +164,59 @@ export class SettingsComponent implements OnInit {
                         this.formValues.floorOfBuilding = answers.floorOfBuilding;
                         this.formValues.mainLandmarks = answers.mainLandmarks;
                         this.formValues.weakness = answers.weakness;
+                        this.weakness = true;
+                    }
+
+                    if (q == "Q2" && getString(q)) {
+                        const answers: formValuesTwo = JSON.parse(getString(q));
+                        if (getString(this.category + '_images')) {
+                            const documents = JSON.parse(getString(this.category + '_images'));
+                            this.documents = documents;
+                            documents.forEach((item, index: number) => {
+                                this.signedApplicationTwo.push(item.image);
+                            });
+                        }
+                        this.formValuesTwo.externalMonitorEnv = answers.externalMonitorEnv;
+                        this.formValuesTwo.externalMonitorEnvText = answers.externalMonitorEnvText;
+                        this.formValuesTwo.externalPowerStat = answers.externalPowerStat;
+                        this.formValuesTwo.externalPowerStatText = answers.externalPowerStatText;
+                        this.formValuesTwo.externalPerimeter = answers.externalPerimeter;
+                        this.formValuesTwo.externalPerimeterText = answers.externalPerimeterText;
+                        this.formValuesTwo.warningSigns = answers.warningSigns;
+                        this.formValuesTwo.warningSignsText = answers.warningSignsText;
+                        this.formValuesTwo.roadLeading = answers.roadLeading;
+                        this.formValuesTwo.roadLeadingText = answers.roadLeadingText;
+                        this.formValuesTwo.weakness = answers.weakness;
+                        this.weakness = true;
+                    }
+
+                    if (q == "Q3" && getString(q)) {
+                        const answers: formValuesThree = JSON.parse(getString(q));
+                        if (getString(this.category + '_images')) {
+                            const documents = JSON.parse(getString(this.category + '_images'));
+                            this.documents = documents;
+                            documents.forEach((item, index: number) => {
+                                this.signedApplicationThree.push(item.image);
+                            });
+                        }
+                        this.formValuesThree.heightOuterWall = answers.heightOuterWall;
+                        this.formValuesThree.surveillanceAlarm = answers.surveillanceAlarm;
+                        this.formValuesThree.surveillanceAlarmText = answers.surveillanceAlarmText;
+                        this.formValuesThree.secureCCTV = answers.secureCCTV;
+                        this.formValuesThree.secureCCTVText = answers.secureCCTVText;
+                        this.formValuesThree.moreFence = answers.moreFence;
+                        this.formValuesThree.moreFenceText = answers.moreFenceText;
+                        this.formValuesThree.lighting = answers.lighting;
+                        this.formValuesThree.lightingText = answers.lightingText;
+                        this.formValuesThree.adjacent = answers.adjacent;
+                        this.formValuesThree.adjacentText = answers.adjacentText;
+                        this.formValuesThree.climbFacility = answers.climbFacility;
+                        this.formValuesThree.climbFacilityText = answers.climbFacilityText;
+                        this.formValuesThree.barrier = answers.barrier;
+                        this.formValuesThree.barrierText = answers.barrierText;
+                        this.formValuesThree.barbedWire = answers.barbedWire;
+                        this.formValuesThree.barbedWireText = answers.barbedWireText;
+                        this.formValuesThree.weakness = answers.weakness;
                         this.weakness = true;
                     }
                 }
@@ -147,10 +251,19 @@ export class SettingsComponent implements OnInit {
     onCheckedChange(args, key) {
         console.log(args.value);
         this.formValues[key] = args.value;
-        //console.log(this.externalInstallatioinsFoundText);
     }
 
-    takeSnap(type, count) {
+    onCheckedChangeTwo(args, key) {
+        console.log(args.value);
+        this.formValuesTwo[key] = args.value;
+    }
+
+    onCheckedChangeThree(args, key) {
+        console.log(args.value);
+        this.formValuesThree[key] = args.value;
+    }
+
+    takeSnap(type, count, arr) {
         takePicture().
             then((imageAsset) => {
                 //  alert("Result is an image asset instance");
@@ -176,7 +289,7 @@ export class SettingsComponent implements OnInit {
                             "image": base64,
                             "timestamp": (new Date()).getTime()
                         });
-                        this.signedApplication.push(source);
+                        arr.push(source);
                     } catch (error) { }
                 });
                 //var image = new Image();
@@ -216,9 +329,21 @@ export class SettingsComponent implements OnInit {
 
     submit(valid) {
         if (valid) {
-            console.log(this.formValues)
-            setString(this.category, JSON.stringify(this.formValues));
-            console.log(this.category)
+            //console.log(this.formValues)
+            //console.log(this.category, this.formValuesTwo)
+            console.log(this.documents)
+
+            if (this.category == "Q1") setString(this.category, JSON.stringify(this.formValues));
+            if (this.category == "Q2") setString(this.category, JSON.stringify(this.formValuesTwo));
+            if (this.category == "Q3") setString(this.category, JSON.stringify(this.formValuesThree));
+
+            if (this.documents && this.documents.length > 0) setString(this.category + '_images', JSON.stringify(this.documents));
+
+            alert("Information submitted successfully").then(() => {
+                this.router.navigate(['home'], {
+                    clearHistory: true
+                });
+            });
         }
     }
 

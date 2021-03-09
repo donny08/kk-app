@@ -24,6 +24,7 @@
                     <Label [text]="option.text" fontSize="16" textWrap="true" (tap)="changeCheckedRadio(option)"></Label>
             </StackLayout>
             <Button text="Next" width="150" (tap)="goNext()" class="next-button m-t-16"></Button>
+            <Button text="Online" *ngIf="online" width="150" (tap)="storeDataServer()" class="online-button m-t-16"></Button>
         </StackLayout>
     </ScrollView>
     <!-- <FlexboxLayout flexWrap="wrap" width="300">

@@ -1,6 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
-import { Application, Image, alert, ImageSource } from "@nativescript/core";
+import { Application, Image, alert, ImageSource, Page } from "@nativescript/core";
 import { Accuracy } from "@nativescript/core/ui/enums";
 import { isAvailable, requestCameraPermissions, takePicture } from '@nativescript/camera';
 import * as geolocation from "@nativescript/geolocation";
@@ -14,7 +14,7 @@ import {
 import { RouterExtensions } from "@nativescript/angular";
 //import { ReferralStore } from '../store/referral/referral.store';
 import { QuestionnaireStore } from "../store/questionnaire/questionnaire.store";
-
+import { connectionType, getConnectionType, startMonitoring, stopMonitoring } from "@nativescript/core/connectivity";
 
 
 class RadioOption {
@@ -32,7 +32,7 @@ class RadioOption {
     selector: "Home",
     templateUrl: "./home.component.html"
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
     image: ImageSource;
     question1: boolean = false;
     question2: boolean = false;
@@ -42,6 +42,7 @@ export class HomeComponent implements OnInit {
     question6: boolean = false;
     question7: boolean = false;
     question8: boolean = false;
+    online: boolean = false;
     questArr: Array<RadioOption> = [{
         "index": 1,
         "text": "Evaluate the location of the building?",
@@ -52,15 +53,82 @@ export class HomeComponent implements OnInit {
         "text": "Evaluate the external facility of the building?",
         "answers": '',
         "selected": false
+    }, {
+        "index": 3,
+        "text": "Evaluate the perimeter of the building?",
+        "answers": '',
+        "selected": false
     }];
-
-    constructor(private homeService: HomeService, private loaderService: LoaderService, private router: RouterExtensions, private store: QuestionnaireStore) {
+    id: any;
+    constructor(private page: Page, private homeService: HomeService, private loaderService: LoaderService, private router: RouterExtensions, private store: QuestionnaireStore) {
         // Use the component constructor to inject providers.
+
     }
 
     ngOnInit(): void {
+        this.id = setInterval(() => {
+            const type = getConnectionType();
+            switch (type) {
+                case connectionType.none:
+                   // console.log("Connection type changed to none.");
+                    this.online = false;
+                    break;
+                case connectionType.wifi:
+                    //console.log("Connection type changed to WiFi.");
+                    this.online = true;
+                    break;
+                case connectionType.mobile:
+                    //console.log("Connection type changed to mobile.");
+                    break;
+                case connectionType.ethernet:
+                    //console.log("Connection type changed to ethernet.");
+                    this.online = true;
+                    break;
+                case connectionType.bluetooth:
+                    //console.log("Connection type changed to bluetooth.");
+                    break;
+                default:
+                    break;
+            }
+        }, 1000);
+       /* this.page.on(Page.navigatedFromEvent, (event) => {
+            console.log("ngOnDestroy");
+            if (this.id) {
+                clearInterval(this.id);
+            }
+        });
+
+        this.page.on(Page.navigatedToEvent, (event) => {
+            console.log("ngOnInit");
+            this.id = setInterval(() => {
+                const type = getConnectionType();
+                switch (type) {
+                    case connectionType.none:
+                        console.log("Connection type changed to none.");
+                        this.online = false;
+                        break;
+                    case connectionType.wifi:
+                        console.log("Connection type changed to WiFi.");
+                        this.online = true;
+                        break;
+                    case connectionType.mobile:
+                        //console.log("Connection type changed to mobile.");
+                        break;
+                    case connectionType.ethernet:
+                        //console.log("Connection type changed to ethernet.");
+                        this.online = true;
+                        break;
+                    case connectionType.bluetooth:
+                        //console.log("Connection type changed to bluetooth.");
+                        break;
+                    default:
+                        break;
+                }
+            }, 1000);
+        });*/
+
         setTimeout(() => {
-           // console.log(this.store.getQuestions())
+            // console.log(this.store.getQuestions())
             // this.store.setToken('', '');
             //   this.loaderService.show('Please wait, this may take a few minutes...');
             //  setTimeout(() => { this.loaderService.hide(); }, 3000)
@@ -89,6 +157,22 @@ export class HomeComponent implements OnInit {
         //console.log("Result is an image asset instance", isAvailable());
         // Init your component properties here.
 
+    }
+
+
+
+    ngOnDestroy() {
+        console.log("ngOnDestroy");
+        if (this.id) {
+            clearInterval(this.id);
+        }
+    }
+
+
+
+    storeDataServer() {
+        console.log(getString('Q1'))
+        console.log(getString('Q1_images'))
     }
 
     public checkedChange(modelRef, key) {

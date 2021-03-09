@@ -14,7 +14,7 @@ question 3. builiding perimeter
 6. is the facility fence adjacent to the walls of another facility
 7. are there any trees, height or objects that could help to climb the facility fence
 8. are there barriers around the fence
-9. are there bar bed wire on the fence
+9. are there barbed wire on the fence
 
 
 Perimeter matching items

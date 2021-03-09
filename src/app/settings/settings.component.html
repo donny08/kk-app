@@ -17,7 +17,7 @@
 <GridLayout class="page__content m-t-20">
     <ScrollView height="100%" scrollBarIndicatorVisible="true">
         <PreviousNextView>
-            <StackLayout class="page">
+            <StackLayout *ngIf="category == 'Q1'" class="page">
                 <form name="form" #f="ngForm" novalidate>
                     <Label class="h3 m-b-20 c-black" [text]="title" textWrap="true"></Label>
                     <StackLayout class="item m-b-20" marginRight="10">
@@ -35,7 +35,8 @@
                         <Label textWrap="true" class="_subtitle"
                             text="3. What is the nearest location or any building near me and how much is the distance?"></Label>
                         <TextField hint="" class="input" name="nearestLocationDistance"
-                            [(ngModel)]="formValues.nearestLocationDistance" returnKeyType="done" editable="true" required></TextField>
+                            [(ngModel)]="formValues.nearestLocationDistance" returnKeyType="done" editable="true"
+                            required></TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <FlexboxLayout>
@@ -46,7 +47,8 @@
                                 (checkedChange)="onCheckedChange($event, 'externalInstallatioinsFound')"></Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="externalInstallatioinsFound"
-                            [(ngModel)]="formValues.externalInstallatioinsFoundText" returnKeyType="done" editable="true" required>
+                            [(ngModel)]="formValues.externalInstallatioinsFoundText" returnKeyType="done"
+                            editable="true" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
@@ -81,10 +83,11 @@
                                     <Image [src]="image" decodeWidth="100" decodeHeight="100" width="60" height="60"
                                         loadMode="async"></Image>
                                     <Label *ngIf="i == signedApplication.length - 1" text="Delete"
-                                        (tap)="deleteImage('APPFORM',i,signedApplication)" fontSize="12" marginLeft="10"
+                                        (tap)="deleteImage('Q2',i,signedApplication)" fontSize="12" marginLeft="10"
                                         textWrap="true"></Label>
                                 </WrapLayout>
-                                <WrapLayout orientation="horizontal" (tap)="takeSnap('APPFORM',signedApplication.length)">
+                                <WrapLayout orientation="horizontal"
+                                    (tap)="takeSnap('Q1',signedApplication.length, signedApplication)">
                                     <Image visibility="{{signedApplication.length < 100 ? 'visible' : 'collapsed'}}"
                                         src="~/app/images/addimage.png" height="70" width="70" loadMode="async"></Image>
                                 </WrapLayout>
@@ -92,11 +95,12 @@
                         </StackLayout>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
-                        <!-- <Label textWrap="true" class="_subtitle" text="Please specify the weakness here...?"></Label> -->
                         <Button text="Weakness" width="150" (tap)="showWeakness()" horizontalAlignment="right"
                             class="weakness-button m-t-16"></Button>
-                        <TextView @fadeAndSlide *ngIf="weakness" name="weakness" hint="Please specify the weakness here..." [(ngModel)]="formValues.weakness"
-                             class="input" lineHeight="5" height="100" required>
+                        <Label *ngIf="weakness" textWrap="true" class="_subtitle"
+                            text="Please specify the weakness here"></Label>
+                        <TextView @fadeAndSlide *ngIf="weakness" name="weakness" hint=""
+                            [(ngModel)]="formValues.weakness" class="input" lineHeight="5" height="100" required>
                         </TextView>
                     </StackLayout>
                 </form>
@@ -104,66 +108,254 @@
                     <Button text="Submit" width="150" (tap)="submit(f.form.valid)" horizontalAlignment="center"
                         class="submit-button m-t-16"></Button>
                 </StackLayout>
-                <!-- <StackLayout marginRight="10" class="m-b-10">
-                <TextField hint="Select the reason" class="input" (tap)="showPicker()" [text]="reason" editable="false">
-                </TextField>
             </StackLayout>
-            <StackLayout class="item m-b-20" marginRight="10">
-                <Label textWrap="true" class="_subtitle" text="Upload images"></Label>
-                <StackLayout width="100%" class="_card">
-                    <WrapLayout orientation="horizontal" width="100%">
-                        <WrapLayout orientation="vertical" *ngFor="let image of signedApplication;let i = index"
-                            class="m-b-10">
-                            <Image [src]="image" decodeWidth="100" decodeHeight="100" width="60" height="60"
-                                loadMode="async"></Image>
-                            <Label *ngIf="i == signedApplication.length - 1" text="Delete"
-                                (tap)="deleteImage('APPFORM',i,signedApplication)" fontSize="12" marginLeft="10"
-                                textWrap="true"></Label>
-                        </WrapLayout>
-                        <WrapLayout orientation="horizontal" (tap)="takeSnap('APPFORM',signedApplication.length)">
-                            <Image visibility="{{signedApplication.length < 100 ? 'visible' : 'collapsed'}}"
-                                src="~/app/images/addimage.png" height="70" width="70" loadMode="async"></Image>
-                        </WrapLayout>
-                    </WrapLayout>
+            <StackLayout *ngIf="category == 'Q2'" class="page">
+                <form name="form" #f="ngForm" novalidate>
+                    <Label class="h3 m-b-20 c-black" [text]="title" textWrap="true"></Label>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <FlexboxLayout>
+                            <Label textWrap="true" width="700" class="_subtitle"
+                                text="1. Are the assistive technical systems available to monitor the external environment (type of systems - quantity)?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30"
+                                checked="{{formValuesTwo.externalMonitorEnv}}" backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeTwo($event, 'externalMonitorEnv')">
+                            </Switch>
+                        </FlexboxLayout>
+                        <TextField hint="" class="input" name="externalMonitorEnvText"
+                            [(ngModel)]="formValuesTwo.externalMonitorEnvText" editable="true" returnKeyType="done"
+                            required></TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <FlexboxLayout>
+                            <Label textWrap="true" width="700" class="_subtitle"
+                                text="2. Are the external power stations secured?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30"
+                                checked="{{formValuesTwo.externalPowerStat}}" backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeTwo($event, 'externalPowerStat')">
+                            </Switch>
+                        </FlexboxLayout>
+                        <TextField hint="" class="input" name="externalPowerStatText"
+                            [(ngModel)]="formValuesTwo.externalPowerStatText" editable="true" returnKeyType="done"
+                            required></TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <FlexboxLayout>
+                            <Label textWrap="true" width="700" class="_subtitle"
+                                text="3. Are there any obstacles that may affect the monitoring of the external perimeter of the facility (trees, poor lighting)?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30"
+                                checked="{{formValuesTwo.externalPerimeter}}" backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeTwo($event, 'externalPerimeter')">
+                            </Switch>
+                        </FlexboxLayout>
+                        <TextField hint="" class="input" name="externalPerimeterText"
+                            [(ngModel)]="formValuesTwo.externalPerimeterText" editable="true" returnKeyType="done"
+                            required></TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <FlexboxLayout>
+                            <Label textWrap="true" width="700" class="_subtitle"
+                                text="4. Are there warning signs outside the environment?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesTwo.warningSigns}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeTwo($event, 'warningSigns')">
+                            </Switch>
+                        </FlexboxLayout>
+                        <TextField hint="" class="input" name="warningSignsText"
+                            [(ngModel)]="formValuesTwo.warningSignsText" editable="true" returnKeyType="done" required>
+                        </TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <FlexboxLayout>
+                            <Label textWrap="true" width="700" class="_subtitle"
+                                text="5. Are the roads leading to the facility is directly passable or have obstacles?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesTwo.roadLeading}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeTwo($event, 'roadLeading')">
+                            </Switch>
+                        </FlexboxLayout>
+                        <TextField hint="" class="input" name="roadLeadingText"
+                            [(ngModel)]="formValuesTwo.roadLeadingText" editable="true" returnKeyType="done" required>
+                        </TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <Label textWrap="true" class="_subtitle" text="Upload images"></Label>
+                        <StackLayout width="100%" class="_card">
+                            <WrapLayout orientation="horizontal" width="100%">
+                                <WrapLayout orientation="vertical"
+                                    *ngFor="let image of signedApplicationTwo;let i = index" class="m-b-10">
+                                    <Image [src]="image" decodeWidth="100" decodeHeight="100" width="60" height="60"
+                                        loadMode="async"></Image>
+                                    <Label *ngIf="i == signedApplicationTwo.length - 1" text="Delete"
+                                        (tap)="deleteImage('Q2',i,signedApplicationTwo)" fontSize="12"
+                                        marginLeft="10" textWrap="true"></Label>
+                                </WrapLayout>
+                                <WrapLayout orientation="horizontal"
+                                    (tap)="takeSnap('Q2',signedApplicationTwo.length, signedApplicationTwo)">
+                                    <Image visibility="{{signedApplicationTwo.length < 100 ? 'visible' : 'collapsed'}}"
+                                        src="~/app/images/addimage.png" height="70" width="70" loadMode="async"></Image>
+                                </WrapLayout>
+                            </WrapLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <Button text="Weakness" width="150" (tap)="showWeakness()" horizontalAlignment="right"
+                            class="weakness-button m-t-16"></Button>
+                        <Label *ngIf="weakness" textWrap="true" class="_subtitle"
+                            text="Please specify the weakness here"></Label>
+                        <TextView @fadeAndSlide *ngIf="weakness" name="weakness" hint=""
+                            [(ngModel)]="formValuesTwo.weakness" class="input" lineHeight="5" height="100" required>
+                        </TextView>
+                    </StackLayout>
+                </form>
+                <StackLayout class="item m-b-20">
+                    <Button text="Submit" width="150" (tap)="submit(f.form.valid)" horizontalAlignment="center"
+                        class="submit-button m-t-16"></Button>
                 </StackLayout>
             </StackLayout>
-            <StackLayout class="item m-b-20" marginRight="10">
-                <Label textWrap="true" class="_subtitle" text="Choose the items"></Label>
-                <WrapLayout orientation="horizontal" class="p-5">
-                    <CheckBox #battery class="checkbox" fillColor="#3a53ff"
-                        onCheckColor="white" boxType="square" (checkedChange)="checkedChange(battery, 'battery')">
-                    </CheckBox>
-                    <Label text="battery" fontSize="16" textWrap="true" (tap)="battery.toggle()" marginRight="10"></Label>
-                    <CheckBox #switch class="checkbox" fillColor="#3a53ff"
-                        onCheckColor="white" boxType="square" (checkedChange)="checkedChange(switch, 'switch')">
-                    </CheckBox>
-                    <Label text="switch" fontSize="16" textWrap="true" (tap)="switch.toggle()" marginRight="10"></Label>
-                    <CheckBox #cable class="checkbox" fillColor="#3a53ff"
-                        onCheckColor="white" boxType="square" (checkedChange)="checkedChange(cable, 'cable')">
-                    </CheckBox>
-                    <Label text="cable" fontSize="16" textWrap="true" (tap)="cable.toggle()" marginRight="10"></Label>
-                    <CheckBox #circuit class="checkbox" fillColor="#3a53ff"
-                        onCheckColor="white" boxType="square" (checkedChange)="checkedChange(circuit, 'circuit')">
-                    </CheckBox>
-                    <Label text="circuit" fontSize="16" textWrap="true" (tap)="circuit.toggle()" marginRight="10"></Label>
-                    <CheckBox #laptop class="checkbox" fillColor="#3a53ff"
-                        onCheckColor="white" boxType="square" (checkedChange)="checkedChange(laptop, 'laptop')">
-                    </CheckBox>
-                    <Label text="laptop" fontSize="16" textWrap="true" (tap)="laptop.toggle()" marginRight="10"></Label>
-                    <CheckBox #other class="checkbox" fillColor="#3a53ff"
-                        onCheckColor="white" boxType="square" (checkedChange)="checkedChange(other, 'other')">
-                    </CheckBox>
-                    <Label text="other" fontSize="16" textWrap="true" (tap)="other.toggle()" marginRight="10"></Label>
-                </WrapLayout>
-            </StackLayout>
-            <StackLayout class="item m-b-20" marginRight="10">
-                <Label textWrap="true" class="_subtitle" text="Add Comments"></Label>
-                <TextField flexGrow="1" class="input" hint="" #name secure="false" [(ngModel)]="comment" returnKeyType="done"></TextField>
-                <FlexboxLayout *ngFor="let item of commentList; let i = index">
-                    <TextField flexGrow="1" class="input" hint="" secure="false" returnKeyType="done"></TextField>
-                    <Image *ngIf="i == commentList.length - 1" src="~/app/images/add-card.png" height="30" width="30" marginLeft="2" (tap)="addMoreComments(i)" loadMode="async"></Image>
-                </FlexboxLayout>
-            </StackLayout> -->
+            <StackLayout *ngIf="category == 'Q3'" class="page">
+                <form name="form" #f="ngForm" novalidate>
+                    <Label class="h3 m-b-20 c-black" [text]="title" textWrap="true"></Label>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <Label textWrap="true" class="_subtitle" text="1. What is the height of the outer wall?"></Label>
+                        <TextField hint="" class="input" name="heightOuterWall" [(ngModel)]="formValuesThree.heightOuterWall"
+                            editable="true" returnKeyType="done" required></TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <FlexboxLayout>
+                            <Label textWrap="true" width="700" class="_subtitle"
+                                text="2. Is the outer wall secured with live surveillance and alaram systems?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30"
+                                checked="{{formValuesThree.surveillanceAlarm}}" backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeThree($event, 'surveillanceAlarm')">
+                            </Switch>
+                        </FlexboxLayout>
+                        <TextField hint="" class="input" name="surveillanceAlarmText"
+                            [(ngModel)]="formValuesThree.surveillanceAlarmText" editable="true" returnKeyType="done"
+                            required></TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <FlexboxLayout>
+                            <Label textWrap="true" width="700" class="_subtitle"
+                                text="3. Is the inner perimeter of the wall secyured by cctv?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30"
+                                checked="{{formValuesThree.secureCCTV}}" backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeThree($event, 'secureCCTV')">
+                            </Switch>
+                        </FlexboxLayout>
+                        <TextField hint="" class="input" name="secureCCTVText"
+                            [(ngModel)]="formValuesThree.secureCCTVText" editable="true" returnKeyType="done"
+                            required></TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <FlexboxLayout>
+                            <Label textWrap="true" width="700" class="_subtitle"
+                                text="4. Does the facility have more than one fence?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30"
+                                checked="{{formValuesThree.moreFence}}" backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeThree($event, 'moreFence')">
+                            </Switch>
+                        </FlexboxLayout>
+                        <TextField hint="" class="input" name="moreFenceText"
+                            [(ngModel)]="formValuesThree.moreFenceText" editable="true" returnKeyType="done"
+                            required></TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <FlexboxLayout>
+                            <Label textWrap="true" width="700" class="_subtitle"
+                                text="5. Is there enough lighting around the fence?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30"
+                                checked="{{formValuesThree.lighting}}" backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeThree($event, 'lighting')">
+                            </Switch>
+                        </FlexboxLayout>
+                        <TextField hint="" class="input" name="lightingText"
+                            [(ngModel)]="formValuesThree.lightingText" editable="true" returnKeyType="done"
+                            required></TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <FlexboxLayout>
+                            <Label textWrap="true" width="700" class="_subtitle"
+                                text="6. Is the facility fence adjacent to the walls of another facility?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30"
+                                checked="{{formValuesThree.adjacent}}" backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeThree($event, 'adjacent')">
+                            </Switch>
+                        </FlexboxLayout>
+                        <TextField hint="" class="input" name="adjacentText"
+                            [(ngModel)]="formValuesThree.adjacentText" editable="true" returnKeyType="done"
+                            required></TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <FlexboxLayout>
+                            <Label textWrap="true" width="700" class="_subtitle"
+                                text="7. Are there any trees, height or objects that could help to climb the facility fence?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30"
+                                checked="{{formValuesThree.climbFacility}}" backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeThree($event, 'climbFacility')">
+                            </Switch>
+                        </FlexboxLayout>
+                        <TextField hint="" class="input" name="climbFacilityText"
+                            [(ngModel)]="formValuesThree.climbFacilityText" editable="true" returnKeyType="done"
+                            required></TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <FlexboxLayout>
+                            <Label textWrap="true" width="700" class="_subtitle"
+                                text="8. Are there barriers around the fence?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30"
+                                checked="{{formValuesThree.barrier}}" backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeThree($event, 'barrier')">
+                            </Switch>
+                        </FlexboxLayout>
+                        <TextField hint="" class="input" name="barrierText"
+                            [(ngModel)]="formValuesThree.barrierText" editable="true" returnKeyType="done"
+                            required></TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <FlexboxLayout>
+                            <Label textWrap="true" width="700" class="_subtitle"
+                                text="9. Are there barbed wire on the fence?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30"
+                                checked="{{formValuesThree.barbedWire}}" backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeThree($event, 'barbedWire')">
+                            </Switch>
+                        </FlexboxLayout>
+                        <TextField hint="" class="input" name="barbedWireText"
+                            [(ngModel)]="formValuesThree.barbedWireText" editable="true" returnKeyType="done"
+                            required></TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <Label textWrap="true" class="_subtitle" text="Upload images"></Label>
+                        <StackLayout width="100%" class="_card">
+                            <WrapLayout orientation="horizontal" width="100%">
+                                <WrapLayout orientation="vertical" *ngFor="let image of signedApplicationThree;let i = index"
+                                    class="m-b-10">
+                                    <Image [src]="image" decodeWidth="100" decodeHeight="100" width="60" height="60"
+                                        loadMode="async"></Image>
+                                    <Label *ngIf="i == signedApplicationThree.length - 1" text="Delete"
+                                        (tap)="deleteImage('Q3',i,signedApplicationThree)" fontSize="12" marginLeft="10"
+                                        textWrap="true"></Label>
+                                </WrapLayout>
+                                <WrapLayout orientation="horizontal"
+                                    (tap)="takeSnap('Q1',signedApplicationThree.length, signedApplicationThree)">
+                                    <Image visibility="{{signedApplicationThree.length < 100 ? 'visible' : 'collapsed'}}"
+                                        src="~/app/images/addimage.png" height="70" width="70" loadMode="async"></Image>
+                                </WrapLayout>
+                            </WrapLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <Button text="Weakness" width="150" (tap)="showWeakness()" horizontalAlignment="right"
+                            class="weakness-button m-t-16"></Button>
+                        <Label *ngIf="weakness" textWrap="true" class="_subtitle"
+                            text="Please specify the weakness here"></Label>
+                        <TextView @fadeAndSlide *ngIf="weakness" name="weakness" hint=""
+                            [(ngModel)]="formValuesThree.weakness" class="input" lineHeight="5" height="100" required>
+                        </TextView>
+                    </StackLayout>
+                </form>
+                <StackLayout class="item m-b-20">
+                    <Button text="Submit" width="150" (tap)="submit(f.form.valid)" horizontalAlignment="center"
+                        class="submit-button m-t-16"></Button>
+                </StackLayout>
             </StackLayout>
         </PreviousNextView>
     </ScrollView>
