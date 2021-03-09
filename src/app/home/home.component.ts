@@ -15,6 +15,7 @@ import { RouterExtensions } from "@nativescript/angular";
 //import { ReferralStore } from '../store/referral/referral.store';
 import { QuestionnaireStore } from "../store/questionnaire/questionnaire.store";
 import { connectionType, getConnectionType, startMonitoring, stopMonitoring } from "@nativescript/core/connectivity";
+import { Router, NavigationEnd } from '@angular/router';
 
 
 class RadioOption {
@@ -60,72 +61,85 @@ export class HomeComponent implements OnInit, OnDestroy {
         "selected": false
     }];
     id: any;
-    constructor(private page: Page, private homeService: HomeService, private loaderService: LoaderService, private router: RouterExtensions, private store: QuestionnaireStore) {
+    constructor(private page: Page, private router2: Router, private homeService: HomeService, private loaderService: LoaderService, private router: RouterExtensions, private store: QuestionnaireStore) {
         // Use the component constructor to inject providers.
-
-    }
-
-    ngOnInit(): void {
-        this.id = setInterval(() => {
-            const type = getConnectionType();
-            switch (type) {
-                case connectionType.none:
-                   // console.log("Connection type changed to none.");
-                    this.online = false;
-                    break;
-                case connectionType.wifi:
-                    //console.log("Connection type changed to WiFi.");
-                    this.online = true;
-                    break;
-                case connectionType.mobile:
-                    //console.log("Connection type changed to mobile.");
-                    break;
-                case connectionType.ethernet:
-                    //console.log("Connection type changed to ethernet.");
-                    this.online = true;
-                    break;
-                case connectionType.bluetooth:
-                    //console.log("Connection type changed to bluetooth.");
-                    break;
-                default:
-                    break;
+        this.router2.events.subscribe(event => {
+            if (event instanceof NavigationEnd) {
+                if (event.url == "/home" || event.url == "/") {
+                    this.id = setInterval(() => {
+                        const type = getConnectionType();
+                        switch (type) {
+                            case connectionType.none:
+                                //console.log("Connection type changed to none.");
+                                this.online = false;
+                                break;
+                            case connectionType.wifi:
+                                //console.log("Connection type changed to WiFi.");
+                                this.online = true;
+                                break;
+                            case connectionType.mobile:
+                                //console.log("Connection type changed to mobile.");
+                                break;
+                            case connectionType.ethernet:
+                                //console.log("Connection type changed to ethernet.");
+                                this.online = true;
+                                break;
+                            case connectionType.bluetooth:
+                                //console.log("Connection type changed to bluetooth.");
+                                break;
+                            default:
+                                break;
+                        }
+                    }, 1000);
+                }
             }
-        }, 1000);
-       /* this.page.on(Page.navigatedFromEvent, (event) => {
+        });
+
+        this.page.on(Page.navigatedFromEvent, (event) => {
             console.log("ngOnDestroy");
             if (this.id) {
                 clearInterval(this.id);
             }
         });
+    }
 
-        this.page.on(Page.navigatedToEvent, (event) => {
-            console.log("ngOnInit");
-            this.id = setInterval(() => {
-                const type = getConnectionType();
-                switch (type) {
-                    case connectionType.none:
-                        console.log("Connection type changed to none.");
-                        this.online = false;
-                        break;
-                    case connectionType.wifi:
-                        console.log("Connection type changed to WiFi.");
-                        this.online = true;
-                        break;
-                    case connectionType.mobile:
-                        //console.log("Connection type changed to mobile.");
-                        break;
-                    case connectionType.ethernet:
-                        //console.log("Connection type changed to ethernet.");
-                        this.online = true;
-                        break;
-                    case connectionType.bluetooth:
-                        //console.log("Connection type changed to bluetooth.");
-                        break;
-                    default:
-                        break;
-                }
-            }, 1000);
-        });*/
+    ngOnInit(): void {
+
+        /* this.page.on(Page.navigatedFromEvent, (event) => {
+             console.log("ngOnDestroy");
+             if (this.id) {
+                 clearInterval(this.id);
+             }
+         });
+ 
+         this.page.on(Page.navigatedToEvent, (event) => {
+             console.log("ngOnInit");
+             this.id = setInterval(() => {
+                 const type = getConnectionType();
+                 switch (type) {
+                     case connectionType.none:
+                         console.log("Connection type changed to none.");
+                         this.online = false;
+                         break;
+                     case connectionType.wifi:
+                         console.log("Connection type changed to WiFi.");
+                         this.online = true;
+                         break;
+                     case connectionType.mobile:
+                         //console.log("Connection type changed to mobile.");
+                         break;
+                     case connectionType.ethernet:
+                         //console.log("Connection type changed to ethernet.");
+                         this.online = true;
+                         break;
+                     case connectionType.bluetooth:
+                         //console.log("Connection type changed to bluetooth.");
+                         break;
+                     default:
+                         break;
+                 }
+             }, 1000);
+         });*/
 
         setTimeout(() => {
             // console.log(this.store.getQuestions())

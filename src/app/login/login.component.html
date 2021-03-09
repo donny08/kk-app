@@ -1,0 +1,20 @@
+<FlexboxLayout class="page">
+	<StackLayout class="form">
+		<Image class="logo" src="~/app/images/uae.png"></Image>
+		<Label class="header" text="Ministry of Interior"></Label>
+		<form name="form" #f="ngForm" novalidate>
+			<StackLayout class="input-field">
+				<TextField #username class="input-login" hint="Username" keyboardType="email" autocorrect="false" name="username"
+					autocapitalizationType="none" [(ngModel)]="user.username" returnKeyType="next" required></TextField>
+				<StackLayout class="hr-light"></StackLayout>
+			</StackLayout>
+
+			<StackLayout marginBottom="10">
+				<TextField #password class="input-login" hint="Password" name="Password" secure="true" [(ngModel)]="user.password"
+					returnKeyType="done" required></TextField>
+				<StackLayout class="hr-light"></StackLayout>
+			</StackLayout>
+		</form>
+		<Button text="Log In" (tap)="submit(f.form.valid)" class="btn btn-primary m-t-20"></Button>
+	</StackLayout>
+</FlexboxLayout>
