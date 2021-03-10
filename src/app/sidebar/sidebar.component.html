@@ -1,7 +1,7 @@
 <StackLayout row="0" class="nt-drawer__header">
     <Image class="nt-drawer__header-image fas t-36" src="font://&#xf2bd;"></Image>
-    <Label class="nt-drawer__header-brand" text="Donny Fernandes"></Label>
-    <Label class="nt-drawer__header-footnote" text="donny@mail.com"></Label>
+    <Label class="nt-drawer__header-brand" [text]="name"></Label>
+    <Label class="nt-drawer__header-footnote" [text]="username"></Label>
 </StackLayout>
 <ScrollView row="1" class="nt-drawer__body">
     <StackLayout>
@@ -15,6 +15,10 @@
             (tap)="appComponent.onNavItemTap('/search')">
             <Label col="0" text="&#xf005;" class="nt-icon fas"></Label>
             <Label col="1" text="Weakness" class="p-r-10"></Label>
+        </GridLayout>
+        <GridLayout columns="auto, *" class="nt-drawer__list-item" (tap)="appComponent.logout()">
+            <Label col="0" text="&#xf2f5;" class="nt-icon fas"></Label>
+            <Label col="1" text="Logout" class="p-r-10"></Label>
         </GridLayout>
         <!-- <GridLayout columns="auto, *" class="nt-drawer__list-item"
             [class.-selected]="appComponent.isComponentSelected('/browse')"

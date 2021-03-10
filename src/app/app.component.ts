@@ -5,7 +5,10 @@ import { DrawerTransitionBase, RadSideDrawer, SlideInOnTopTransition } from "nat
 import { filter } from "rxjs/operators";
 import { Application } from "@nativescript/core";
 import { FilterableListpicker } from '@nstudio/nativescript-filterable-listpicker';
-
+import {
+    getString,
+    remove
+} from "@nativescript/core/application-settings";
 registerElement("FilterableListpicker", () => FilterableListpicker);
 registerElement("PreviousNextView", () => require("@nativescript/iqkeyboardmanager").PreviousNextView);
 
@@ -28,6 +31,8 @@ export class AppComponent implements OnInit {
         this.router.events
             .pipe(filter((event: any) => event instanceof NavigationEnd))
             .subscribe((event: NavigationEnd) => this._activatedUrl = event.urlAfterRedirects);
+         
+        if(getString('user')) this.router.navigate(['home']);
     }
 
     get sideDrawerTransition(): DrawerTransitionBase {
@@ -47,5 +52,14 @@ export class AppComponent implements OnInit {
 
         const sideDrawer = <RadSideDrawer>Application.getRootView();
         sideDrawer.closeDrawer();
+    }
+
+    logout() {
+        const sideDrawer = <RadSideDrawer>Application.getRootView();
+        sideDrawer.closeDrawer();
+        remove("user");
+        this.routerExtensions.navigate(['login'], {
+            clearHistory: true
+        });
     }
 }

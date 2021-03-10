@@ -65,7 +65,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         // Use the component constructor to inject providers.
         this.router2.events.subscribe(event => {
             if (event instanceof NavigationEnd) {
-                if (event.url == "/home" || event.url == "/") {
+                if (event.url == "/home") {
                     this.id = setInterval(() => {
                         const type = getConnectionType();
                         switch (type) {
