@@ -1,6 +1,8 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import { Application, Image, alert, ImageSource, Page } from "@nativescript/core";
+import { openFile } from "@nativescript/core/utils";
+import { knownFolders } from "@nativescript/core/file-system";
 import { Accuracy } from "@nativescript/core/ui/enums";
 import { isAvailable, requestCameraPermissions, takePicture } from '@nativescript/camera';
 import * as geolocation from "@nativescript/geolocation";
@@ -16,7 +18,8 @@ import { RouterExtensions } from "@nativescript/angular";
 import { QuestionnaireStore } from "../store/questionnaire/questionnaire.store";
 import { connectionType, getConnectionType, startMonitoring, stopMonitoring } from "@nativescript/core/connectivity";
 import { Router, NavigationEnd } from '@angular/router';
-
+//import { jsPDF } from "jspdf";
+//import { GeneratePdf } from 'nativescript-generate-pdf';
 
 class RadioOption {
     index: number;
@@ -33,6 +36,7 @@ class RadioOption {
     selector: "Home",
     templateUrl: "./home.component.html"
 })
+
 export class HomeComponent implements OnInit, OnDestroy {
     image: ImageSource;
     question1: boolean = false;
@@ -61,6 +65,8 @@ export class HomeComponent implements OnInit, OnDestroy {
         "selected": false
     }];
     id: any;
+    selected: boolean = false;
+
     constructor(private page: Page, private router2: Router, private homeService: HomeService, private loaderService: LoaderService, private router: RouterExtensions, private store: QuestionnaireStore) {
         // Use the component constructor to inject providers.
         this.router2.events.subscribe(event => {
@@ -104,7 +110,21 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
+        // setTimeout(() => {
 
+        // }, 5000)
+       // const graphwebview: WebView = this.webview.nativeElement;
+       // graphwebview.src = `~/jspdf/jspdf.html`;
+        // let fileName = '/assets/jspdf/jspdf.html';
+        // let documents = knownFolders.currentApp().getFile('jspdf.html');
+        // console.log(documents)
+        //let path = documents.getFile(fileName).path;
+        // console.log(documents.getFile(fileName))
+        // openFile(path)
+        // const doc = new jsPDF();
+
+        // doc.text("Hello world!", 10, 10);
+        // doc.save("a4.pdf");
         /* this.page.on(Page.navigatedFromEvent, (event) => {
              console.log("ngOnDestroy");
              if (this.id) {
@@ -173,8 +193,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     }
 
-
-
     ngOnDestroy() {
         console.log("ngOnDestroy");
         if (this.id) {
@@ -182,11 +200,10 @@ export class HomeComponent implements OnInit, OnDestroy {
         }
     }
 
-
-
     storeDataServer() {
         console.log(getString('Q1'))
         console.log(getString('Q1_images'))
+        this.router.navigate(['browse']);
     }
 
     public checkedChange(modelRef, key) {
@@ -203,10 +220,13 @@ export class HomeComponent implements OnInit, OnDestroy {
         radioOption.selected = !radioOption.selected;
 
         if (!radioOption.selected) {
+            this.selected = false;
             return;
         }
 
-        // uncheck all other options
+        this.selected = true;
+
+        // uncheck all other options 
         this.questArr.forEach(option => {
             if (option.text !== radioOption.text) {
                 option.selected = false;
@@ -240,10 +260,12 @@ export class HomeComponent implements OnInit, OnDestroy {
         //     "id": 8,
         //     "selected": this.question8
         // }];
-
-        setString('questions', JSON.stringify(this.questArr));
-        this.router.navigate(['settings']);
-        //console.log(getString('questions'));
+        if (this.selected) {
+            setString('questions', JSON.stringify(this.questArr));
+            this.router.navigate(['settings']);
+        } else {
+            alert("Please choose the question");
+        }
     }
 }
 

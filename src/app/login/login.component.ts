@@ -39,6 +39,8 @@ export class LoginComponent implements OnInit {
                     this.loaderService.hide();
                 },
                 error => {
+                    alert("Please enter valid username and password");
+                    this.user.password = '';
                     this.loaderService.hide();
                     console.log(error);
                 }

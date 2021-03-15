@@ -264,7 +264,8 @@ export class SettingsComponent implements OnInit {
     }
 
     takeSnap(type, count, arr) {
-        takePicture().
+        var options = { width: 100, height: 100, keepAspectRatio: true, saveToGallery: false, allowsEditing: false };
+        takePicture(options).
             then((imageAsset) => {
                 //  alert("Result is an image asset instance");
                 //let source = new ImageSource();

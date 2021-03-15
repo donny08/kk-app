@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="css/graph.css"> -->
+    <!-- <script src="js/jspdf.debug.js"></script> -->
+    <script src="js/vue.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>The second image uses the style attribute to set the width to 128 pixels, this will not be overridden by the
+            style in the head section:</p>
+        <div style="display: flex; flex-direction: row; justify-content: space-between;">
+            <div v-for="(image, index) in images" :key="index">
+                <img :src="`data:image/png;base64,${image.image}`" style="width:128px;height:128px;">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

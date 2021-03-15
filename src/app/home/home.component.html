@@ -24,13 +24,10 @@
                     <Label [text]="option.text" fontSize="16" textWrap="true" (tap)="changeCheckedRadio(option)"></Label>
             </StackLayout>
             <Button text="Next" width="150" (tap)="goNext()" class="next-button m-t-16"></Button>
-            <Button text="Online" *ngIf="online" width="150" (tap)="storeDataServer()" class="online-button m-t-16"></Button>
+            <Button text="PDF" width="150" (tap)="storeDataServer()" class="online-button m-t-16"></Button>
         </StackLayout>
+        <!-- <StackLayout>
+            <WebView height="500" (loadFinished)="onWebViewLoaded($event)" #webview></WebView>
+        </StackLayout> -->
     </ScrollView>
-    <!-- <FlexboxLayout flexWrap="wrap" width="300">
-        <FlexboxLayout flexDirection="column">
-            <Image [src]="image" decodeWidth="100" decodeHeight="100" width="200" height="200"
-                loadMode="async"></Image>
-        </FlexboxLayout>
-    </FlexboxLayout> -->
 </GridLayout>
