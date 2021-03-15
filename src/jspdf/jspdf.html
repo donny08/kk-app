@@ -9,15 +9,133 @@
     <!-- <script src="js/jspdf.debug.js"></script> -->
     <script src="js/vue.js"></script>
     <script src="js/main.js"></script>
+    <style>
+        .answer {
+            /* margin: -11px 0 0; */
+            margin-top: -11px;
+            margin-bottom: 20px;
+            font-size: medium;
+        }
+
+        #app {
+            /* border-style: dotted; */
+        }
+
+        .img-logo {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 200px;
+            /* margin-bottom: 60px; */
+        }
+
+        .head {
+            text-align: center;
+            margin-bottom: 60px;
+            margin-top: -30px;
+        }
+
+        span {
+            background-color: rgb(237, 224, 50);
+        }
+    </style>
 </head>
 
 <body>
     <div id="app">
-        <p>The second image uses the style attribute to set the width to 128 pixels, this will not be overridden by the
-            style in the head section:</p>
-        <div style="display: flex; flex-direction: row; justify-content: space-between;">
-            <div v-for="(image, index) in images" :key="index">
-                <img :src="`data:image/png;base64,${image.image}`" style="width:128px;height:128px;">
+        <img src="uae.png" class="img-logo">
+        <h1 class="head">MOI Feedback Survey</h1>
+        <div v-if="q1" style="margin-bottom: 40px;">
+            <h2 style="margin-bottom: 20px;"><strong>1. Evaluate the location of the building?</strong></h2>
+            <h3><strong>1.1. Name of the location?</strong></h3>
+            <p class="answer">{{q1.nameOfLocation}}</p>
+            <h3><strong>1.2. What is the street name and situation of the street?</strong></h3>
+            <p class="answer">{{q1.streetSituation}}</p>
+            <h3><strong>1.3. What is the nearest location or any building near me and how much is the distance?</strong>
+            </h3>
+            <p class="answer">{{q1.nearestLocationDistance}}</p>
+            <h3><strong>1.4. Are there any external installations or sites that could reveal the internal location of
+                    the
+                    building? <span>{{ q1.externalInstallatioinsFound ? 'Yes' : 'No' }}</span></strong></h3>
+            <p class="answer">{{q1.externalInstallatioinsFoundText}}</p>
+            <h3><strong>1.5. What are the main landmarks near the building?</strong></h3>
+            <p class="answer">{{q1.mainLandmarks}}</p>
+            <h3><strong>1.6. Is the building located near water body? <span>{{ q1.waterBody ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q1.waterBodyText}}</p>
+            <h3><strong>1.7. How many floor building consisting of?</strong></h3>
+            <p class="answer">{{q1.floorOfBuilding}}</p>
+            <h3><strong>Weakness</strong></h3>
+            <p class="answer">{{q1.weakness}}</p>
+            <h3><strong>Uploaded images</strong></h3>
+            <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+                <div v-for="(image, index) in imagesQ1" :key="index" style="margin: 5px;">
+                    <img :src="`data:image/png;base64,${image.image}`" style="width:128px;height:128px;">
+                </div>
+            </div>
+        </div>
+        <div v-if="q2" style="margin-bottom: 40px;">
+            <h2 style="margin-bottom: 20px;"><strong>2. Evaluate the external facility of the building?</strong></h2>
+            <h3><strong>2.1. Are the assistive technical systems available to monitor the external environment (type of
+                    systems - quantity)? <span>{{ q2.externalMonitorEnv ? 'Yes' : 'No' }}</span></strong></h3>
+            <p class="answer">{{q2.externalMonitorEnvText}}</p>
+            <h3><strong>2.2. Are the external power stations secured? <span>{{ q2.externalPowerStat ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q2.externalPowerStatText}}</p>
+            <h3><strong>2.3. Are there any obstacles that may affect the monitoring of the external perimeter of the
+                    facility (trees, poor lighting)? <span>{{ q2.externalPerimeter ? 'Yes' : 'No' }}</span></strong>
+            </h3>
+            <p class="answer">{{q2.externalPerimeterText}}</p>
+            <h3><strong>2.4. Are there warning signs outside the environment? <span>{{ q2.warningSigns ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q2.warningSignsText}}</p>
+            <h3><strong>2.5. Are the roads leading to the facility is directly passable or have obstacles? <span>{{
+                        q2.roadLeading ? 'Yes' : 'No' }}</span></strong></h3>
+            <p class="answer">{{q2.roadLeadingText}}</p>
+            <h3><strong>Weakness</strong></h3>
+            <p class="answer">{{q2.weakness}}</p>
+            <h3><strong>Uploaded images</strong></h3>
+            <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+                <div v-for="(image, index) in imagesQ2" :key="index" style="margin: 5px;">
+                    <img :src="`data:image/png;base64,${image.image}`" style="width:128px;height:128px;">
+                </div>
+            </div>
+        </div>
+        <div v-if="q3" style="margin-bottom: 40px;">
+            <h2 style="margin-bottom: 20px;"><strong>3. Evaluate the perimeter of the building?</strong></h2>
+            <h3><strong>3.1. What is the height of the outer wall?</strong></h3>
+            <p class="answer">{{q3.heightOuterWall}}</p>
+            <h3><strong>3.2. Is the outer wall secured with live surveillance and alaram systems? <span>{{ q3.surveillanceAlarm ? 'Yes' : 'No'
+            }}</span></strong></h3>
+            <p class="answer">{{q3.surveillanceAlarmText}}</p>
+            <h3><strong>3.3. Is the inner perimeter of the wall secured by cctv? <span>{{ q3.secureCCTV ? 'Yes' : 'No'
+            }}</span></strong></h3>
+            <p class="answer">{{q3.secureCCTVText}}</p>
+            <h3><strong>3.4. Does the facility have more than one fence? <span>{{ q3.moreFence ? 'Yes' : 'No'
+            }}</span></strong></h3>
+            <p class="answer">{{q3.moreFenceText}}</p>
+            <h3><strong>3.5. Is there enough lighting around the fence? <span>{{ q3.lighting ? 'Yes' : 'No'
+            }}</span></strong></h3>
+            <p class="answer">{{q3.lightingText}}</p>
+            <h3><strong>3.6. Is the facility fence adjacent to the walls of another facility? <span>{{ q3.adjacent ? 'Yes' : 'No'
+            }}</span></strong></h3>
+            <p class="answer">{{q3.adjacentText}}</p>
+            <h3><strong>3.7. Are there any trees, height or objects that could help to climb the facility fence? <span>{{ q3.climbFacility ? 'Yes' : 'No'
+            }}</span></strong></h3>
+            <p class="answer">{{q3.climbFacilityText}}</p>
+            <h3><strong>3.8. Are there barriers around the fence? <span>{{ q3.barrier ? 'Yes' : 'No'
+            }}</span></strong></h3>
+            <p class="answer">{{q3.barrierText}}</p>
+            <h3><strong>3.9. Are there barbed wire on the fence? <span>{{ q3.barbedWire ? 'Yes' : 'No'
+            }}</span></strong></h3>
+            <p class="answer">{{q3.barbedWireText}}</p>
+            <h3><strong>Weakness</strong></h3>
+            <p class="answer">{{q3.weakness}}</p>
+            <h3><strong>Uploaded images</strong></h3>
+            <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+                <div v-for="(image, index) in imagesQ3" :key="index" style="margin: 5px;">
+                    <img :src="`data:image/png;base64,${image.image}`" style="width:128px;height:128px;">
+                </div>
             </div>
         </div>
     </div>

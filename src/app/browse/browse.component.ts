@@ -1,11 +1,13 @@
 import { Component, OnInit, ElementRef, ViewChild } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
-import { Application } from "@nativescript/core";
+import { Application, alert } from "@nativescript/core";
 import { WebView, LoadEventData } from "@nativescript/core/ui/web-view";
 import {
     getString,
     setString
 } from "@nativescript/core/application-settings";
+import { LoaderService } from "../utils/index";
+
 let webView: any;
 
 @Component({
@@ -18,17 +20,28 @@ export class BrowseComponent implements OnInit {
     pageRenderer: any;
     pdfData: any;
 
-    constructor() {
+    constructor(private loaderService: LoaderService) {
         // Use the component constructor to inject providers.
     }
 
     ngOnInit(): void {
+        this.loaderService.show('Generating Report. Please wait...');
         console.log('getString', getString('Q1_images'))
+        const questions = [{
+            "question": getString('Q1') ? JSON.parse(getString('Q1')) : null,
+            "images": getString('Q1_images') ? JSON.parse(getString('Q1_images')) : null
+        }, {
+            "question": getString('Q2') ? JSON.parse(getString('Q2')) : null,
+            "images": getString('Q2_images') ? JSON.parse(getString('Q2_images')) : null
+        }, {
+            "question": getString('Q3') ? JSON.parse(getString('Q3')) : null,
+            "images": getString('Q3_images') ? JSON.parse(getString('Q3_images')) : null
+        }];
         //const images = JSON.parse(getString('Q1_images'));
         // const base64 = images[0].image;
         // Init your component properties here.
         const graphwebview: WebView = this.webview.nativeElement;
-        graphwebview.src = `~/jspdf/jspdf.html?${getString('Q1_images')}`;
+        graphwebview.src = `~/jspdf/jspdf.html?${JSON.stringify(questions)}`;
     }
 
     createIosPdf(webView, fileName) {
@@ -79,7 +92,14 @@ export class BrowseComponent implements OnInit {
     onWebViewLoaded(args: LoadEventData) {
         webView = (<WebView>args.object).nativeView;
         setTimeout(() => {
-            console.log("MyPdfFileName", this.createIosPdf(webView, 'report'));
+            const located = this.createIosPdf(webView, 'report');
+            console.log("MyPdfFileName", located);
+            this.loaderService.hide();
+            alert({
+                title: "PDF stored at",
+                message: located,
+                okButtonText: "OK"
+            });
         }, 2000)
         // console.log("MyPdfFileName", this.createIosPdf(webView, 'report'));
     }
