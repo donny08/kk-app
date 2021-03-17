@@ -68,9 +68,9 @@
             <h3><strong>Weakness</strong></h3>
             <p class="answer">{{q1.weakness}}</p>
             <h3><strong>Uploaded images</strong></h3>
-            <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
-                <div v-for="(image, index) in imagesQ1" :key="index" style="margin: 5px;">
-                    <img :src="`data:image/png;base64,${image.image}`" style="width:128px;height:128px;">
+            <div style="display: flex; flex-direction: column; flex-wrap: wrap;">
+                <div v-for="(image, index) in imagesQ1" :key="index" style="margin-bottom: 25px;">
+                    <img :src="`data:image/png;base64,${image.image}`" style="width:99%;height:auto;">
                 </div>
             </div>
         </div>
@@ -95,9 +95,9 @@
             <h3><strong>Weakness</strong></h3>
             <p class="answer">{{q2.weakness}}</p>
             <h3><strong>Uploaded images</strong></h3>
-            <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
-                <div v-for="(image, index) in imagesQ2" :key="index" style="margin: 5px;">
-                    <img :src="`data:image/png;base64,${image.image}`" style="width:128px;height:128px;">
+            <div style="display: flex; flex-direction: column; flex-wrap: wrap;">
+                <div v-for="(image, index) in imagesQ2" :key="index" style="margin-bottom: 25px;">
+                    <img :src="`data:image/png;base64,${image.image}`" style="width:99%;height:auto;">
                 </div>
             </div>
         </div>
@@ -132,9 +132,9 @@
             <h3><strong>Weakness</strong></h3>
             <p class="answer">{{q3.weakness}}</p>
             <h3><strong>Uploaded images</strong></h3>
-            <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
-                <div v-for="(image, index) in imagesQ3" :key="index" style="margin: 5px;">
-                    <img :src="`data:image/png;base64,${image.image}`" style="width:128px;height:128px;">
+            <div style="display: flex; flex-direction: column; flex-wrap: wrap;">
+                <div v-for="(image, index) in imagesQ3" :key="index" style="margin-bottom: 25px;">
+                    <img :src="`data:image/png;base64,${image.image}`" style="width:99%;height:auto;">
                 </div>
             </div>
         </div>

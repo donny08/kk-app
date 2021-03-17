@@ -16,7 +16,14 @@ const users = [{
     "username": "donny",
     "password": "password",
     "firstName": "donny",
+    "role": "admin",
     "lastName": "fernandes"
+},{
+    "username": "moi",
+    "password": "password",
+    "firstName": "feedback",
+    "role": "user",
+    "lastName": "survey"
 }]
 
 @Component({
@@ -45,7 +52,7 @@ export class LoginComponent implements OnInit {
                 if (user) {
                     const data = {
                         "userInfo": user
-                    }
+                    };
 
                     setString('user', JSON.stringify(data));
                     this.router.navigate(['home']);
