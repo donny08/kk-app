@@ -234,6 +234,8 @@ export class HomeComponent implements OnInit, OnDestroy {
         });
     }
 
+    clear(){ console.log("clear"); }
+
     goNext() {
         // const questions = [{
         //     "id": 1,

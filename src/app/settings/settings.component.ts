@@ -19,6 +19,23 @@ interface RadioOption {
     selected: boolean;
 }
 
+class q1TableValues {
+    commentQ11: string;
+    statusQ11: boolean = true;
+    percentQ11: number = 0.5;
+    statusQ12: boolean = true;
+    percentQ12: number = 0.5;
+    statusQ13: boolean = true;
+    percentQ13: number = 0.25;
+    statusQ14: boolean = true;
+    percentQ14: number = 0.25;
+    statusQ15: boolean = true;
+    percentQ15: number = 0.25;
+    statusQ16: boolean = true;
+    percentQ16: number = 0.25;
+    total: number = 4;
+}
+
 class formValues {
     nameOfLocation: string;
     streetSituation: string;
@@ -105,6 +122,7 @@ export class SettingsComponent implements OnInit {
     formValues: formValues = new formValues();
     formValuesTwo: formValuesTwo = new formValuesTwo();
     formValuesThree: formValuesThree = new formValuesThree();
+    q1TableValues: q1TableValues = new q1TableValues();
     category: string;
     @ViewChild('myfilter') myfilter: ElementRef;
 
@@ -248,6 +266,19 @@ export class SettingsComponent implements OnInit {
         });
     }
 
+    onCheckedSummaryChange(args, key, match, percent, pMatch) {
+        if (match == 'Q1') {
+            this.q1TableValues[key] = args.value;
+            if (args.value) {
+                this.q1TableValues[pMatch] = percent;
+            } else {
+                this.q1TableValues[pMatch] = 0;
+            }
+            this.q1TableValues['total'] = this.q1TableValues['percentQ11'] + this.q1TableValues['percentQ12'] + this.q1TableValues['percentQ13'] + this.q1TableValues['percentQ14'] + this.q1TableValues['percentQ15'] + this.q1TableValues['percentQ16'];
+            console.log(this.q1TableValues);
+        }
+    }
+
     onCheckedChange(args, key) {
         console.log(args.value);
         this.formValues[key] = args.value;
@@ -329,6 +360,7 @@ export class SettingsComponent implements OnInit {
     }
 
     submit(valid) {
+        console.log(valid)
         if (valid) {
             //console.log(this.formValues)
             //console.log(this.category, this.formValuesTwo)

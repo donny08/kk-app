@@ -26,7 +26,7 @@ export class BrowseComponent implements OnInit {
 
     ngOnInit(): void {
         this.loaderService.show('Generating Report. Please wait...');
-        console.log('getString', getString('Q1_images'))
+       // console.log('getString', getString('Q1_images'))
         const questions = [{
             "question": getString('Q1') ? JSON.parse(getString('Q1')) : null,
             "images": getString('Q1_images') ? JSON.parse(getString('Q1_images')) : null
@@ -46,6 +46,7 @@ export class BrowseComponent implements OnInit {
 
     createIosPdf(webView, fileName) {
         var originalBounds = webView.bounds;
+        //console.log("webView.bounds.size.width", webView.bounds.size.width)
         webView.bounds = CGRectMake(originalBounds.origin.x, originalBounds.origin.y, webView.bounds.size.width, webView.scrollView.contentSize.height);
         var pdfPageSize = CGRectMake(0, 0, 612, 792);
         var pdfPageFrame = CGRectMake(32, 32, 612 - 32 - 32, 792 - 32 - 32);

@@ -103,6 +103,89 @@
                             [(ngModel)]="formValues.weakness" class="input" lineHeight="5" height="100" required>
                         </TextView>
                     </StackLayout>
+                    <Label textWrap="true" class="_subtitle" fontWeight="bold" fontSize="22" text="Summary"></Label>
+                    <FlexboxLayout class="table" marginRight="10" flexDirection="column">
+                        <FlexboxLayout
+                            style="border-radius: 1;padding:10;text-decoration: underline;text-decoration-color: white;background-image: linear-gradient(to right, #9f783d, #9f783d)"
+                            flexDirection="column">
+                            <FlexboxLayout style="color:white;" flexDirection="row">
+                                <Label text="Question" width="250" fontWeight="bold" textWrap="true"
+                                    style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;"></Label>
+                                <Label fontWeight="bold" width="100" text="Percentage" textWrap="true"
+                                    style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;"></Label>
+                                <Label fontWeight="bold" width="100" text="Status" textWrap="true"
+                                    style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;"></Label>
+                                <Label fontWeight="bold" width="250" text="Comments" textWrap="true"
+                                    style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;"></Label>
+                            </FlexboxLayout>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="1. Evaluate the location of the building?" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q1TableValues.statusQ11}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ11', 'Q1', 1, 'percentQ11')">
+                            </Switch>
+                            <TextView name="commentQ11" [(ngModel)]="q1TableValues.commentQ11" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="2. Evaluate the location of the building?" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q1TableValues.statusQ12}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ12', 'Q1', 1, 'percentQ12')">
+                            </Switch>
+                            <TextView name="commentQ12" [(ngModel)]="q1TableValues.commentQ12" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="3. Evaluate the location of the building?" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="0.5%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q1TableValues.statusQ13}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ13', 'Q1', 0.5, 'percentQ13')">
+                            </Switch>
+                            <TextView name="commentQ13" [(ngModel)]="q1TableValues.commentQ13" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="4. Evaluate the location of the building?" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="0.5%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q1TableValues.statusQ14}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ14', 'Q1', 0.5, 'percentQ14')">
+                            </Switch>
+                            <TextView name="commentQ14" [(ngModel)]="q1TableValues.commentQ14" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="5. Evaluate the location of the building?" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="0.5%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q1TableValues.statusQ15}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ15', 'Q1', 0.5, 'percentQ15')">
+                            </Switch>
+                            <TextView name="commentQ15" [(ngModel)]="q1TableValues.commentQ15" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="6. Evaluate the location of the building?" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="0.5%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q1TableValues.statusQ16}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ16', 'Q1', 0.5, 'percentQ16')">
+                            </Switch>
+                            <TextView name="commentQ16" [(ngModel)]="q1TableValues.commentQ16" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;padding: 10;background-image: linear-gradient(to right, #f7dd74, #f7dd74)" justifyContent="space-between" flexDirection="row">
+                            <Label text="Total of Percentage" width="auto" fontWeight="bold"
+                            textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;"></Label>
+                            <Label text="{{q1TableValues.total}}%" width="auto" fontWeight="bold"
+                            textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 18;margin-right: 10%;"></Label>
+                        </FlexboxLayout>
+                    </FlexboxLayout>
                 </form>
                 <StackLayout class="item m-b-20">
                     <Button text="Submit" width="150" (tap)="submit(f.form.valid)" horizontalAlignment="center"
@@ -184,8 +267,8 @@
                                     <Image [src]="image" decodeWidth="100" decodeHeight="100" width="60" height="60"
                                         loadMode="async"></Image>
                                     <Label *ngIf="i == signedApplicationTwo.length - 1" text="Delete"
-                                        (tap)="deleteImage('Q2',i,signedApplicationTwo)" fontSize="12"
-                                        marginLeft="10" textWrap="true"></Label>
+                                        (tap)="deleteImage('Q2',i,signedApplicationTwo)" fontSize="12" marginLeft="10"
+                                        textWrap="true"></Label>
                                 </WrapLayout>
                                 <WrapLayout orientation="horizontal"
                                     (tap)="takeSnap('Q2',signedApplicationTwo.length, signedApplicationTwo)">
@@ -214,9 +297,11 @@
                 <form name="form" #f="ngForm" novalidate>
                     <Label class="h3 m-b-20 c-black" [text]="title" textWrap="true"></Label>
                     <StackLayout class="item m-b-20" marginRight="10">
-                        <Label textWrap="true" class="_subtitle" text="1. What is the height of the outer wall?"></Label>
-                        <TextField hint="" class="input" name="heightOuterWall" [(ngModel)]="formValuesThree.heightOuterWall"
-                            editable="true" returnKeyType="done" required></TextField>
+                        <Label textWrap="true" class="_subtitle"
+                            text="1. What is the height of the outer wall?"></Label>
+                        <TextField hint="" class="input" name="heightOuterWall"
+                            [(ngModel)]="formValuesThree.heightOuterWall" editable="true" returnKeyType="done" required>
+                        </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <FlexboxLayout>
@@ -235,60 +320,54 @@
                         <FlexboxLayout>
                             <Label textWrap="true" width="700" class="_subtitle"
                                 text="3. Is the inner perimeter of the wall secured by cctv?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesThree.secureCCTV}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeThree($event, 'secureCCTV')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesThree.secureCCTV}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeThree($event, 'secureCCTV')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="secureCCTVText"
-                            [(ngModel)]="formValuesThree.secureCCTVText" editable="true" returnKeyType="done"
-                            required></TextField>
+                            [(ngModel)]="formValuesThree.secureCCTVText" editable="true" returnKeyType="done" required>
+                        </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <FlexboxLayout>
                             <Label textWrap="true" width="700" class="_subtitle"
                                 text="4. Does the facility have more than one fence?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesThree.moreFence}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeThree($event, 'moreFence')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesThree.moreFence}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeThree($event, 'moreFence')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="moreFenceText"
-                            [(ngModel)]="formValuesThree.moreFenceText" editable="true" returnKeyType="done"
-                            required></TextField>
+                            [(ngModel)]="formValuesThree.moreFenceText" editable="true" returnKeyType="done" required>
+                        </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <FlexboxLayout>
                             <Label textWrap="true" width="700" class="_subtitle"
                                 text="5. Is there enough lighting around the fence?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesThree.lighting}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeThree($event, 'lighting')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesThree.lighting}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeThree($event, 'lighting')">
                             </Switch>
                         </FlexboxLayout>
-                        <TextField hint="" class="input" name="lightingText"
-                            [(ngModel)]="formValuesThree.lightingText" editable="true" returnKeyType="done"
-                            required></TextField>
+                        <TextField hint="" class="input" name="lightingText" [(ngModel)]="formValuesThree.lightingText"
+                            editable="true" returnKeyType="done" required></TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <FlexboxLayout>
                             <Label textWrap="true" width="700" class="_subtitle"
                                 text="6. Is the facility fence adjacent to the walls of another facility?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesThree.adjacent}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeThree($event, 'adjacent')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesThree.adjacent}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeThree($event, 'adjacent')">
                             </Switch>
                         </FlexboxLayout>
-                        <TextField hint="" class="input" name="adjacentText"
-                            [(ngModel)]="formValuesThree.adjacentText" editable="true" returnKeyType="done"
-                            required></TextField>
+                        <TextField hint="" class="input" name="adjacentText" [(ngModel)]="formValuesThree.adjacentText"
+                            editable="true" returnKeyType="done" required></TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <FlexboxLayout>
                             <Label textWrap="true" width="700" class="_subtitle"
                                 text="7. Are there any trees, height or objects that could help to climb the facility fence?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesThree.climbFacility}}" backgroundColor="#3a53ff"
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesThree.climbFacility}}"
+                                backgroundColor="#3a53ff"
                                 (checkedChange)="onCheckedChangeThree($event, 'climbFacility')">
                             </Switch>
                         </FlexboxLayout>
@@ -300,34 +379,31 @@
                         <FlexboxLayout>
                             <Label textWrap="true" width="700" class="_subtitle"
                                 text="8. Are there barriers around the fence?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesThree.barrier}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeThree($event, 'barrier')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesThree.barrier}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeThree($event, 'barrier')">
                             </Switch>
                         </FlexboxLayout>
-                        <TextField hint="" class="input" name="barrierText"
-                            [(ngModel)]="formValuesThree.barrierText" editable="true" returnKeyType="done"
-                            required></TextField>
+                        <TextField hint="" class="input" name="barrierText" [(ngModel)]="formValuesThree.barrierText"
+                            editable="true" returnKeyType="done" required></TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <FlexboxLayout>
                             <Label textWrap="true" width="700" class="_subtitle"
                                 text="9. Are there barbed wire on the fence?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesThree.barbedWire}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeThree($event, 'barbedWire')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesThree.barbedWire}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeThree($event, 'barbedWire')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="barbedWireText"
-                            [(ngModel)]="formValuesThree.barbedWireText" editable="true" returnKeyType="done"
-                            required></TextField>
+                            [(ngModel)]="formValuesThree.barbedWireText" editable="true" returnKeyType="done" required>
+                        </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <Label textWrap="true" class="_subtitle" text="Upload images"></Label>
                         <StackLayout width="100%" class="_card">
                             <WrapLayout orientation="horizontal" width="100%">
-                                <WrapLayout orientation="vertical" *ngFor="let image of signedApplicationThree;let i = index"
-                                    class="m-b-10">
+                                <WrapLayout orientation="vertical"
+                                    *ngFor="let image of signedApplicationThree;let i = index" class="m-b-10">
                                     <Image [src]="image" decodeWidth="100" decodeHeight="100" width="60" height="60"
                                         loadMode="async"></Image>
                                     <Label *ngIf="i == signedApplicationThree.length - 1" text="Delete"
@@ -336,7 +412,8 @@
                                 </WrapLayout>
                                 <WrapLayout orientation="horizontal"
                                     (tap)="takeSnap('Q1',signedApplicationThree.length, signedApplicationThree)">
-                                    <Image visibility="{{signedApplicationThree.length < 100 ? 'visible' : 'collapsed'}}"
+                                    <Image
+                                        visibility="{{signedApplicationThree.length < 100 ? 'visible' : 'collapsed'}}"
                                         src="~/app/images/addimage.png" height="70" width="70" loadMode="async"></Image>
                                 </WrapLayout>
                             </WrapLayout>
