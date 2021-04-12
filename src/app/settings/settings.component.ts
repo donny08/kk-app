@@ -143,6 +143,55 @@ class q4TableValues {
     total: number = 4;
 }
 
+class q5TableValues {
+    commentQ51: string;
+    statusQ51: boolean = true;
+    percentQ51: number = 1;
+    commentQ52: string;
+    statusQ52: boolean = true;
+    percentQ52: number = 1;
+    commentQ53: string;
+    statusQ53: boolean = true;
+    percentQ53: number = 1;
+    commentQ54: string;
+    statusQ54: boolean = true;
+    percentQ54: number = 0.5;
+    commentQ55: string;
+    statusQ55: boolean = true;
+    percentQ55: number = 0.5;
+    commentQ56: string;
+    statusQ56: boolean = true;
+    percentQ56: number = 0.5;
+    commentQ57: string;
+    statusQ57: boolean = true;
+    percentQ57: number = 0.5;
+    commentQ58: string;
+    statusQ58: boolean = true;
+    percentQ58: number = 0.5;
+    commentQ59: string;
+    statusQ59: boolean = true;
+    percentQ59: number = 0.5;
+    commentQ510: string;
+    statusQ510: boolean = true;
+    percentQ510: number = 0.5;
+    commentQ511: string;
+    statusQ511: boolean = true;
+    percentQ511: number = 0.5;
+    commentQ512: string;
+    statusQ512: boolean = true;
+    percentQ512: number = 0.5;
+    commentQ513: string;
+    statusQ513: boolean = true;
+    percentQ513: number = 1;
+    commentQ514: string;
+    statusQ514: boolean = true;
+    percentQ514: number = 0.5;
+    commentQ515: string;
+    statusQ515: boolean = true;
+    percentQ515: number = 1;
+    total: number = 9;
+}
+
 class formValues {
     nameOfLocation: string;
     streetSituation: string;
@@ -202,6 +251,25 @@ class formValuesFour {
     alarmFenceText: string;
     barrierFence: boolean = false;
     barrierFenceText: string;
+    weakness: string;
+}
+
+class formValuesFive {
+    useGate: string;
+    gateFacility: string;
+    protectionPortal: string;
+    guarding: string;
+    unauthorizedText: string;
+    unauthorized: boolean = false;
+    warningSignsText: string;
+    warningSigns: boolean = false;
+    emergencyPortalText: string;
+    emergencyPortal: boolean = false;
+    eveningHourText: string;
+    eveningHour: boolean = false;
+    vehicleInspectionText: string;
+    vehicleInspection: boolean = false;
+    weakness: string;
 }
 
 @Component({
@@ -225,8 +293,8 @@ export class SettingsComponent implements OnInit {
     title: string;
     reason: string;
     public signedApplication: Array<any> = [];
-    public signedApplicationTwo: Array<any> = [];
-    public signedApplicationThree: Array<any> = [];
+    // public signedApplicationTwo: Array<any> = [];
+    // public signedApplicationThree: Array<any> = [];
     documents = [];
     availableItems: any = [];
     commentList = [{
@@ -243,10 +311,12 @@ export class SettingsComponent implements OnInit {
     formValuesTwo: formValuesTwo = new formValuesTwo();
     formValuesThree: formValuesThree = new formValuesThree();
     formValuesFour: formValuesFour = new formValuesFour();
+    formValuesFive: formValuesFive = new formValuesFive();
     q1TableValues: q1TableValues = new q1TableValues();
     q2TableValues: q2TableValues = new q2TableValues();
     q3TableValues: q3TableValues = new q3TableValues();
     q4TableValues: q4TableValues = new q4TableValues();
+    q5TableValues: q5TableValues = new q5TableValues();
     category: string;
     @ViewChild('myfilter') myfilter: ElementRef;
 
@@ -316,7 +386,7 @@ export class SettingsComponent implements OnInit {
                             const documents = JSON.parse(getString(this.category + '_images'));
                             this.documents = documents;
                             documents.forEach((item, index: number) => {
-                                this.signedApplicationTwo.push(item.image);
+                                this.signedApplication.push(item.image);
                             });
                         }
                         this.formValuesTwo.externalMonitorEnv = answers.externalMonitorEnv;
@@ -342,7 +412,7 @@ export class SettingsComponent implements OnInit {
                             const documents = JSON.parse(getString(this.category + '_images'));
                             this.documents = documents;
                             documents.forEach((item, index: number) => {
-                                this.signedApplicationThree.push(item.image);
+                                this.signedApplication.push(item.image);
                             });
                         }
                         this.formValuesThree.heightOuterWall = answers.heightOuterWall;
@@ -368,7 +438,6 @@ export class SettingsComponent implements OnInit {
                     }
 
                     if (q == "Q4" && getString(q)) {
-                        const answers: formValuesFour = JSON.parse(getString(q));
                         if (getString(this.category + '_images')) {
                             const documents = JSON.parse(getString(this.category + '_images'));
                             this.documents = documents;
@@ -376,9 +445,22 @@ export class SettingsComponent implements OnInit {
                                 this.signedApplication.push(item.image);
                             });
                         }
-                        this.formValuesFour = JSON.parse(getString('Q4'));
+                        this.formValuesFour = JSON.parse(getString(q));
                         this.weakness = true;
-                        this.q3TableValues = JSON.parse(getString('Q4Percentages'));
+                        this.q4TableValues = JSON.parse(getString('Q4Percentages'));
+                    }
+
+                    if (q == "Q5" && getString(q)) {
+                        if (getString(this.category + '_images')) {
+                            const documents = JSON.parse(getString(this.category + '_images'));
+                            this.documents = documents;
+                            documents.forEach((item, index: number) => {
+                                this.signedApplication.push(item.image);
+                            });
+                        }
+                        this.formValuesFive = JSON.parse(getString(q));
+                        this.weakness = true;
+                        this.q5TableValues = JSON.parse(getString('Q5Percentages'));
                     }
                 }
             });
@@ -540,8 +622,8 @@ export class SettingsComponent implements OnInit {
             if (this.category == "Q1") { setString(this.category, JSON.stringify(this.formValues)); setString('Q1Percentages', JSON.stringify(this.q1TableValues)); }
             if (this.category == "Q2") { setString(this.category, JSON.stringify(this.formValuesTwo)); setString('Q2Percentages', JSON.stringify(this.q2TableValues)); }
             if (this.category == "Q3") { setString(this.category, JSON.stringify(this.formValuesThree)); setString('Q3Percentages', JSON.stringify(this.q3TableValues)); }
-            if (this.category == "Q4") { setString(this.category, JSON.stringify(this.formValuesThree)); setString('Q4Percentages', JSON.stringify(this.q4TableValues)); }
-
+            if (this.category == "Q4") { setString(this.category, JSON.stringify(this.formValuesFour)); setString('Q4Percentages', JSON.stringify(this.q4TableValues)); }
+            if (this.category == "Q5") { setString(this.category, JSON.stringify(this.formValuesFive)); setString('Q5Percentages', JSON.stringify(this.q5TableValues)); }
             if (this.documents && this.documents.length > 0) setString(this.category + '_images', JSON.stringify(this.documents));
 
             alert("Information submitted successfully").then(() => {

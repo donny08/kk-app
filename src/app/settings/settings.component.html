@@ -263,16 +263,16 @@
                         <StackLayout width="100%" class="_card">
                             <WrapLayout orientation="horizontal" width="100%">
                                 <WrapLayout orientation="vertical"
-                                    *ngFor="let image of signedApplicationTwo;let i = index" class="m-b-10">
+                                    *ngFor="let image of signedApplication;let i = index" class="m-b-10">
                                     <Image [src]="image" decodeWidth="100" decodeHeight="100" width="60" height="60"
                                         loadMode="async"></Image>
-                                    <Label *ngIf="i == signedApplicationTwo.length - 1" text="Delete"
-                                        (tap)="deleteImage('Q2',i,signedApplicationTwo)" fontSize="12" marginLeft="10"
+                                    <Label *ngIf="i == signedApplication.length - 1" text="Delete"
+                                        (tap)="deleteImage('Q2',i,signedApplication)" fontSize="12" marginLeft="10"
                                         textWrap="true"></Label>
                                 </WrapLayout>
                                 <WrapLayout orientation="horizontal"
-                                    (tap)="takeSnap('Q2',signedApplicationTwo.length, signedApplicationTwo)">
-                                    <Image visibility="{{signedApplicationTwo.length < 100 ? 'visible' : 'collapsed'}}"
+                                    (tap)="takeSnap('Q2',signedApplication.length, signedApplication)">
+                                    <Image visibility="{{signedApplication.length < 100 ? 'visible' : 'collapsed'}}"
                                         src="~/app/images/addimage.png" height="70" width="70" loadMode="async"></Image>
                                 </WrapLayout>
                             </WrapLayout>
@@ -515,17 +515,17 @@
                         <StackLayout width="100%" class="_card">
                             <WrapLayout orientation="horizontal" width="100%">
                                 <WrapLayout orientation="vertical"
-                                    *ngFor="let image of signedApplicationThree;let i = index" class="m-b-10">
+                                    *ngFor="let image of signedApplication;let i = index" class="m-b-10">
                                     <Image [src]="image" decodeWidth="100" decodeHeight="100" width="60" height="60"
                                         loadMode="async"></Image>
-                                    <Label *ngIf="i == signedApplicationThree.length - 1" text="Delete"
-                                        (tap)="deleteImage('Q3',i,signedApplicationThree)" fontSize="12" marginLeft="10"
+                                    <Label *ngIf="i == signedApplication.length - 1" text="Delete"
+                                        (tap)="deleteImage('Q3',i,signedApplication)" fontSize="12" marginLeft="10"
                                         textWrap="true"></Label>
                                 </WrapLayout>
                                 <WrapLayout orientation="horizontal"
-                                    (tap)="takeSnap('Q1',signedApplicationThree.length, signedApplicationThree)">
+                                    (tap)="takeSnap('Q1',signedApplication.length, signedApplication)">
                                     <Image
-                                        visibility="{{signedApplicationThree.length < 100 ? 'visible' : 'collapsed'}}"
+                                        visibility="{{signedApplication.length < 100 ? 'visible' : 'collapsed'}}"
                                         src="~/app/images/addimage.png" height="70" width="70" loadMode="async"></Image>
                                 </WrapLayout>
                             </WrapLayout>
@@ -895,6 +895,305 @@
                             <Label text="Percentage of matching the requirements of the fence" width="auto" fontWeight="bold"
                             textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;"></Label>
                             <Label text="{{q4TableValues.total}}%" width="auto" fontWeight="bold"
+                            textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 18;margin-right: 10%;"></Label>
+                        </FlexboxLayout>
+                    </FlexboxLayout>
+                </form>
+            </StackLayout>
+
+            <StackLayout *ngIf="category == 'Q5'" class="page">
+                <form name="form" #f="ngForm" novalidate>
+                    <Label class="h3 m-b-20 c-black" [text]="title" textWrap="true"></Label>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <Label textWrap="true" class="_subtitle"
+                            text="1. What are the uses of each gate?"></Label>
+                        <TextField hint="" class="input" name="useGate"
+                            [(ngModel)]="formValuesFive.useGate" editable="true" returnKeyType="done" required>
+                        </TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <Label textWrap="true"  class="_subtitle" text="2. what are the number of gates in the facility?"></Label>
+                        <TextField hint="" class="input" name="gateFacility"
+                            [(ngModel)]="formValuesFive.gateFacility" editable="true" returnKeyType="done"
+                            required></TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <Label textWrap="true"  class="_subtitle"
+                                text="3. what types and numbers of protection system are in each portal?"></Label>
+                        <TextField hint="" class="input" name="protectionPortal"
+                            [(ngModel)]="formValuesFive.protectionPortal" editable="true" returnKeyType="done"
+                            required></TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <Label textWrap="true" class="_subtitle"
+                            text="4. Guarding? Are all scoops locked"></Label>
+                        <TextField hint="" class="input" name="guarding"
+                            [(ngModel)]="formValuesFive.guarding" editable="true" returnKeyType="done" required>
+                        </TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <FlexboxLayout>
+                            <Label textWrap="true" width="700" class="_subtitle"
+                                text="5. Is there a return path for unauthorized person to enter?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30"
+                                checked="{{formValuesFive.unauthorized}}" backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeFour($event, 'unauthorized')">
+                            </Switch>
+                        </FlexboxLayout>
+                        <TextField hint="" class="input" name="unauthorizedText"
+                            [(ngModel)]="formValuesFive.unauthorizedText" editable="true" returnKeyType="done"
+                            required></TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <FlexboxLayout>
+                            <Label textWrap="true" width="700" class="_subtitle"
+                                text="6. Are there warning signs at the gate?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30"
+                                checked="{{formValuesFive.warningSigns}}" backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeFour($event, 'warningSigns')">
+                            </Switch>
+                        </FlexboxLayout>
+                        <TextField hint="" class="input" name="warningSignsText"
+                            [(ngModel)]="formValuesFive.warningSignsText" editable="true" returnKeyType="done"
+                            required></TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <FlexboxLayout>
+                            <Label textWrap="true" width="700" class="_subtitle"
+                                text="7. Is there an emergency gateway to the facility? And what is the specification of the emergency portal?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30"
+                                checked="{{formValuesFive.emergencyPortal}}" backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeFour($event, 'emergencyPortal')">
+                            </Switch>
+                        </FlexboxLayout>
+                        <TextField hint="" class="input" name="emergencyPortalText"
+                            [(ngModel)]="formValuesFive.emergencyPortalText" editable="true" returnKeyType="done"
+                            required></TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <FlexboxLayout>
+                            <Label textWrap="true" width="700" class="_subtitle"
+                                text="8. Is there good lighting for the gate during the evening hours?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30"
+                                checked="{{formValuesFive.eveningHour}}" backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeFour($event, 'eveningHour')">
+                            </Switch>
+                        </FlexboxLayout>
+                        <TextField hint="" class="input" name="eveningHourText"
+                            [(ngModel)]="formValuesFive.eveningHourText" editable="true" returnKeyType="done"
+                            required></TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <FlexboxLayout>
+                            <Label textWrap="true" width="700" class="_subtitle"
+                                text="9. What is the vehicle inspection mechanism? (car sweeper, cupped woman, police dog)"></Label>
+                            <Switch checked="true" marginLeft="5" size="30"
+                                checked="{{formValuesFive.vehicleInspection}}" backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeFour($event, 'vehicleInspection')">
+                            </Switch>
+                        </FlexboxLayout>
+                        <TextField hint="" class="input" name="vehicleInspectionText"
+                            [(ngModel)]="formValuesFive.vehicleInspectionText" editable="true" returnKeyType="done"
+                            required></TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <Label textWrap="true" class="_subtitle" text="Upload images"></Label>
+                        <StackLayout width="100%" class="_card">
+                            <WrapLayout orientation="horizontal" width="100%">
+                                <WrapLayout orientation="vertical"
+                                    *ngFor="let image of signedApplication;let i = index" class="m-b-10">
+                                    <Image [src]="image" decodeWidth="100" decodeHeight="100" width="60" height="60"
+                                        loadMode="async"></Image>
+                                    <Label *ngIf="i == signedApplication.length - 1" text="Delete"
+                                        (tap)="deleteImage('Q5',i,signedApplication)" fontSize="12" marginLeft="10"
+                                        textWrap="true"></Label>
+                                </WrapLayout>
+                                <WrapLayout orientation="horizontal"
+                                    (tap)="takeSnap('Q5',signedApplication.length, signedApplication)">
+                                    <Image visibility="{{signedApplication.length < 100 ? 'visible' : 'collapsed'}}"
+                                        src="~/app/images/addimage.png" height="70" width="70" loadMode="async"></Image>
+                                </WrapLayout>
+                            </WrapLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <Button text="Weakness" width="150" (tap)="showWeakness()" horizontalAlignment="right"
+                            class="weakness-button m-t-16"></Button>
+                        <Label *ngIf="weakness" textWrap="true" class="_subtitle"
+                            text="Please specify the weakness here"></Label>
+                        <TextView @fadeAndSlide *ngIf="weakness" name="weakness" hint=""
+                            [(ngModel)]="formValuesFive.weakness" class="input" lineHeight="5" height="100" required>
+                        </TextView>
+                    </StackLayout>
+                    <FlexboxLayout class="table" marginRight="10" flexDirection="column">
+                        <FlexboxLayout
+                            style="border-radius: 1;padding:10;text-decoration: underline;text-decoration-color: white;background-image: linear-gradient(to right, #9f783d, #9f783d)"
+                            flexDirection="column">
+                            <FlexboxLayout style="color:white;" flexDirection="row">
+                                <Label text="Items" width="250" fontWeight="bold" textWrap="true"
+                                    style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;"></Label>
+                                <Label fontWeight="bold" width="100" text="Percentage" textWrap="true"
+                                    style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;"></Label>
+                                <Label fontWeight="bold" width="100" text="Status" textWrap="true"
+                                    style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;"></Label>
+                                <Label fontWeight="bold" width="250" text="Notes" textWrap="true"
+                                    style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;"></Label>
+                            </FlexboxLayout>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="1. The servants must be contacted with fences" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q5TableValues.statusQ51}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'commentQ51', 'Q5', 1, 'percentQ51')">
+                            </Switch>
+                            <TextView name="commentQ51" [(ngModel)]="q5TableValues.commentQ51" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="2. A key gateway to enter and other emergency uses" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q5TableValues.statusQ52}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'commentQ52', 'Q5', 1, 'percentQ52')">
+                            </Switch>
+                            <TextView name="commentQ52" [(ngModel)]="q5TableValues.commentQ52" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="3. The positionb  of the booth should allow guard to expose the outdoor area for the establishment" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q5TableValues.statusQ53}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'commentQ53', 'Q5', 1, 'percentQ53')">
+                            </Switch>
+                            <TextView name="commentQ53" [(ngModel)]="q5TableValues.commentQ53" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="4. Securing the guard rooms with bullet proof glass" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q5TableValues.statusQ54}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'commentQ54', 'Q5', 1, 'percentQ54')">
+                            </Switch>
+                            <TextView name="commentQ54" [(ngModel)]="q5TableValues.commentQ54" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="5. The height of the gate must not be less than the height of the outer fence" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q5TableValues.statusQ55}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'commentQ55', 'Q5', 1, 'percentQ55')">
+                            </Switch>
+                            <TextView name="commentQ55" [(ngModel)]="q5TableValues.commentQ55" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="6. The door must be opened to the inner side of the building" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q5TableValues.statusQ56}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'commentQ56', 'Q5', 1, 'percentQ56')">
+                            </Switch>
+                            <TextView name="commentQ56" [(ngModel)]="q5TableValues.commentQ56" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="7. Entry and exit routes must be covered by surveillance cameras" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q5TableValues.statusQ57}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'commentQ57', 'Q5', 1, 'percentQ57')">
+                            </Switch>
+                            <TextView name="commentQ57" [(ngModel)]="q5TableValues.commentQ57" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="8. Cameras must be installed in the guard room" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q5TableValues.statusQ58}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ58', 'Q5', 1, 'percentQ58')">
+                            </Switch>
+                            <TextView name="commentQ58" [(ngModel)]="q5TableValues.commentQ58" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="9. Availability of vehicle  bumpers" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q5TableValues.statusQ59}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ59', 'Q5', 1, 'percentQ59')">
+                            </Switch>
+                            <TextView name="commentQ59" [(ngModel)]="q5TableValues.commentQ59" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="10. Availability of vehicle  barriers" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q5TableValues.statusQ510}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ510', 'Q5', 1, 'percentQ510')">
+                            </Switch>
+                            <TextView name="commentQ510" [(ngModel)]="q5TableValues.commentQ510" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="11. Availability of vehicle  plate reader" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q5TableValues.statusQ511}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ511', 'Q5', 1, 'percentQ511')">
+                            </Switch>
+                            <TextView name="commentQ511" [(ngModel)]="q5TableValues.commentQ511" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="12. Card reader availability" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q5TableValues.statusQ512}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ512', 'Q5', 1, 'percentQ512')">
+                            </Switch>
+                            <TextView name="commentQ512" [(ngModel)]="q5TableValues.commentQ512" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="13. Availability of warning panels" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q5TableValues.statusQ513}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ513', 'Q5', 1, 'percentQ513')">
+                            </Switch>
+                            <TextView name="commentQ513" [(ngModel)]="q5TableValues.commentQ513" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="14. There must be a return path for all its vehicles" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q5TableValues.statusQ514}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ514', 'Q5', 1, 'percentQ514')">
+                            </Switch>
+                            <TextView name="commentQ514" [(ngModel)]="q5TableValues.commentQ514" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="15. Secure every gate with guard room" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q5TableValues.statusQ515}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ515', 'Q5', 1, 'percentQ515')">
+                            </Switch>
+                            <TextView name="commentQ515" [(ngModel)]="q5TableValues.commentQ515" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;padding: 10;background-image: linear-gradient(to right, #f7dd74, #f7dd74)" justifyContent="space-between" flexDirection="row">
+                            <Label text="Percentage of matched gates" width="auto" fontWeight="bold"
+                            textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;"></Label>
+                            <Label text="{{q5TableValues.total}}%" width="auto" fontWeight="bold"
                             textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 18;margin-right: 10%;"></Label>
                         </FlexboxLayout>
                     </FlexboxLayout>
