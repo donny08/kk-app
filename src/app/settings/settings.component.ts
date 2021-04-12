@@ -23,16 +23,123 @@ class q1TableValues {
     commentQ11: string;
     statusQ11: boolean = true;
     percentQ11: number = 0.5;
+    commentQ12: string;
     statusQ12: boolean = true;
     percentQ12: number = 0.5;
+    commentQ13: string;
     statusQ13: boolean = true;
     percentQ13: number = 0.25;
+    commentQ14: string;
     statusQ14: boolean = true;
     percentQ14: number = 0.25;
+    commentQ15: string;
     statusQ15: boolean = true;
     percentQ15: number = 0.25;
+    commentQ16: string;
     statusQ16: boolean = true;
     percentQ16: number = 0.25;
+    total: number = 4;
+}
+
+class q2TableValues {
+    commentQ21: string;
+    statusQ21: boolean = true;
+    percentQ21: number = 0.5;
+    commentQ22: string;
+    statusQ22: boolean = true;
+    percentQ22: number = 0.5;
+    commentQ23: string;
+    statusQ23: boolean = true;
+    percentQ23: number = 0.5;
+    commentQ24: string;
+    statusQ24: boolean = true;
+    percentQ24: number = 0.5;
+    commentQ25: string;
+    statusQ25: boolean = true;
+    percentQ25: number = 0.5;
+    commentQ26: string;
+    statusQ26: boolean = true;
+    percentQ26: number = 0.5;
+    commentQ27: string;
+    statusQ27: boolean = true;
+    percentQ27: number = 0.5;
+    commentQ28: string;
+    statusQ28: boolean = true;
+    percentQ28: number = 0.5;
+    commentQ29: string;
+    statusQ29: boolean = true;
+    percentQ29: number = 0.5;
+    total: number = 9;
+}
+
+class q3TableValues {
+    commentQ31: string;
+    statusQ31: boolean = true;
+    percentQ31: number = 0.5;
+    commentQ32: string;
+    statusQ32: boolean = true;
+    percentQ32: number = 0.25;
+    commentQ33: string;
+    statusQ33: boolean = true;
+    percentQ33: number = 0.25;
+    commentQ34: string;
+    statusQ34: boolean = true;
+    percentQ34: number = 0.25;
+    commentQ35: string;
+    statusQ35: boolean = true;
+    percentQ35: number = 0.25;
+    commentQ36: string;
+    statusQ36: boolean = true;
+    percentQ36: number = 0.25;
+    commentQ37: string;
+    statusQ37: boolean = true;
+    percentQ37: number = 0.5;
+    commentQ38: string;
+    statusQ38: boolean = true;
+    percentQ38: number = 0.25;
+    commentQ39: string;
+    statusQ39: boolean = true;
+    percentQ39: number = 0.25;
+    commentQ310: string;
+    statusQ310: boolean = true;
+    percentQ310: number = 0.5;
+    commentQ311: string;
+    statusQ311: boolean = true;
+    percentQ311: number = 0.5;
+    commentQ312: string;
+    statusQ312: boolean = true;
+    percentQ312: number = 0.25;
+    commentQ313: string;
+    statusQ313: boolean = true;
+    percentQ313: number = 0.25;
+    commentQ314: string;
+    statusQ314: boolean = true;
+    percentQ314: number = 0.25;
+    total: number = 9;
+}
+
+class q4TableValues {
+    commentQ41: string;
+    statusQ41: boolean = true;
+    percentQ41: number = 1;
+    commentQ42: string;
+    statusQ42: boolean = true;
+    percentQ42: number = 0.5;
+    commentQ43: string;
+    statusQ43: boolean = true;
+    percentQ43: number = 0.5;
+    commentQ44: string;
+    statusQ44: boolean = true;
+    percentQ44: number = 0.5;
+    commentQ45: string;
+    statusQ45: boolean = true;
+    percentQ45: number = 0.5;
+    commentQ46: string;
+    statusQ46: boolean = true;
+    percentQ46: number = 0.5;
+    commentQ47: string;
+    statusQ47: boolean = true;
+    percentQ47: number = 0.5;
     total: number = 4;
 }
 
@@ -84,6 +191,19 @@ class formValuesThree {
     weakness: string;
 }
 
+class formValuesFour {
+    heightFenceText: string;
+    fenceFacility: boolean = false;
+    fenceFacilityText: string;
+    lightingFence: boolean = false;
+    lightingFenceText: string;
+    fenceLanyardText: string;
+    alarmFence: boolean = false;
+    alarmFenceText: string;
+    barrierFence: boolean = false;
+    barrierFenceText: string;
+}
+
 @Component({
     selector: "Settings",
     animations: [
@@ -122,7 +242,11 @@ export class SettingsComponent implements OnInit {
     formValues: formValues = new formValues();
     formValuesTwo: formValuesTwo = new formValuesTwo();
     formValuesThree: formValuesThree = new formValuesThree();
+    formValuesFour: formValuesFour = new formValuesFour();
     q1TableValues: q1TableValues = new q1TableValues();
+    q2TableValues: q2TableValues = new q2TableValues();
+    q3TableValues: q3TableValues = new q3TableValues();
+    q4TableValues: q4TableValues = new q4TableValues();
     category: string;
     @ViewChild('myfilter') myfilter: ElementRef;
 
@@ -183,6 +307,7 @@ export class SettingsComponent implements OnInit {
                         this.formValues.mainLandmarks = answers.mainLandmarks;
                         this.formValues.weakness = answers.weakness;
                         this.weakness = true;
+                        this.q1TableValues = JSON.parse(getString('Q1Percentages'));
                     }
 
                     if (q == "Q2" && getString(q)) {
@@ -206,6 +331,9 @@ export class SettingsComponent implements OnInit {
                         this.formValuesTwo.roadLeadingText = answers.roadLeadingText;
                         this.formValuesTwo.weakness = answers.weakness;
                         this.weakness = true;
+
+                        //Q1Percentages
+                        this.q2TableValues = JSON.parse(getString('Q2Percentages'));
                     }
 
                     if (q == "Q3" && getString(q)) {
@@ -236,6 +364,21 @@ export class SettingsComponent implements OnInit {
                         this.formValuesThree.barbedWireText = answers.barbedWireText;
                         this.formValuesThree.weakness = answers.weakness;
                         this.weakness = true;
+                        this.q3TableValues = JSON.parse(getString('Q3Percentages'));
+                    }
+
+                    if (q == "Q4" && getString(q)) {
+                        const answers: formValuesFour = JSON.parse(getString(q));
+                        if (getString(this.category + '_images')) {
+                            const documents = JSON.parse(getString(this.category + '_images'));
+                            this.documents = documents;
+                            documents.forEach((item, index: number) => {
+                                this.signedApplication.push(item.image);
+                            });
+                        }
+                        this.formValuesFour = JSON.parse(getString('Q4'));
+                        this.weakness = true;
+                        this.q3TableValues = JSON.parse(getString('Q4Percentages'));
                     }
                 }
             });
@@ -277,6 +420,29 @@ export class SettingsComponent implements OnInit {
             this.q1TableValues['total'] = this.q1TableValues['percentQ11'] + this.q1TableValues['percentQ12'] + this.q1TableValues['percentQ13'] + this.q1TableValues['percentQ14'] + this.q1TableValues['percentQ15'] + this.q1TableValues['percentQ16'];
             console.log(this.q1TableValues);
         }
+
+        if (match == 'Q2') {
+            this.q2TableValues[key] = args.value;
+            if (args.value) {
+                this.q2TableValues[pMatch] = percent;
+            } else {
+                this.q2TableValues[pMatch] = 0;
+            }
+            this.q2TableValues['total'] = this.q2TableValues['percentQ21'] + this.q2TableValues['percentQ22'] + this.q2TableValues['percentQ23'] + this.q2TableValues['percentQ24'] + this.q2TableValues['percentQ25'] + this.q2TableValues['percentQ26'] + this.q2TableValues['percentQ27'] + this.q2TableValues['percentQ28'] + this.q2TableValues['percentQ29'];
+            console.log(this.q2TableValues);
+        }
+        //q3TableValues
+
+        if (match == 'Q3') {
+            this.q3TableValues[key] = args.value;
+            if (args.value) {
+                this.q3TableValues[pMatch] = percent;
+            } else {
+                this.q3TableValues[pMatch] = 0;
+            }
+            this.q3TableValues['total'] = this.q3TableValues['percentQ31'] + this.q3TableValues['percentQ32'] + this.q3TableValues['percentQ33'] + this.q3TableValues['percentQ34'] + this.q3TableValues['percentQ35'] + this.q3TableValues['percentQ36'] + this.q3TableValues['percentQ37'] + this.q3TableValues['percentQ38'] + this.q3TableValues['percentQ39'] + this.q3TableValues['percentQ310'] + this.q3TableValues['percentQ311'] + this.q3TableValues['percentQ312'] + this.q3TableValues['percentQ313'] + this.q3TableValues['percentQ314'];
+            console.log(this.q3TableValues);
+        }
     }
 
     onCheckedChange(args, key) {
@@ -292,6 +458,11 @@ export class SettingsComponent implements OnInit {
     onCheckedChangeThree(args, key) {
         console.log(args.value);
         this.formValuesThree[key] = args.value;
+    }
+
+    onCheckedChangeFour(args, key) {
+        console.log(args.value);
+        this.formValuesFour[key] = args.value;
     }
 
     takeSnap(type, count, arr) {
@@ -366,9 +537,10 @@ export class SettingsComponent implements OnInit {
             //console.log(this.category, this.formValuesTwo)
             console.log(this.documents)
 
-            if (this.category == "Q1") setString(this.category, JSON.stringify(this.formValues));
-            if (this.category == "Q2") setString(this.category, JSON.stringify(this.formValuesTwo));
-            if (this.category == "Q3") setString(this.category, JSON.stringify(this.formValuesThree));
+            if (this.category == "Q1") { setString(this.category, JSON.stringify(this.formValues)); setString('Q1Percentages', JSON.stringify(this.q1TableValues)); }
+            if (this.category == "Q2") { setString(this.category, JSON.stringify(this.formValuesTwo)); setString('Q2Percentages', JSON.stringify(this.q2TableValues)); }
+            if (this.category == "Q3") { setString(this.category, JSON.stringify(this.formValuesThree)); setString('Q3Percentages', JSON.stringify(this.q3TableValues)); }
+            if (this.category == "Q4") { setString(this.category, JSON.stringify(this.formValuesThree)); setString('Q4Percentages', JSON.stringify(this.q4TableValues)); }
 
             if (this.documents && this.documents.length > 0) setString(this.category + '_images', JSON.stringify(this.documents));
 

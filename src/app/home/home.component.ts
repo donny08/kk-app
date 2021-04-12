@@ -63,6 +63,11 @@ export class HomeComponent implements OnInit, OnDestroy {
         "text": "Evaluate the perimeter of the building?",
         "answers": '',
         "selected": false
+    }, {
+        "index": 4,
+        "text": "External fence for establishment?",
+        "answers": '',
+        "selected": false
     }];
     id: any;
     selected: boolean = false;

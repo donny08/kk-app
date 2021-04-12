@@ -103,24 +103,24 @@
                             [(ngModel)]="formValues.weakness" class="input" lineHeight="5" height="100" required>
                         </TextView>
                     </StackLayout>
-                    <Label textWrap="true" class="_subtitle" fontWeight="bold" fontSize="22" text="Summary"></Label>
+                    <!-- <Label textWrap="true" class="_subtitle" fontWeight="bold" fontSize="22" text="Evaluate by percentage"></Label> -->
                     <FlexboxLayout class="table" marginRight="10" flexDirection="column">
                         <FlexboxLayout
                             style="border-radius: 1;padding:10;text-decoration: underline;text-decoration-color: white;background-image: linear-gradient(to right, #9f783d, #9f783d)"
                             flexDirection="column">
                             <FlexboxLayout style="color:white;" flexDirection="row">
-                                <Label text="Question" width="250" fontWeight="bold" textWrap="true"
+                                <Label text="Items" width="250" fontWeight="bold" textWrap="true"
                                     style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;"></Label>
                                 <Label fontWeight="bold" width="100" text="Percentage" textWrap="true"
                                     style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;"></Label>
                                 <Label fontWeight="bold" width="100" text="Status" textWrap="true"
                                     style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;"></Label>
-                                <Label fontWeight="bold" width="250" text="Comments" textWrap="true"
+                                <Label fontWeight="bold" width="250" text="Notes" textWrap="true"
                                     style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;"></Label>
                             </FlexboxLayout>
                         </FlexboxLayout>
                         <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
-                            <Label text="1. Evaluate the location of the building?" width="250" fontWeight="bold"
+                            <Label text="1. Avoid sites near residential and tourist areas" width="250" fontWeight="bold"
                                 textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="1%" width="100" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
@@ -130,7 +130,7 @@
                             <TextView name="commentQ11" [(ngModel)]="q1TableValues.commentQ11" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
                         </FlexboxLayout>
                         <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
-                            <Label text="2. Evaluate the location of the building?" width="250" fontWeight="bold"
+                            <Label text="2. Avoid location near vital areas such as embassies and service institutions" width="250" fontWeight="bold"
                                 textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="1%" width="100" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
@@ -140,7 +140,7 @@
                             <TextView name="commentQ12" [(ngModel)]="q1TableValues.commentQ12" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
                         </FlexboxLayout>
                         <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
-                            <Label text="3. Evaluate the location of the building?" width="250" fontWeight="bold"
+                            <Label text="3. Avoid sites surrounded by bridges, tunnels and tall buildings" width="250" fontWeight="bold"
                                 textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="0.5%" width="100" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
@@ -150,7 +150,7 @@
                             <TextView name="commentQ13" [(ngModel)]="q1TableValues.commentQ13" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
                         </FlexboxLayout>
                         <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
-                            <Label text="4. Evaluate the location of the building?" width="250" fontWeight="bold"
+                            <Label text="4. Avoid locations near the main street" width="250" fontWeight="bold"
                                 textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="0.5%" width="100" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
@@ -160,7 +160,7 @@
                             <TextView name="commentQ14" [(ngModel)]="q1TableValues.commentQ14" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
                         </FlexboxLayout>
                         <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
-                            <Label text="5. Evaluate the location of the building?" width="250" fontWeight="bold"
+                            <Label text="5. Avoid sites exposed to flooding and dust erosion hazards" width="250" fontWeight="bold"
                                 textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="0.5%" width="100" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
@@ -170,7 +170,7 @@
                             <TextView name="commentQ15" [(ngModel)]="q1TableValues.commentQ15" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
                         </FlexboxLayout>
                         <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
-                            <Label text="6. Evaluate the location of the building?" width="250" fontWeight="bold"
+                            <Label text="6. Is cover available for the facility" width="250" fontWeight="bold"
                                 textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="0.5%" width="100" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
@@ -180,7 +180,7 @@
                             <TextView name="commentQ16" [(ngModel)]="q1TableValues.commentQ16" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
                         </FlexboxLayout>
                         <FlexboxLayout style="color:black;padding: 10;background-image: linear-gradient(to right, #f7dd74, #f7dd74)" justifyContent="space-between" flexDirection="row">
-                            <Label text="Total of Percentage" width="auto" fontWeight="bold"
+                            <Label text="Percentage to match requirements of the site" width="auto" fontWeight="bold"
                             textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;"></Label>
                             <Label text="{{q1TableValues.total}}%" width="auto" fontWeight="bold"
                             textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 18;margin-right: 10%;"></Label>
@@ -287,6 +287,118 @@
                             [(ngModel)]="formValuesTwo.weakness" class="input" lineHeight="5" height="100" required>
                         </TextView>
                     </StackLayout>
+                    <FlexboxLayout class="table" marginRight="10" flexDirection="column">
+                        <FlexboxLayout
+                            style="border-radius: 1;padding:10;text-decoration: underline;text-decoration-color: white;background-image: linear-gradient(to right, #9f783d, #9f783d)"
+                            flexDirection="column">
+                            <FlexboxLayout style="color:white;" flexDirection="row">
+                                <Label text="Items" width="250" fontWeight="bold" textWrap="true"
+                                    style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;"></Label>
+                                <Label fontWeight="bold" width="100" text="Percentage" textWrap="true"
+                                    style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;"></Label>
+                                <Label fontWeight="bold" width="100" text="Status" textWrap="true"
+                                    style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;"></Label>
+                                <Label fontWeight="bold" width="250" text="Notes" textWrap="true"
+                                    style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;"></Label>
+                            </FlexboxLayout>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="1. Availability of warning signs to prevent approaching" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q2TableValues.statusQ21}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ21', 'Q2', 1, 'percentQ21')">
+                            </Switch>
+                            <TextView name="commentQ21" [(ngModel)]="q2TableValues.commentQ21" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="2. Availability of warning panels to prevent imaging" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q2TableValues.statusQ22}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ22', 'Q2', 1, 'percentQ22')">
+                            </Switch>
+                            <TextView name="commentQ22" [(ngModel)]="q2TableValues.commentQ22" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="3. Provide speed bumps on the streets leading to the building" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q2TableValues.statusQ23}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ23', 'Q2', 1, 'percentQ23')">
+                            </Switch>
+                            <TextView name="commentQ23" [(ngModel)]="q2TableValues.commentQ23" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="4. Provide the necessary lighting for the building during the evening period" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q2TableValues.statusQ24}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ24', 'Q2', 1, 'percentQ24')">
+                            </Switch>
+                            <TextView name="commentQ24" [(ngModel)]="q2TableValues.commentQ24" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="5. Designing the entrance  streets to prevent the entry of vehicles quickly exceeded 40 km/h" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q2TableValues.statusQ25}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ25', 'Q2', 1, 'percentQ25')">
+                            </Switch>
+                            <TextView name="commentQ25" [(ngModel)]="q2TableValues.commentQ25" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="6. Entrance to gates should not be directly from street" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q2TableValues.statusQ26}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ26', 'Q2', 1, 'percentQ26')">
+                            </Switch>
+                            <TextView name="commentQ26" [(ngModel)]="q2TableValues.commentQ26" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="7. Provide an external area for vehicles inspection" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q2TableValues.statusQ27}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ27', 'Q2', 1, 'percentQ27')">
+                            </Switch>
+                            <TextView name="commentQ27" [(ngModel)]="q2TableValues.commentQ27" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="8. Availability of television surveillance cameras to cover the outside with provide night vision feature" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q2TableValues.statusQ28}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ28', 'Q2', 1, 'percentQ28')">
+                            </Switch>
+                            <TextView name="commentQ28" [(ngModel)]="q2TableValues.commentQ28" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="9. Securing external power station, if any" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q2TableValues.statusQ29}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ29', 'Q2', 1, 'percentQ29')">
+                            </Switch>
+                            <TextView name="commentQ29" [(ngModel)]="q2TableValues.commentQ29" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;padding: 10;background-image: linear-gradient(to right, #f7dd74, #f7dd74)" justifyContent="space-between" flexDirection="row">
+                            <Label text="Percentage to match external requirements" width="auto" fontWeight="bold"
+                            textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;"></Label>
+                            <Label text="{{q2TableValues.total}}%" width="auto" fontWeight="bold"
+                            textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 18;margin-right: 10%;"></Label>
+                        </FlexboxLayout>
+                    </FlexboxLayout>
                 </form>
                 <StackLayout class="item m-b-20">
                     <Button text="Submit" width="150" (tap)="submit(f.form.valid)" horizontalAlignment="center"
@@ -428,11 +540,365 @@
                             [(ngModel)]="formValuesThree.weakness" class="input" lineHeight="5" height="100" required>
                         </TextView>
                     </StackLayout>
+                    <FlexboxLayout class="table" marginRight="10" flexDirection="column">
+                        <FlexboxLayout
+                            style="border-radius: 1;padding:10;text-decoration: underline;text-decoration-color: white;background-image: linear-gradient(to right, #9f783d, #9f783d)"
+                            flexDirection="column">
+                            <FlexboxLayout style="color:white;" flexDirection="row">
+                                <Label text="Items" width="250" fontWeight="bold" textWrap="true"
+                                    style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;"></Label>
+                                <Label fontWeight="bold" width="100" text="Percentage" textWrap="true"
+                                    style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;"></Label>
+                                <Label fontWeight="bold" width="100" text="Status" textWrap="true"
+                                    style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;"></Label>
+                                <Label fontWeight="bold" width="250" text="Notes" textWrap="true"
+                                    style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;"></Label>
+                            </FlexboxLayout>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="1. The rise of the fence must be atleast 52 meters" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q3TableValues.statusQ31}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ31', 'Q3', 1, 'percentQ31')">
+                            </Switch>
+                            <TextView name="commentQ31" [(ngModel)]="q3TableValues.commentQ31" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="2. The wall thickness should be atleast 25 cm" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q3TableValues.statusQ32}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ32', 'Q3', 0.5, 'percentQ32')">
+                            </Switch>
+                            <TextView name="commentQ32" [(ngModel)]="q3TableValues.commentQ32" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="3. It should not have any crevices or protrusion" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q3TableValues.statusQ33}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ33', 'Q3', 0.5, 'percentQ33')">
+                            </Switch>
+                            <TextView name="commentQ33" [(ngModel)]="q3TableValues.commentQ33" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="4. The fences must be built using solid building" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q3TableValues.statusQ34}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ34', 'Q3', 0.5, 'percentQ34')">
+                            </Switch>
+                            <TextView name="commentQ34" [(ngModel)]="q3TableValues.commentQ34" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="5. Use aesthetic barriers to add additional protection" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q3TableValues.statusQ35}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ35', 'Q3', 0.5, 'percentQ35')">
+                            </Switch>
+                            <TextView name="commentQ35" [(ngModel)]="q3TableValues.commentQ35" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="6. The fences and barbed wires must be strengthened in isolated places" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q3TableValues.statusQ36}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ36', 'Q3', 0.5, 'percentQ36')">
+                            </Switch>
+                            <TextView name="commentQ36" [(ngModel)]="q3TableValues.commentQ36" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="7. The fences must be dyed in light colors to facilitate any attempt approaching the fence" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q3TableValues.statusQ37}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ37', 'Q3', 1, 'percentQ37')">
+                            </Switch>
+                            <TextView name="commentQ37" [(ngModel)]="q3TableValues.commentQ37" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="8. The caved road must be built for the inside for tours inspection" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q3TableValues.statusQ38}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ38', 'Q3', 0.5, 'percentQ38')">
+                            </Switch>
+                            <TextView name="commentQ38" [(ngModel)]="q3TableValues.commentQ38" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="9. The fence must not touch the fence of other nearby structures" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q3TableValues.statusQ39}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ39', 'Q3', 0.5, 'percentQ39')">
+                            </Switch>
+                            <TextView name="commentQ39" [(ngModel)]="q3TableValues.commentQ39" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="10. External fixe cameras are available every 50 meters" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q3TableValues.statusQ310}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ310', 'Q3', 1, 'percentQ310')">
+                            </Switch>
+                            <TextView name="commentQ310" [(ngModel)]="q3TableValues.commentQ310" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="11. Moving Cameras available every 250 meters" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q3TableValues.statusQ311}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ311', 'Q3', 1, 'percentQ311')">
+                            </Switch>
+                            <TextView name="commentQ311" [(ngModel)]="q3TableValues.commentQ311" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="12. Provide fixed cameras inside the perimeter of the inner wall. Distance 5" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q3TableValues.statusQ312}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ312', 'Q3', 0.5, 'percentQ312')">
+                            </Switch>
+                            <TextView name="commentQ312" [(ngModel)]="q3TableValues.commentQ312" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="13. Fence to cover tracks. Indoor fixed cameras are available on vehicles" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q3TableValues.statusQ313}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ313', 'Q3', 0.5, 'percentQ313')">
+                            </Switch>
+                            <TextView name="commentQ313" [(ngModel)]="q3TableValues.commentQ313" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="14. The lighting should be provided on the fence" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q3TableValues.statusQ314}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ314', 'Q3', 0.5, 'percentQ314')">
+                            </Switch>
+                            <TextView name="commentQ314" [(ngModel)]="q3TableValues.commentQ314" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;padding: 10;background-image: linear-gradient(to right, #f7dd74, #f7dd74)" justifyContent="space-between" flexDirection="row">
+                            <Label text="Percentage to match the requirement of the outer wall" width="auto" fontWeight="bold"
+                            textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;"></Label>
+                            <Label text="{{q3TableValues.total}}%" width="auto" fontWeight="bold"
+                            textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 18;margin-right: 10%;"></Label>
+                        </FlexboxLayout>
+                    </FlexboxLayout>
                 </form>
                 <StackLayout class="item m-b-20">
                     <Button text="Submit" width="150" (tap)="submit(f.form.valid)" horizontalAlignment="center"
                         class="submit-button m-t-16"></Button>
                 </StackLayout>
+            </StackLayout>
+            <StackLayout *ngIf="category == 'Q4'" class="page">
+                <form name="form" #f="ngForm" novalidate>
+                    <Label class="h3 m-b-20 c-black" [text]="title" textWrap="true"></Label>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <Label textWrap="true" class="_subtitle"
+                            text="1. What is the height of the fences?"></Label>
+                        <TextField hint="" class="input" name="heightFenceText"
+                            [(ngModel)]="formValuesFour.heightFenceText" editable="true" returnKeyType="done" required>
+                        </TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <FlexboxLayout>
+                            <Label textWrap="true" width="700" class="_subtitle"
+                                text="2. Is the a fence facility?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30"
+                                checked="{{formValuesFour.fenceFacility}}" backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeFour($event, 'fenceFacility')">
+                            </Switch>
+                        </FlexboxLayout>
+                        <TextField hint="" class="input" name="fenceFacilityText"
+                            [(ngModel)]="formValuesFour.fenceFacilityText" editable="true" returnKeyType="done"
+                            required></TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <FlexboxLayout>
+                            <Label textWrap="true" width="700" class="_subtitle"
+                                text="3. Is there adequate lighting to cover the perimeter of the fence?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30"
+                                checked="{{formValuesFour.lightingFence}}" backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeFour($event, 'lightingFence')">
+                            </Switch>
+                        </FlexboxLayout>
+                        <TextField hint="" class="input" name="lightingFenceText"
+                            [(ngModel)]="formValuesFour.lightingFenceText" editable="true" returnKeyType="done"
+                            required></TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <Label textWrap="true" class="_subtitle"
+                            text="4. What is the material for making your fence lanyards?"></Label>
+                        <TextField hint="" class="input" name="fenceLanyardText"
+                            [(ngModel)]="formValuesFour.fenceLanyardText" editable="true" returnKeyType="done" required>
+                        </TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <FlexboxLayout>
+                            <Label textWrap="true" width="700" class="_subtitle"
+                                text="5. Are there alarm devices when approaching the fence?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30"
+                                checked="{{formValuesFour.alarmFence}}" backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeFour($event, 'alarmFence')">
+                            </Switch>
+                        </FlexboxLayout>
+                        <TextField hint="" class="input" name="alarmFenceText"
+                            [(ngModel)]="formValuesFour.alarmFenceText" editable="true" returnKeyType="done"
+                            required></TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <FlexboxLayout>
+                            <Label textWrap="true" width="700" class="_subtitle"
+                                text="6. Are there barriers to protect the fence from vehicles?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30"
+                                checked="{{formValuesFour.barrierFence}}" backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeFour($event, 'barrierFence')">
+                            </Switch>
+                        </FlexboxLayout>
+                        <TextField hint="" class="input" name="barrierFenceText"
+                            [(ngModel)]="formValuesFour.barrierFenceText" editable="true" returnKeyType="done"
+                            required></TextField>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <Label textWrap="true" class="_subtitle" text="Upload images"></Label>
+                        <StackLayout width="100%" class="_card">
+                            <WrapLayout orientation="horizontal" width="100%">
+                                <WrapLayout orientation="vertical"
+                                    *ngFor="let image of signedApplication;let i = index" class="m-b-10">
+                                    <Image [src]="image" decodeWidth="100" decodeHeight="100" width="60" height="60"
+                                        loadMode="async"></Image>
+                                    <Label *ngIf="i == signedApplication.length - 1" text="Delete"
+                                        (tap)="deleteImage('Q4',i,signedApplication)" fontSize="12" marginLeft="10"
+                                        textWrap="true"></Label>
+                                </WrapLayout>
+                                <WrapLayout orientation="horizontal"
+                                    (tap)="takeSnap('Q4',signedApplication.length, signedApplication)">
+                                    <Image visibility="{{signedApplication.length < 100 ? 'visible' : 'collapsed'}}"
+                                        src="~/app/images/addimage.png" height="70" width="70" loadMode="async"></Image>
+                                </WrapLayout>
+                            </WrapLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout class="item m-b-20" marginRight="10">
+                        <Button text="Weakness" width="150" (tap)="showWeakness()" horizontalAlignment="right"
+                            class="weakness-button m-t-16"></Button>
+                        <Label *ngIf="weakness" textWrap="true" class="_subtitle"
+                            text="Please specify the weakness here"></Label>
+                        <TextView @fadeAndSlide *ngIf="weakness" name="weakness" hint=""
+                            [(ngModel)]="formValuesFour.weakness" class="input" lineHeight="5" height="100" required>
+                        </TextView>
+                    </StackLayout>
+                    <FlexboxLayout class="table" marginRight="10" flexDirection="column">
+                        <FlexboxLayout
+                            style="border-radius: 1;padding:10;text-decoration: underline;text-decoration-color: white;background-image: linear-gradient(to right, #9f783d, #9f783d)"
+                            flexDirection="column">
+                            <FlexboxLayout style="color:white;" flexDirection="row">
+                                <Label text="Items" width="250" fontWeight="bold" textWrap="true"
+                                    style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;"></Label>
+                                <Label fontWeight="bold" width="100" text="Percentage" textWrap="true"
+                                    style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;"></Label>
+                                <Label fontWeight="bold" width="100" text="Status" textWrap="true"
+                                    style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;"></Label>
+                                <Label fontWeight="bold" width="250" text="Notes" textWrap="true"
+                                    style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;"></Label>
+                            </FlexboxLayout>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="1. The height should be atleast 3 meters" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q4TableValues.statusQ41}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ41', 'Q4', 1, 'percentQ41')">
+                            </Switch>
+                            <TextView name="commentQ41" [(ngModel)]="q4TableValues.commentQ41" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="2. Tough items must be used in fence choice" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q4TableValues.statusQ42}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ42', 'Q4', 1, 'percentQ42')">
+                            </Switch>
+                            <TextView name="commentQ42" [(ngModel)]="q4TableValues.commentQ42" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="3. The space must not be between fence slots greater than 5 cm" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q4TableValues.statusQ43}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ43', 'Q4', 1, 'percentQ43')">
+                            </Switch>
+                            <TextView name="commentQ43" [(ngModel)]="q4TableValues.commentQ43" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="4. An iron wire  fixed crosswire must be installed on the fence. The addition is durability and stability for cyan" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q4TableValues.statusQ44}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ44', 'Q4', 1, 'percentQ44')">
+                            </Switch>
+                            <TextView name="commentQ44" [(ngModel)]="q4TableValues.commentQ44" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="5. Cement prevents drilling the fence must be fixed to the ground down the fence" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q4TableValues.statusQ45}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ45', 'Q4', 1, 'percentQ45')">
+                            </Switch>
+                            <TextView name="commentQ45" [(ngModel)]="q4TableValues.commentQ45" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="6. Barbed wire should be installed at the top of the hedge and at an angle 45 towards the outside" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q4TableValues.statusQ46}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ46', 'Q4', 1, 'percentQ46')">
+                            </Switch>
+                            <TextView name="commentQ46" [(ngModel)]="q4TableValues.commentQ46" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
+                            <Label text="7. The lighting should be available" width="250" fontWeight="bold"
+                                textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
+                            <Label text="1%" width="100" fontWeight="bold" textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
+                            <Switch checked="{{q4TableValues.statusQ47}}" width="100" checked="false" style="margin-left: 6.8%;margin-top: 20%;"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedSummaryChange($event, 'statusQ47', 'Q4', 1, 'percentQ47')">
+                            </Switch>
+                            <TextView name="commentQ47" [(ngModel)]="q4TableValues.commentQ47" width="250" hint="" class="input" lineHeight="5" height="100" style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
+                        </FlexboxLayout>
+                        <FlexboxLayout style="color:black;padding: 10;background-image: linear-gradient(to right, #f7dd74, #f7dd74)" justifyContent="space-between" flexDirection="row">
+                            <Label text="Percentage of matching the requirements of the fence" width="auto" fontWeight="bold"
+                            textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;"></Label>
+                            <Label text="{{q4TableValues.total}}%" width="auto" fontWeight="bold"
+                            textWrap="true" style="text-decoration: none;text-decoration-color: white;font-size: 18;margin-right: 10%;"></Label>
+                        </FlexboxLayout>
+                    </FlexboxLayout>
+                </form>
             </StackLayout>
         </PreviousNextView>
     </ScrollView>
