@@ -192,6 +192,91 @@ class q5TableValues {
     total: number = 9;
 }
 
+class q6TableValues {
+    commentQ61: string;
+    statusQ61: boolean = true;
+    percentQ61: number = 1;
+    commentQ62: string;
+    statusQ62: boolean = true;
+    percentQ62: number = 1;
+    commentQ63: string;
+    statusQ63: boolean = true;
+    percentQ63: number = 1;
+    commentQ64: string;
+    statusQ64: boolean = true;
+    percentQ64: number = 1;
+    total: number = 4;
+}
+
+class q7TableValues {
+    commentQ71: string;
+    statusQ71: boolean = true;
+    percentQ71: number = 1;
+    commentQ72: string;
+    statusQ72: boolean = true;
+    percentQ72: number = 1;
+    commentQ73: string;
+    statusQ73: boolean = true;
+    percentQ73: number = 1;
+    commentQ74: string;
+    statusQ74: boolean = true;
+    percentQ74: number = 1;
+    commentQ75: string;
+    statusQ75: boolean = true;
+    percentQ75: number = 1;
+    commentQ76: string;
+    statusQ76: boolean = true;
+    percentQ76: number = 1;
+    commentQ77: string;
+    statusQ77: boolean = true;
+    percentQ77: number = 1;
+    commentQ78: string;
+    statusQ78: boolean = true;
+    percentQ78: number = 1;
+    commentQ79: string;
+    statusQ79: boolean = true;
+    percentQ79: number = 1;
+    commentQ710: string;
+    statusQ710: boolean = true;
+    percentQ710: number = 1;
+    total: number = 10;
+}
+class q8TableValues {
+    commentQ81: string;
+    statusQ81: boolean = true;
+    percentQ81: number = 1;
+    commentQ82: string;
+    statusQ82: boolean = true;
+    percentQ82: number = 1;
+    commentQ83: string;
+    statusQ83: boolean = true;
+    percentQ83: number = 1;
+    commentQ84: string;
+    statusQ84: boolean = true;
+    percentQ84: number = 1;
+    commentQ85: string;
+    statusQ85: boolean = true;
+    percentQ85: number = 1;
+    commentQ86: string;
+    statusQ86: boolean = true;
+    percentQ86: number = 1;
+    commentQ87: string;
+    statusQ87: boolean = true;
+    percentQ87: number = 1;
+    commentQ88: string;
+    statusQ88: boolean = true;
+    percentQ88: number = 1;
+    commentQ89: string;
+    statusQ89: boolean = true;
+    percentQ89: number = 1;
+    total: number = 9;
+}
+class q9TableValues {}
+class q10TableValues {}
+class q11TableValues {}
+class q12TableValues {}
+class q13TableValues {}
+
 class formValues {
     nameOfLocation: string;
     streetSituation: string;
@@ -272,6 +357,59 @@ class formValuesFive {
     weakness: string;
 }
 
+class formValuesSix {
+    visitorsParking: string;
+    parkingSpaces: boolean = false;
+    parkingSpacesText: string;
+    parkingNumbers: string;
+    outdoorParking: string;
+    indoorParking: boolean = false;
+    indoorParkingText: string;
+    distanceIndoor: string;
+    lightingParking: boolean = false;
+    lightingParkingText: string;
+    weakness: string;
+}
+
+class formValuesSeven {
+    receptionBuildingSecured: boolean = false;
+    receptionBuildingSecuredText: string;
+    buildingToReceive: boolean = false;
+    buildingToReceiveText: string;
+    systemOfEntry: boolean = false;
+    systemOfEntryText: string;
+    recordsOfMall: boolean = false;
+    recordsOfMallText: string;
+    mechanismForSearching: string;
+    weakness: string;
+}
+
+class formValuesEight {
+    externalService: boolean = false;
+    externalServiceText: string;
+    buildingForExternal: boolean = false;
+    buildingForExternalText: string;
+    entryAndExit: boolean = false;
+    entryAndExitText: string;
+    material: boolean = false;
+    materialText: string;
+    mallSearched: boolean = false;
+    mallSearchedText: string;
+    weakness: string;
+}
+
+class formValuesNine {
+
+}
+
+class formValuesTen {}
+
+class formValuesEleven {}
+
+class formValuesTwelve {}
+
+class formValuesThirteen {}
+
 @Component({
     selector: "Settings",
     animations: [
@@ -312,11 +450,30 @@ export class SettingsComponent implements OnInit {
     formValuesThree: formValuesThree = new formValuesThree();
     formValuesFour: formValuesFour = new formValuesFour();
     formValuesFive: formValuesFive = new formValuesFive();
+    formValuesSix: formValuesSix = new formValuesSix();
+    formValuesSeven: formValuesSeven = new formValuesSeven();
+    formValuesEight: formValuesEight = new formValuesEight();
+    formValuesNine: formValuesNine = new formValuesNine();
+    formValuesTen: formValuesTen = new formValuesTen();
+    formValuesEleven: formValuesEleven = new formValuesEleven();
+    formValuesTwelve: formValuesTwelve = new formValuesTwelve();
+    formValuesThirteen: formValuesThirteen = new formValuesThirteen();
+
     q1TableValues: q1TableValues = new q1TableValues();
     q2TableValues: q2TableValues = new q2TableValues();
     q3TableValues: q3TableValues = new q3TableValues();
     q4TableValues: q4TableValues = new q4TableValues();
     q5TableValues: q5TableValues = new q5TableValues();
+    q6TableValues: q6TableValues = new q6TableValues();
+
+    q7TableValues: q7TableValues = new q7TableValues();
+    q8TableValues: q8TableValues = new q8TableValues();
+    q9TableValues: q9TableValues = new q9TableValues();
+    q10TableValues: q10TableValues = new q10TableValues();
+    q11TableValues: q11TableValues = new q11TableValues();
+    q12TableValues: q12TableValues = new q12TableValues();
+    q13TableValues: q13TableValues = new q13TableValues();
+
     category: string;
     @ViewChild('myfilter') myfilter: ElementRef;
 
@@ -462,6 +619,45 @@ export class SettingsComponent implements OnInit {
                         this.weakness = true;
                         this.q5TableValues = JSON.parse(getString('Q5Percentages'));
                     }
+
+                    if (q == "Q6" && getString(q)) {
+                        if (getString(this.category + '_images')) {
+                            const documents = JSON.parse(getString(this.category + '_images'));
+                            this.documents = documents;
+                            documents.forEach((item, index: number) => {
+                                this.signedApplication.push(item.image);
+                            });
+                        }
+                        this.formValuesSix = JSON.parse(getString(q));
+                        this.weakness = true;
+                        this.q6TableValues = JSON.parse(getString('Q6Percentages'));
+                    }
+
+                    if (q == "Q7" && getString(q)) {
+                        if (getString(this.category + '_images')) {
+                            const documents = JSON.parse(getString(this.category + '_images'));
+                            this.documents = documents;
+                            documents.forEach((item, index: number) => {
+                                this.signedApplication.push(item.image);
+                            });
+                        }
+                        this.formValuesSeven = JSON.parse(getString(q));
+                        this.weakness = true;
+                        this.q7TableValues = JSON.parse(getString('Q7Percentages'));
+                    }
+
+                    if (q == "Q8" && getString(q)) {
+                        if (getString(this.category + '_images')) {
+                            const documents = JSON.parse(getString(this.category + '_images'));
+                            this.documents = documents;
+                            documents.forEach((item, index: number) => {
+                                this.signedApplication.push(item.image);
+                            });
+                        }
+                        this.formValuesEight = JSON.parse(getString(q));
+                        this.weakness = true;
+                        this.q8TableValues = JSON.parse(getString('Q8Percentages'));
+                    }
                 }
             });
         }
@@ -525,6 +721,116 @@ export class SettingsComponent implements OnInit {
             this.q3TableValues['total'] = this.q3TableValues['percentQ31'] + this.q3TableValues['percentQ32'] + this.q3TableValues['percentQ33'] + this.q3TableValues['percentQ34'] + this.q3TableValues['percentQ35'] + this.q3TableValues['percentQ36'] + this.q3TableValues['percentQ37'] + this.q3TableValues['percentQ38'] + this.q3TableValues['percentQ39'] + this.q3TableValues['percentQ310'] + this.q3TableValues['percentQ311'] + this.q3TableValues['percentQ312'] + this.q3TableValues['percentQ313'] + this.q3TableValues['percentQ314'];
             console.log(this.q3TableValues);
         }
+
+        if (match == 'Q4') {
+            this.q4TableValues[key] = args.value;
+            if (args.value) {
+                this.q4TableValues[pMatch] = percent;
+            } else {
+                this.q4TableValues[pMatch] = 0;
+            }
+            this.q4TableValues['total'] = this.q4TableValues['percentQ41'] + this.q4TableValues['percentQ42'] + this.q4TableValues['percentQ43'] + this.q4TableValues['percentQ44'] + this.q4TableValues['percentQ45'] + this.q4TableValues['percentQ46'] + this.q4TableValues['percentQ47'];
+            console.log(this.q4TableValues);
+        }
+
+        if (match == 'Q5') {
+            this.q5TableValues[key] = args.value;
+            if (args.value) {
+                this.q5TableValues[pMatch] = percent;
+            } else {
+                this.q5TableValues[pMatch] = 0;
+            }
+            this.q5TableValues['total'] = this.q5TableValues['percentQ51'] + this.q5TableValues['percentQ52'] + this.q5TableValues['percentQ53'] + this.q5TableValues['percentQ54'] + this.q5TableValues['percentQ55'] + this.q5TableValues['percentQ56'] + this.q5TableValues['percentQ57'] + this.q5TableValues['percentQ58'] + this.q5TableValues['percentQ59'] + this.q5TableValues['percentQ510'] + this.q5TableValues['percentQ511'] + this.q5TableValues['percentQ512'] + this.q5TableValues['percentQ513'] + this.q5TableValues['percentQ514'] + this.q5TableValues['percentQ515'];
+            console.log(this.q5TableValues);
+        }
+
+        if (match == 'Q6') {
+            this.q6TableValues[key] = args.value;
+            if (args.value) {
+                this.q6TableValues[pMatch] = percent;
+            } else {
+                this.q6TableValues[pMatch] = 0;
+            }
+            this.q6TableValues['total'] = this.q6TableValues['percentQ61'] + this.q6TableValues['percentQ62'] + this.q6TableValues['percentQ63'] + this.q6TableValues['percentQ64'];
+            console.log(this.q6TableValues);
+        }
+
+        if (match == 'Q7') {
+            this.q7TableValues[key] = args.value;
+            if (args.value) {
+                this.q7TableValues[pMatch] = percent;
+            } else {
+                this.q7TableValues[pMatch] = 0;
+            }
+            this.q7TableValues['total'] = this.q7TableValues['percentQ71'] + this.q7TableValues['percentQ72'] + this.q7TableValues['percentQ73'] + this.q7TableValues['percentQ74'] + this.q7TableValues['percentQ75'] + this.q7TableValues['percentQ76'] + this.q7TableValues['percentQ77'] + this.q7TableValues['percentQ78'] + this.q7TableValues['percentQ79'] + this.q7TableValues['percentQ710'];
+            console.log(this.q7TableValues);
+        }
+
+        if (match == 'Q8') {
+            this.q8TableValues[key] = args.value;
+            if (args.value) {
+                this.q8TableValues[pMatch] = percent;
+            } else {
+                this.q8TableValues[pMatch] = 0;
+            }
+            this.q8TableValues['total'] = this.q8TableValues['percentQ81'] + this.q8TableValues['percentQ82'] + this.q8TableValues['percentQ83'] + this.q8TableValues['percentQ84'] + this.q8TableValues['percentQ85'] + this.q8TableValues['percentQ86'] + this.q8TableValues['percentQ87'] + this.q8TableValues['percentQ88'] + this.q8TableValues['percentQ89'];
+            console.log(this.q8TableValues);
+        }
+
+        if (match == 'Q9') {
+            this.q9TableValues[key] = args.value;
+            if (args.value) {
+                this.q9TableValues[pMatch] = percent;
+            } else {
+                this.q9TableValues[pMatch] = 0;
+            }
+            this.q9TableValues['total'] = this.q9TableValues['percentQ91'] + this.q9TableValues['percentQ92'] + this.q9TableValues['percentQ93'] + this.q9TableValues['percentQ94'] ;
+            console.log(this.q9TableValues);
+        }
+
+        if (match == 'Q10') {
+            this.q10TableValues[key] = args.value;
+            if (args.value) {
+                this.q10TableValues[pMatch] = percent;
+            } else {
+                this.q10TableValues[pMatch] = 0;
+            }
+            this.q10TableValues['total'] = this.q10TableValues['percentQ101'] + this.q10TableValues['percentQ102'] + this.q10TableValues['percentQ103'] + this.q10TableValues['percentQ104'] + this.q10TableValues['percentQ105'] + this.q10TableValues['percentQ106'] + this.q10TableValues['percentQ107'] + this.q10TableValues['percentQ108'] + this.q10TableValues['percentQ109'] + this.q10TableValues['percentQ1010'] + this.q10TableValues['percentQ1011'] + this.q10TableValues['percentQ1012'];
+            console.log(this.q10TableValues);
+        }
+
+        if (match == 'Q11') {
+            this.q11TableValues[key] = args.value;
+            if (args.value) {
+                this.q11TableValues[pMatch] = percent;
+            } else {
+                this.q11TableValues[pMatch] = 0;
+            }
+            this.q11TableValues['total'] = this.q11TableValues['percentQ111'] + this.q11TableValues['percentQ112'] + this.q11TableValues['percentQ113'] + this.q11TableValues['percentQ114'] + this.q11TableValues['percentQ115'];
+            console.log(this.q11TableValues);
+        }
+
+        if (match == 'Q12') {
+            this.q12TableValues[key] = args.value;
+            if (args.value) {
+                this.q12TableValues[pMatch] = percent;
+            } else {
+                this.q12TableValues[pMatch] = 0;
+            }
+            this.q12TableValues['total'] = this.q12TableValues['percentQ121'] + this.q12TableValues['percentQ122'] + this.q12TableValues['percentQ123'] + this.q12TableValues['percentQ124'] + this.q12TableValues['percentQ125'] + this.q12TableValues['percentQ126'] + this.q12TableValues['percentQ127'];
+            console.log(this.q12TableValues);
+        }
+
+        if (match == 'Q13') {
+            this.q13TableValues[key] = args.value;
+            if (args.value) {
+                this.q13TableValues[pMatch] = percent;
+            } else {
+                this.q13TableValues[pMatch] = 0;
+            }
+            this.q13TableValues['total'] = this.q13TableValues['percentQ131'] + this.q13TableValues['percentQ132'] + this.q13TableValues['percentQ133'] + this.q13TableValues['percentQ134'] + this.q13TableValues['percentQ135'] + this.q13TableValues['percentQ136'] + this.q13TableValues['percentQ137'] + this.q13TableValues['percentQ138'] + this.q13TableValues['percentQ139'] + this.q13TableValues['percentQ1310'] + this.q13TableValues['percentQ1311'] + this.q13TableValues['percentQ1312'];
+            console.log(this.q13TableValues);
+        }
     }
 
     onCheckedChange(args, key) {
@@ -545,6 +851,51 @@ export class SettingsComponent implements OnInit {
     onCheckedChangeFour(args, key) {
         console.log(args.value);
         this.formValuesFour[key] = args.value;
+    }
+
+    onCheckedChangeFive(args, key) {
+        console.log(args.value);
+        this.formValuesFive[key] = args.value;
+    }
+
+    onCheckedChangeSix(args, key) {
+        console.log(args.value);
+        this.formValuesSix[key] = args.value;
+    }
+
+    onCheckedChangeSeven(args, key) {
+        console.log(args.value);
+        this.formValuesSeven[key] = args.value;
+    }
+
+    onCheckedChangeEight(args, key) {
+        console.log(args.value);
+        this.formValuesEight[key] = args.value;
+    }
+
+    onCheckedChangeNine(args, key) {
+        console.log(args.value);
+        this.formValuesNine[key] = args.value;
+    }
+
+    onCheckedChangeTen(args, key) {
+        console.log(args.value);
+        this.formValuesTen[key] = args.value;
+    }
+
+    onCheckedChangeEleven(args, key) {
+        console.log(args.value);
+        this.formValuesEleven[key] = args.value;
+    }
+
+    onCheckedChangeTwelve(args, key) {
+        console.log(args.value);
+        this.formValuesTwelve[key] = args.value;
+    }
+
+    onCheckedChangeThirteen(args, key) {
+        console.log(args.value);
+        this.formValuesThirteen[key] = args.value;
     }
 
     takeSnap(type, count, arr) {
@@ -624,6 +975,15 @@ export class SettingsComponent implements OnInit {
             if (this.category == "Q3") { setString(this.category, JSON.stringify(this.formValuesThree)); setString('Q3Percentages', JSON.stringify(this.q3TableValues)); }
             if (this.category == "Q4") { setString(this.category, JSON.stringify(this.formValuesFour)); setString('Q4Percentages', JSON.stringify(this.q4TableValues)); }
             if (this.category == "Q5") { setString(this.category, JSON.stringify(this.formValuesFive)); setString('Q5Percentages', JSON.stringify(this.q5TableValues)); }
+            if (this.category == "Q6") { setString(this.category, JSON.stringify(this.formValuesSix)); setString('Q6Percentages', JSON.stringify(this.q6TableValues)); }
+            if (this.category == "Q7") { setString(this.category, JSON.stringify(this.formValuesSix)); setString('Q7Percentages', JSON.stringify(this.q7TableValues)); }
+            if (this.category == "Q8") { setString(this.category, JSON.stringify(this.formValuesSix)); setString('Q8Percentages', JSON.stringify(this.q8TableValues)); }
+            if (this.category == "Q9") { setString(this.category, JSON.stringify(this.formValuesSix)); setString('Q9Percentages', JSON.stringify(this.q9TableValues)); }
+            if (this.category == "Q10") { setString(this.category, JSON.stringify(this.formValuesSix)); setString('Q10Percentages', JSON.stringify(this.q10TableValues)); }
+            if (this.category == "Q11") { setString(this.category, JSON.stringify(this.formValuesSix)); setString('Q11Percentages', JSON.stringify(this.q11TableValues)); }
+            if (this.category == "Q12") { setString(this.category, JSON.stringify(this.formValuesSix)); setString('Q12Percentages', JSON.stringify(this.q12TableValues)); }
+            if (this.category == "Q13") { setString(this.category, JSON.stringify(this.formValuesSix)); setString('Q13Percentages', JSON.stringify(this.q13TableValues)); }
+
             if (this.documents && this.documents.length > 0) setString(this.category + '_images', JSON.stringify(this.documents));
 
             alert("Information submitted successfully").then(() => {
