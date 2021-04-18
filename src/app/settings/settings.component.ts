@@ -271,11 +271,141 @@ class q8TableValues {
     percentQ89: number = 1;
     total: number = 9;
 }
-class q9TableValues {}
-class q10TableValues {}
-class q11TableValues {}
-class q12TableValues {}
-class q13TableValues {}
+class q9TableValues {
+    commentQ91: string;
+    statusQ91: boolean = true;
+    percentQ91: number = 1;
+    commentQ92: string;
+    statusQ92: boolean = true;
+    percentQ92: number = 1;
+    commentQ93: string;
+    statusQ93: boolean = true;
+    percentQ93: number = 1;
+    commentQ94: string;
+    statusQ94: boolean = true;
+    percentQ94: number = 1;
+    total: number = 4;
+}
+class q10TableValues {
+    commentQ101: string;
+    statusQ101: boolean = true;
+    percentQ101: number = 1;
+    commentQ102: string;
+    statusQ102: boolean = true;
+    percentQ102: number = 1;
+    commentQ103: string;
+    statusQ103: boolean = true;
+    percentQ103: number = 1;
+    commentQ104: string;
+    statusQ104: boolean = true;
+    percentQ104: number = 1;
+    commentQ105: string;
+    statusQ105: boolean = true;
+    percentQ105: number = 1;
+    commentQ106: string;
+    statusQ106: boolean = true;
+    percentQ106: number = 0.5;
+    commentQ107: string;
+    statusQ107: boolean = true;
+    percentQ107: number = 1;
+    commentQ108: string;
+    statusQ108: boolean = true;
+    percentQ108: number = 0.5;
+    commentQ109: string;
+    statusQ109: boolean = true;
+    percentQ109: number = 0.5;
+    commentQ1010: string;
+    statusQ1010: boolean = true;
+    percentQ1010: number = 0.5;
+    commentQ1011: string;
+    statusQ1011: boolean = true;
+    percentQ1011: number = 1;
+    commentQ1012: string;
+    statusQ1012: boolean = true;
+    percentQ1012: number = 1;
+    total: number = 10;
+}
+class q11TableValues {
+    commentQ111: string;
+    statusQ111: boolean = true;
+    percentQ111: number = 1;
+    commentQ112: string;
+    statusQ112: boolean = true;
+    percentQ112: number = 1;
+    commentQ113: string;
+    statusQ113: boolean = true;
+    percentQ113: number = 1;
+    commentQ114: string;
+    statusQ114: boolean = true;
+    percentQ114: number = 2;
+    commentQ115: string;
+    statusQ115: boolean = true;
+    percentQ115: number = 2;
+    total: number = 7;
+}
+class q12TableValues {
+    commentQ121: string;
+    statusQ121: boolean = true;
+    percentQ121: number = 2;
+    commentQ122: string;
+    statusQ122: boolean = true;
+    percentQ122: number = 1;
+    commentQ123: string;
+    statusQ123: boolean = true;
+    percentQ123: number = 1;
+    commentQ124: string;
+    statusQ124: boolean = true;
+    percentQ124: number = 1;
+    commentQ125: string;
+    statusQ125: boolean = true;
+    percentQ125: number = 2;
+    commentQ126: string;
+    statusQ126: boolean = true;
+    percentQ126: number = 2;
+    commentQ127: string;
+    statusQ127: boolean = true;
+    percentQ127: number = 2;
+    total: number = 11;
+}
+class q13TableValues {
+    commentQ131: string;
+    statusQ131: boolean = true;
+    percentQ131: number = 1;
+    commentQ132: string;
+    statusQ132: boolean = true;
+    percentQ132: number = 0.5;
+    commentQ133: string;
+    statusQ133: boolean = true;
+    percentQ133: number = 1;
+    commentQ134: string;
+    statusQ134: boolean = true;
+    percentQ134: number = 1;
+    commentQ135: string;
+    statusQ135: boolean = true;
+    percentQ135: number = 1;
+    commentQ136: string;
+    statusQ136: boolean = true;
+    percentQ136: number = 1;
+    commentQ137: string;
+    statusQ137: boolean = true;
+    percentQ137: number = 1;
+    commentQ138: string;
+    statusQ138: boolean = true;
+    percentQ138: number = 0.5;
+    commentQ139: string;
+    statusQ139: boolean = true;
+    percentQ139: number = 0.5;
+    commentQ1310: string;
+    statusQ1310: boolean = true;
+    percentQ1310: number = 0.5;
+    commentQ1311: string;
+    statusQ1311: boolean = true;
+    percentQ1311: number = 0.5;
+    commentQ1312: string;
+    statusQ1312: boolean = true;
+    percentQ1312: number = 0.5;
+    total: number = 9;
+}
 
 class formValues {
     nameOfLocation: string;
@@ -399,7 +529,19 @@ class formValuesEight {
 }
 
 class formValuesNine {
-
+    perimeterSecured: boolean = false;
+    perimeterSecuredText: string;
+    adequateLighting: boolean = false;
+    adequateLightingText: string;
+    internalPath: boolean = false;
+    internalPathText: string;
+    vehiclesSecured: boolean = false;
+    vehiclesSecuredText: string;
+    rightVision: boolean = false;
+    rightVisionText: string;
+    assemblyPoint: boolean = false;
+    assemblyPointText: string;
+    weakness: string;
 }
 
 class formValuesTen {}
@@ -657,6 +799,71 @@ export class SettingsComponent implements OnInit {
                         this.formValuesEight = JSON.parse(getString(q));
                         this.weakness = true;
                         this.q8TableValues = JSON.parse(getString('Q8Percentages'));
+                    }
+
+                    if (q == "Q9" && getString(q)) {
+                        if (getString(this.category + '_images')) {
+                            const documents = JSON.parse(getString(this.category + '_images'));
+                            this.documents = documents;
+                            documents.forEach((item, index: number) => {
+                                this.signedApplication.push(item.image);
+                            });
+                        }
+                        this.formValuesNine = JSON.parse(getString(q));
+                        this.weakness = true;
+                        this.q9TableValues = JSON.parse(getString('Q9Percentages'));
+                    }
+
+                    if (q == "Q10" && getString(q)) {
+                        if (getString(this.category + '_images')) {
+                            const documents = JSON.parse(getString(this.category + '_images'));
+                            this.documents = documents;
+                            documents.forEach((item, index: number) => {
+                                this.signedApplication.push(item.image);
+                            });
+                        }
+                        this.formValuesNine = JSON.parse(getString(q));
+                        this.weakness = true;
+                        this.q10TableValues = JSON.parse(getString('Q10Percentages'));
+                    }
+
+                    if (q == "Q11" && getString(q)) {
+                        if (getString(this.category + '_images')) {
+                            const documents = JSON.parse(getString(this.category + '_images'));
+                            this.documents = documents;
+                            documents.forEach((item, index: number) => {
+                                this.signedApplication.push(item.image);
+                            });
+                        }
+                        this.formValuesEleven = JSON.parse(getString(q));
+                        this.weakness = true;
+                        this.q11TableValues = JSON.parse(getString('Q11Percentages'));
+                    }
+
+                    if (q == "Q12" && getString(q)) {
+                        if (getString(this.category + '_images')) {
+                            const documents = JSON.parse(getString(this.category + '_images'));
+                            this.documents = documents;
+                            documents.forEach((item, index: number) => {
+                                this.signedApplication.push(item.image);
+                            });
+                        }
+                        this.formValuesEleven = JSON.parse(getString(q));
+                        this.weakness = true;
+                        this.q12TableValues = JSON.parse(getString('Q12Percentages'));
+                    }
+
+                    if (q == "Q13" && getString(q)) {
+                        if (getString(this.category + '_images')) {
+                            const documents = JSON.parse(getString(this.category + '_images'));
+                            this.documents = documents;
+                            documents.forEach((item, index: number) => {
+                                this.signedApplication.push(item.image);
+                            });
+                        }
+                        this.formValuesThirteen = JSON.parse(getString(q));
+                        this.weakness = true;
+                        this.q13TableValues = JSON.parse(getString('Q13Percentages'));
                     }
                 }
             });

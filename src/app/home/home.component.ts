@@ -90,7 +90,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         "selected": false
     }, {
         "index": 9,
-        "text": "Reception buildings?",
+        "text": "Internal perimeter of the facility?",
         "answers": '',
         "selected": false
     }];
