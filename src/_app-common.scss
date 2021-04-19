@@ -160,9 +160,10 @@
 }
 
 .table {
-  border-radius: 10;
-  border-width: 1;
+  border-radius: 0;
+  border-width: 0.5;
   border-color: rgb(28, 34, 29);
+  background-color: #f5f9e4;
 }
 
 .input.ng-dirty {

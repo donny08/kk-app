@@ -11,45 +11,180 @@
     -->
     <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
     </ActionItem>
-    <Label text="Weakness"></Label>
+    <Label text="Evaluation Report"></Label>
 </ActionBar>
 
 <GridLayout class="page__content">
     <ScrollView height="95%" scrollBarIndicatorVisible="true">
         <StackLayout padding="20">
-            <FlexboxLayout class="table" flexDirection="column">
-                <FlexboxLayout
-                    style="border-radius: 1;padding:10;margin-bottom:20;text-decoration: underline;text-decoration-color: white;background-image: linear-gradient(to right, #5DB2FC, #5574F7)"
+            <FlexboxLayout flexDirection="column">
+                <FlexboxLayout class="table" style="text-decoration: underline;text-decoration-color: white;"
                     flexDirection="column">
-                    <FlexboxLayout style="color:white;" flexDirection="row">
-                        <Label text="Questionnaire" width="50%" marginLeft="15%" fontWeight="bold" textWrap="true"
-                            style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;"></Label>
-                        <Label fontWeight="bold" width="50%" text="Weakness" marginRight="20%" textWrap="true"
-                            style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;"></Label>
+                    <FlexboxLayout style="color:black;" flexDirection="row">
+                        <FlexboxLayout style="background: #ba7253;" width="80%" flexDirection="row">
+                            <Label text="Percentage to match requirements of the site" fontWeight="normal"
+                                textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;margin: 5;"></Label>
+                        </FlexboxLayout>
+                        <Label fontWeight="normal" width="20%" text="4%" textWrap="true"
+                            style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;margin-right: 1%;"></Label>
                     </FlexboxLayout>
                 </FlexboxLayout>
-                <FlexboxLayout  *ngIf="questionOneWeakness" style="color:black;margin-bottom:20;" flexDirection="row">
-                    <Label text="Q1. Evaluate the location of the building?" marginLeft="1%" width="50%"
-                        fontWeight="bold" textWrap="true"
-                        style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;"></Label>
-                    <Label [text]="questionOneWeakness" width="50%" marginRight="1%" fontWeight="bold" textWrap="true"
-                        style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;"></Label>
+                <FlexboxLayout class="table" style="text-decoration: underline;text-decoration-color: white;"
+                    flexDirection="column">
+                    <FlexboxLayout style="color:black;" flexDirection="row">
+                        <FlexboxLayout style="background: #ba7253;" width="80%" flexDirection="row">
+                            <Label text="Percentage to match external requirements" fontWeight="normal"
+                                textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;margin: 5;"></Label>
+                        </FlexboxLayout>
+                        <Label fontWeight="normal" width="20%" text="9%" textWrap="true"
+                            style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;margin-right: 1%;"></Label>
+                    </FlexboxLayout>
                 </FlexboxLayout>
-                <FlexboxLayout *ngIf="questionOneWeaknessTwo" style="color:black;margin-bottom:20;" flexDirection="row">
-                    <Label text="Q2. Evaluate the external facility of the building?" marginLeft="1%" width="50%"
-                        fontWeight="bold" textWrap="true"
-                        style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;"></Label>
-                    <Label [text]="questionOneWeaknessTwo" width="50%" marginRight="1%" fontWeight="bold"
-                        textWrap="true"
-                        style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;"></Label>
+                <FlexboxLayout class="table" style="text-decoration: underline;text-decoration-color: white;"
+                    flexDirection="column">
+                    <FlexboxLayout style="color:black;" flexDirection="row">
+                        <FlexboxLayout style="background: #ba7253;" width="80%" flexDirection="row">
+                            <Label text="Percentage to match the requirement of the outer wall" fontWeight="normal"
+                                textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;margin: 5;"></Label>
+                        </FlexboxLayout>
+                        <Label fontWeight="normal" width="20%" text="9%" textWrap="true"
+                            style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;margin-right: 1%;"></Label>
+                    </FlexboxLayout>
                 </FlexboxLayout>
-                <FlexboxLayout *ngIf="questionOneWeaknessThree" style="color:black;margin-bottom:20;" flexDirection="row">
-                    <Label text="Q3. Evaluate the perimeter of the building?" marginLeft="1%" width="50%"
-                        fontWeight="bold" textWrap="true"
-                        style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;"></Label>
-                    <Label [text]="questionOneWeaknessThree" width="50%" marginRight="1%" fontWeight="bold"
-                        textWrap="true"
-                        style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;"></Label>
+                <FlexboxLayout class="table" style="text-decoration: underline;text-decoration-color: white;"
+                    flexDirection="column">
+                    <FlexboxLayout style="color:black;" flexDirection="row">
+                        <FlexboxLayout style="background: #ba7253;" width="80%" flexDirection="row">
+                            <Label text="Percentage of matching the requirements of the fence" fontWeight="normal"
+                                textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;margin: 5;"></Label>
+                        </FlexboxLayout>
+                        <Label fontWeight="normal" width="20%" text="4%" textWrap="true"
+                            style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;margin-right: 1%;"></Label>
+                    </FlexboxLayout>
+                </FlexboxLayout>
+                <FlexboxLayout class="table" style="text-decoration: underline;text-decoration-color: white;"
+                    flexDirection="column">
+                    <FlexboxLayout style="color:black;" flexDirection="row">
+                        <FlexboxLayout style="background: #ba7253;" width="80%" flexDirection="row">
+                            <Label text="Percentage of matched gates" fontWeight="normal"
+                                textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;margin: 5;"></Label>
+                        </FlexboxLayout>
+                        <Label fontWeight="normal" width="20%" text="10%" textWrap="true"
+                            style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;margin-right: 1%;"></Label>
+                    </FlexboxLayout>
+                </FlexboxLayout>
+                <FlexboxLayout class="table" style="text-decoration: underline;text-decoration-color: white;"
+                    flexDirection="column">
+                    <FlexboxLayout style="color:black;" flexDirection="row">
+                        <FlexboxLayout style="background: #ba7253;" width="80%" flexDirection="row">
+                            <Label text="Percentage of matched positions clauses" fontWeight="normal"
+                                textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;margin: 5;"></Label>
+                        </FlexboxLayout>
+                        <Label fontWeight="normal" width="20%" text="4%" textWrap="true"
+                            style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;margin-right: 1%;"></Label>
+                    </FlexboxLayout>
+                </FlexboxLayout>
+                <FlexboxLayout class="table" style="text-decoration: underline;text-decoration-color: white;"
+                    flexDirection="column">
+                    <FlexboxLayout style="color:black;" flexDirection="row">
+                        <FlexboxLayout style="background: #ba7253;" width="80%" flexDirection="row">
+                            <Label text="Percentage of matched reception building" fontWeight="normal"
+                                textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;margin: 5;"></Label>
+                        </FlexboxLayout>
+                        <Label fontWeight="normal" width="20%" text="10%" textWrap="true"
+                            style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;margin-right: 1%;"></Label>
+                    </FlexboxLayout>
+                </FlexboxLayout>
+                <FlexboxLayout class="table" style="text-decoration: underline;text-decoration-color: white;"
+                    flexDirection="column">
+                    <FlexboxLayout style="color:black;" flexDirection="row">
+                        <FlexboxLayout style="background: #ba7253;" width="80%" flexDirection="row">
+                            <Label text="Percentage of matched external service building" fontWeight="normal"
+                                textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;margin: 5;"></Label>
+                        </FlexboxLayout>
+                        <Label fontWeight="normal" width="20%" text="9%" textWrap="true"
+                            style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;margin-right: 1%;"></Label>
+                    </FlexboxLayout>
+                </FlexboxLayout>
+                <FlexboxLayout class="table" style="text-decoration: underline;text-decoration-color: white;"
+                    flexDirection="column">
+                    <FlexboxLayout style="color:black;" flexDirection="row">
+                        <FlexboxLayout style="background: #ba7253;" width="80%" flexDirection="row">
+                            <Label text="Percentage of matched perimeter outside" fontWeight="normal"
+                                textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;margin: 5;"></Label>
+                        </FlexboxLayout>
+                        <Label fontWeight="normal" width="20%" text="4%" textWrap="true"
+                            style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;margin-right: 1%;"></Label>
+                    </FlexboxLayout>
+                </FlexboxLayout>
+                <FlexboxLayout class="table" style="text-decoration: underline;text-decoration-color: white;"
+                    flexDirection="column">
+                    <FlexboxLayout style="color:black;" flexDirection="row">
+                        <FlexboxLayout style="background: #ba7253;" width="80%" flexDirection="row">
+                            <Label text="Percentage of matched indoor building" fontWeight="normal"
+                                textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;margin: 5;"></Label>
+                        </FlexboxLayout>
+                        <Label fontWeight="normal" width="20%" text="10%" textWrap="true"
+                            style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;margin-right: 1%;"></Label>
+                    </FlexboxLayout>
+                </FlexboxLayout>
+                <FlexboxLayout class="table" style="text-decoration: underline;text-decoration-color: white;"
+                    flexDirection="column">
+                    <FlexboxLayout style="color:black;" flexDirection="row">
+                        <FlexboxLayout style="background: #ba7253;" width="80%" flexDirection="row">
+                            <Label text="Percentage of matching protection system and control rooms" fontWeight="normal"
+                                textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;margin: 5;"></Label>
+                        </FlexboxLayout>
+                        <Label fontWeight="normal" width="20%" text="7%" textWrap="true"
+                            style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;margin-right: 1%;"></Label>
+                    </FlexboxLayout>
+                </FlexboxLayout>
+                <FlexboxLayout class="table" style="text-decoration: underline;text-decoration-color: white;"
+                    flexDirection="column">
+                    <FlexboxLayout style="color:black;" flexDirection="row">
+                        <FlexboxLayout style="background: #ba7253;" width="80%" flexDirection="row">
+                            <Label text="Percentage to match the building and inspection procedures" fontWeight="normal"
+                                textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;margin: 5;"></Label>
+                        </FlexboxLayout>
+                        <Label fontWeight="normal" width="20%" text="11%" textWrap="true"
+                            style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;margin-right: 1%;"></Label>
+                    </FlexboxLayout>
+                </FlexboxLayout>
+                <FlexboxLayout class="table" style="text-decoration: underline;text-decoration-color: white;"
+                    flexDirection="column">
+                    <FlexboxLayout style="color:black;" flexDirection="row">
+                        <FlexboxLayout style="background: #ba7253;" width="80%" flexDirection="row">
+                            <Label text="Percentage for the matching and safety requirements" fontWeight="normal"
+                                textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;margin: 5;"></Label>
+                        </FlexboxLayout>
+                        <Label fontWeight="normal" width="20%" text="9%" textWrap="true"
+                            style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;margin-right: 1%;"></Label>
+                    </FlexboxLayout>
+                </FlexboxLayout>
+                <FlexboxLayout class="table" style="text-decoration: underline;text-decoration-color: white;"
+                    flexDirection="column">
+                    <FlexboxLayout style="color:black;" flexDirection="row">
+                        <FlexboxLayout style="background: #34281b;color:white;" width="80%" flexDirection="row">
+                            <Label text="Final degree to match building insurance" fontWeight="normal"
+                                textWrap="true"
+                                style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;margin: 5;"></Label>
+                        </FlexboxLayout>
+                        <Label fontWeight="normal" width="20%" text="100%" textWrap="true"
+                            style="text-decoration: none;text-decoration-color: white;font-size: 18;text-align: right;margin-right: 1%;"></Label>
+                    </FlexboxLayout>
                 </FlexboxLayout>
             </FlexboxLayout>
             <!-- <FlexboxLayout style="color:black;margin-bottom:20;" flexDirection="row">

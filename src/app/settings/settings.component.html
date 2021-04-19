@@ -1057,6 +1057,10 @@
                         </FlexboxLayout>
                     </FlexboxLayout>
                 </form>
+                <StackLayout class="item m-b-20">
+                    <Button text="Submit" width="150" (tap)="submit(f.form.valid)" horizontalAlignment="center"
+                        class="submit-button m-t-16"></Button>
+                </StackLayout>
             </StackLayout>
 
             <StackLayout *ngIf="category == 'Q5'" class="page">
@@ -1201,7 +1205,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q5TableValues.statusQ51}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ51', 'Q5', 1, 'percentQ51')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ51', 'Q5', 1, 'percentQ51')">
                             </Switch>
                             <TextView name="commentQ51" [(ngModel)]="q5TableValues.commentQ51" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -1215,7 +1219,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q5TableValues.statusQ52}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ52', 'Q5', 1, 'percentQ52')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ52', 'Q5', 1, 'percentQ52')">
                             </Switch>
                             <TextView name="commentQ52" [(ngModel)]="q5TableValues.commentQ52" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -1230,7 +1234,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q5TableValues.statusQ53}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ53', 'Q5', 1, 'percentQ53')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ53', 'Q5', 1, 'percentQ53')">
                             </Switch>
                             <TextView name="commentQ53" [(ngModel)]="q5TableValues.commentQ53" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -1244,7 +1248,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q5TableValues.statusQ54}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ54', 'Q5', 1, 'percentQ54')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ54', 'Q5', 1, 'percentQ54')">
                             </Switch>
                             <TextView name="commentQ54" [(ngModel)]="q5TableValues.commentQ54" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -1258,7 +1262,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q5TableValues.statusQ55}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ55', 'Q5', 1, 'percentQ55')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ55', 'Q5', 1, 'percentQ55')">
                             </Switch>
                             <TextView name="commentQ55" [(ngModel)]="q5TableValues.commentQ55" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -1272,7 +1276,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q5TableValues.statusQ56}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ56', 'Q5', 1, 'percentQ56')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ56', 'Q5', 1, 'percentQ56')">
                             </Switch>
                             <TextView name="commentQ56" [(ngModel)]="q5TableValues.commentQ56" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -1286,7 +1290,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q5TableValues.statusQ57}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ57', 'Q5', 1, 'percentQ57')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ57', 'Q5', 1, 'percentQ57')">
                             </Switch>
                             <TextView name="commentQ57" [(ngModel)]="q5TableValues.commentQ57" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -1413,6 +1417,10 @@
                         </FlexboxLayout>
                     </FlexboxLayout>
                 </form>
+                <StackLayout class="item m-b-20">
+                    <Button text="Submit" width="150" (tap)="submit(f.form.valid)" horizontalAlignment="center"
+                        class="submit-button m-t-16"></Button>
+                </StackLayout>
             </StackLayout>
 
             <StackLayout *ngIf="category == 'Q6'" class="page">
@@ -1537,7 +1545,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q6TableValues.statusQ61}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ61', 'Q6', 1, 'percentQ61')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ61', 'Q6', 1, 'percentQ61')">
                             </Switch>
                             <TextView name="commentQ61" [(ngModel)]="q6TableValues.commentQ61" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -1552,7 +1560,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q6TableValues.statusQ62}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ62', 'Q6', 1, 'percentQ62')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ62', 'Q6', 1, 'percentQ62')">
                             </Switch>
                             <TextView name="commentQ62" [(ngModel)]="q6TableValues.commentQ62" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -1566,7 +1574,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q6TableValues.statusQ63}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ63', 'Q6', 1, 'percentQ63')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ63', 'Q6', 1, 'percentQ63')">
                             </Switch>
                             <TextView name="commentQ63" [(ngModel)]="q6TableValues.commentQ63" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -1580,7 +1588,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q6TableValues.statusQ64}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ64', 'Q6', 1, 'percentQ64')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ64', 'Q6', 1, 'percentQ64')">
                             </Switch>
                             <TextView name="commentQ64" [(ngModel)]="q6TableValues.commentQ64" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -1597,6 +1605,10 @@
                         </FlexboxLayout>
                     </FlexboxLayout>
                 </form>
+                <StackLayout class="item m-b-20">
+                    <Button text="Submit" width="150" (tap)="submit(f.form.valid)" horizontalAlignment="center"
+                        class="submit-button m-t-16"></Button>
+                </StackLayout>
             </StackLayout>
 
             <StackLayout *ngIf="category == 'Q7'" class="page">
@@ -1718,7 +1730,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q7TableValues.statusQ71}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ71', 'Q7', 1, 'percentQ71')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ71', 'Q7', 1, 'percentQ71')">
                             </Switch>
                             <TextView name="commentQ71" [(ngModel)]="q7TableValues.commentQ71" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -1733,7 +1745,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q7TableValues.statusQ72}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ72', 'Q7', 1, 'percentQ72')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ72', 'Q7', 1, 'percentQ72')">
                             </Switch>
                             <TextView name="commentQ72" [(ngModel)]="q7TableValues.commentQ72" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -1747,7 +1759,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q7TableValues.statusQ73}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ73', 'Q7', 1, 'percentQ73')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ73', 'Q7', 1, 'percentQ73')">
                             </Switch>
                             <TextView name="commentQ73" [(ngModel)]="q7TableValues.commentQ73" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -1761,7 +1773,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q7TableValues.statusQ74}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ74', 'Q7', 1, 'percentQ74')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ74', 'Q7', 1, 'percentQ74')">
                             </Switch>
                             <TextView name="commentQ74" [(ngModel)]="q7TableValues.commentQ74" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -1776,7 +1788,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q7TableValues.statusQ75}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ75', 'Q7', 1, 'percentQ75')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ75', 'Q7', 1, 'percentQ75')">
                             </Switch>
                             <TextView name="commentQ75" [(ngModel)]="q7TableValues.commentQ75" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -1790,7 +1802,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q7TableValues.statusQ76}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ76', 'Q7', 1, 'percentQ76')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ76', 'Q7', 1, 'percentQ76')">
                             </Switch>
                             <TextView name="commentQ76" [(ngModel)]="q7TableValues.commentQ76" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -1804,7 +1816,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q7TableValues.statusQ77}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ77', 'Q7', 1, 'percentQ77')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ77', 'Q7', 1, 'percentQ77')">
                             </Switch>
                             <TextView name="commentQ77" [(ngModel)]="q7TableValues.commentQ77" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -1818,7 +1830,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q7TableValues.statusQ78}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ78', 'Q7', 1, 'percentQ78')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ78', 'Q7', 1, 'percentQ78')">
                             </Switch>
                             <TextView name="commentQ78" [(ngModel)]="q7TableValues.commentQ78" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -1832,7 +1844,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q7TableValues.statusQ79}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ79', 'Q7', 1, 'percentQ79')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ79', 'Q7', 1, 'percentQ79')">
                             </Switch>
                             <TextView name="commentQ79" [(ngModel)]="q7TableValues.commentQ79" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -1846,7 +1858,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q7TableValues.statusQ710}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ710', 'Q7', 1, 'percentQ710')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ710', 'Q7', 1, 'percentQ710')">
                             </Switch>
                             <TextView name="commentQ710" [(ngModel)]="q7TableValues.commentQ710" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -1863,6 +1875,10 @@
                         </FlexboxLayout>
                     </FlexboxLayout>
                 </form>
+                <StackLayout class="item m-b-20">
+                    <Button text="Submit" width="150" (tap)="submit(f.form.valid)" horizontalAlignment="center"
+                        class="submit-button m-t-16"></Button>
+                </StackLayout>
             </StackLayout>
 
             <StackLayout *ngIf="category == 'Q8'" class="page">
@@ -1988,7 +2004,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q8TableValues.statusQ81}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ81', 'Q8', 1, 'percentQ81')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ81', 'Q8', 1, 'percentQ81')">
                             </Switch>
                             <TextView name="commentQ81" [(ngModel)]="q8TableValues.commentQ81" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2002,7 +2018,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q8TableValues.statusQ82}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ82', 'Q8', 1, 'percentQ82')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ82', 'Q8', 1, 'percentQ82')">
                             </Switch>
                             <TextView name="commentQ82" [(ngModel)]="q8TableValues.commentQ82" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2016,7 +2032,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q8TableValues.statusQ83}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ83', 'Q8', 1, 'percentQ83')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ83', 'Q8', 1, 'percentQ83')">
                             </Switch>
                             <TextView name="commentQ83" [(ngModel)]="q8TableValues.commentQ83" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2030,7 +2046,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q8TableValues.statusQ84}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ84', 'Q8', 1, 'percentQ84')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ84', 'Q8', 1, 'percentQ84')">
                             </Switch>
                             <TextView name="commentQ84" [(ngModel)]="q8TableValues.commentQ84" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2044,7 +2060,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q8TableValues.statusQ85}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ85', 'Q8', 1, 'percentQ85')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ85', 'Q8', 1, 'percentQ85')">
                             </Switch>
                             <TextView name="commentQ85" [(ngModel)]="q8TableValues.commentQ85" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2058,7 +2074,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q8TableValues.statusQ86}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ86', 'Q8', 1, 'percentQ86')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ86', 'Q8', 1, 'percentQ86')">
                             </Switch>
                             <TextView name="commentQ86" [(ngModel)]="q8TableValues.commentQ86" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2072,7 +2088,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q8TableValues.statusQ87}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ87', 'Q8', 1, 'percentQ87')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ87', 'Q8', 1, 'percentQ87')">
                             </Switch>
                             <TextView name="commentQ87" [(ngModel)]="q8TableValues.commentQ87" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2086,7 +2102,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q8TableValues.statusQ88}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ88', 'Q8', 1, 'percentQ88')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ88', 'Q8', 1, 'percentQ88')">
                             </Switch>
                             <TextView name="commentQ88" [(ngModel)]="q8TableValues.commentQ88" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2100,7 +2116,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q8TableValues.statusQ89}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ89', 'Q8', 1, 'percentQ89')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ89', 'Q8', 1, 'percentQ89')">
                             </Switch>
                             <TextView name="commentQ89" [(ngModel)]="q8TableValues.commentQ89" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2117,6 +2133,10 @@
                         </FlexboxLayout>
                     </FlexboxLayout>
                 </form>
+                <StackLayout class="item m-b-20">
+                    <Button text="Submit" width="150" (tap)="submit(f.form.valid)" horizontalAlignment="center"
+                        class="submit-button m-t-16"></Button>
+                </StackLayout>
             </StackLayout>
 
             <StackLayout *ngIf="category == 'Q9'" class="page">
@@ -2255,7 +2275,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q9TableValues.statusQ91}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ91', 'Q9', 1, 'percentQ91')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ91', 'Q9', 1, 'percentQ91')">
                             </Switch>
                             <TextView name="commentQ91" [(ngModel)]="q9TableValues.commentQ91" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2269,7 +2289,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q9TableValues.statusQ92}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ92', 'Q9', 1, 'percentQ92')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ92', 'Q9', 1, 'percentQ92')">
                             </Switch>
                             <TextView name="commentQ92" [(ngModel)]="q9TableValues.commentQ92" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2284,7 +2304,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q9TableValues.statusQ93}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ93', 'Q9', 1, 'percentQ93')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ93', 'Q9', 1, 'percentQ93')">
                             </Switch>
                             <TextView name="commentQ93" [(ngModel)]="q9TableValues.commentQ93" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2298,7 +2318,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q9TableValues.statusQ94}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ94', 'Q9', 1, 'percentQ94')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ94', 'Q9', 1, 'percentQ94')">
                             </Switch>
                             <TextView name="commentQ94" [(ngModel)]="q9TableValues.commentQ94" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2315,6 +2335,10 @@
                         </FlexboxLayout>
                     </FlexboxLayout>
                 </form>
+                <StackLayout class="item m-b-20">
+                    <Button text="Submit" width="150" (tap)="submit(f.form.valid)" horizontalAlignment="center"
+                        class="submit-button m-t-16"></Button>
+                </StackLayout>
             </StackLayout>
 
             <StackLayout *ngIf="category == 'Q10'" class="page">
@@ -2470,7 +2494,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q10TableValues.statusQ101}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ101', 'Q10', 1, 'percentQ101')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ101', 'Q10', 1, 'percentQ101')">
                             </Switch>
                             <TextView name="commentQ101" [(ngModel)]="q10TableValues.commentQ101" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2485,7 +2509,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q10TableValues.statusQ102}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ102', 'Q10', 1, 'percentQ102')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ102', 'Q10', 1, 'percentQ102')">
                             </Switch>
                             <TextView name="commentQ102" [(ngModel)]="q10TableValues.commentQ102" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2500,7 +2524,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q10TableValues.statusQ103}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ103', 'Q10', 1, 'percentQ103')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ103', 'Q10', 1, 'percentQ103')">
                             </Switch>
                             <TextView name="commentQ103" [(ngModel)]="q10TableValues.commentQ103" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2515,7 +2539,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q10TableValues.statusQ104}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ104', 'Q10', 1, 'percentQ104')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ104', 'Q10', 1, 'percentQ104')">
                             </Switch>
                             <TextView name="commentQ104" [(ngModel)]="q10TableValues.commentQ104" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2529,7 +2553,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q10TableValues.statusQ105}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ105', 'Q10', 1, 'percentQ105')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ105', 'Q10', 1, 'percentQ105')">
                             </Switch>
                             <TextView name="commentQ105" [(ngModel)]="q10TableValues.commentQ105" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2543,7 +2567,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q10TableValues.statusQ106}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ106', 'Q10', 1, 'percentQ106')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ106', 'Q10', 1, 'percentQ106')">
                             </Switch>
                             <TextView name="commentQ106" [(ngModel)]="q10TableValues.commentQ106" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2558,7 +2582,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q10TableValues.statusQ107}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ107', 'Q10', 1, 'percentQ107')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ107', 'Q10', 1, 'percentQ107')">
                             </Switch>
                             <TextView name="commentQ107" [(ngModel)]="q10TableValues.commentQ107" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2572,7 +2596,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q10TableValues.statusQ108}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ108', 'Q10', 1, 'percentQ108')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ108', 'Q10', 1, 'percentQ108')">
                             </Switch>
                             <TextView name="commentQ108" [(ngModel)]="q10TableValues.commentQ108" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2586,7 +2610,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q10TableValues.statusQ107}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ107', 'Q10', 1, 'percentQ107')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ107', 'Q10', 1, 'percentQ107')">
                             </Switch>
                             <TextView name="commentQ107" [(ngModel)]="q10TableValues.commentQ107" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2600,7 +2624,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q10TableValues.statusQ107}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ107', 'Q10', 1, 'percentQ107')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ107', 'Q10', 1, 'percentQ107')">
                             </Switch>
                             <TextView name="commentQ107" [(ngModel)]="q10TableValues.commentQ107" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2614,7 +2638,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q10TableValues.statusQ107}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ107', 'Q10', 1, 'percentQ107')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ107', 'Q10', 1, 'percentQ107')">
                             </Switch>
                             <TextView name="commentQ107" [(ngModel)]="q10TableValues.commentQ107" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2627,7 +2651,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q10TableValues.statusQ107}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ107', 'Q10', 1, 'percentQ107')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ107', 'Q10', 1, 'percentQ107')">
                             </Switch>
                             <TextView name="commentQ107" [(ngModel)]="q10TableValues.commentQ107" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2644,6 +2668,10 @@
                         </FlexboxLayout>
                     </FlexboxLayout>
                 </form>
+                <StackLayout class="item m-b-20">
+                    <Button text="Submit" width="150" (tap)="submit(f.form.valid)" horizontalAlignment="center"
+                        class="submit-button m-t-16"></Button>
+                </StackLayout>
             </StackLayout>
 
             <StackLayout *ngIf="category == 'Q11'" class="page">
@@ -2899,7 +2927,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q11TableValues.statusQ111}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ111', 'Q11', 1, 'percentQ111')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ111', 'Q11', 1, 'percentQ111')">
                             </Switch>
                             <TextView name="commentQ111" [(ngModel)]="q11TableValues.commentQ111" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2913,7 +2941,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q11TableValues.statusQ112}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ112', 'Q11', 1, 'percentQ112')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ112', 'Q11', 1, 'percentQ112')">
                             </Switch>
                             <TextView name="commentQ112" [(ngModel)]="q11TableValues.commentQ112" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2928,7 +2956,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q11TableValues.statusQ113}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ113', 'Q11', 1, 'percentQ113')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ113', 'Q11', 1, 'percentQ113')">
                             </Switch>
                             <TextView name="commentQ113" [(ngModel)]="q11TableValues.commentQ113" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2943,7 +2971,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q11TableValues.statusQ114}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ114', 'Q11', 1, 'percentQ114')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ114', 'Q11', 1, 'percentQ114')">
                             </Switch>
                             <TextView name="commentQ114" [(ngModel)]="q11TableValues.commentQ114" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2957,7 +2985,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q11TableValues.statusQ115}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ115', 'Q11', 1, 'percentQ115')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ115', 'Q11', 1, 'percentQ115')">
                             </Switch>
                             <TextView name="commentQ115" [(ngModel)]="q11TableValues.commentQ115" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -2974,6 +3002,10 @@
                         </FlexboxLayout>
                     </FlexboxLayout>
                 </form>
+                <StackLayout class="item m-b-20">
+                    <Button text="Submit" width="150" (tap)="submit(f.form.valid)" horizontalAlignment="center"
+                        class="submit-button m-t-16"></Button>
+                </StackLayout>
             </StackLayout>
 
             <StackLayout *ngIf="category == 'Q12'" class="page">
@@ -3132,7 +3164,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q12TableValues.statusQ121}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ121', 'Q12', 1, 'percentQ121')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ121', 'Q12', 1, 'percentQ121')">
                             </Switch>
                             <TextView name="commentQ121" [(ngModel)]="q12TableValues.commentQ121" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -3146,7 +3178,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q12TableValues.statusQ122}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ122', 'Q12', 1, 'percentQ122')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ122', 'Q12', 1, 'percentQ122')">
                             </Switch>
                             <TextView name="commentQ122" [(ngModel)]="q12TableValues.commentQ122" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -3161,7 +3193,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q12TableValues.statusQ123}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ123', 'Q12', 1, 'percentQ123')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ123', 'Q12', 1, 'percentQ123')">
                             </Switch>
                             <TextView name="commentQ123" [(ngModel)]="q12TableValues.commentQ123" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -3176,7 +3208,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q12TableValues.statusQ124}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ124', 'Q12', 1, 'percentQ124')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ124', 'Q12', 1, 'percentQ124')">
                             </Switch>
                             <TextView name="commentQ124" [(ngModel)]="q12TableValues.commentQ124" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -3190,7 +3222,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q12TableValues.statusQ125}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ125', 'Q12', 1, 'percentQ125')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ125', 'Q12', 1, 'percentQ125')">
                             </Switch>
                             <TextView name="commentQ125" [(ngModel)]="q12TableValues.commentQ125" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -3204,7 +3236,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q12TableValues.statusQ126}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ126', 'Q12', 1, 'percentQ126')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ126', 'Q12', 1, 'percentQ126')">
                             </Switch>
                             <TextView name="commentQ126" [(ngModel)]="q12TableValues.commentQ126" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -3218,7 +3250,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q12TableValues.statusQ127}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ127', 'Q7', 1, 'percentQ127')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ127', 'Q7', 1, 'percentQ127')">
                             </Switch>
                             <TextView name="commentQ127" [(ngModel)]="q12TableValues.commentQ127" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -3235,6 +3267,10 @@
                         </FlexboxLayout>
                     </FlexboxLayout>
                 </form>
+                <StackLayout class="item m-b-20">
+                    <Button text="Submit" width="150" (tap)="submit(f.form.valid)" horizontalAlignment="center"
+                        class="submit-button m-t-16"></Button>
+                </StackLayout>
             </StackLayout>
 
             <StackLayout *ngIf="category == 'Q13'" class="page">
@@ -3502,7 +3538,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q13TableValues.statusQ131}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ131', 'Q13', 1, 'percentQ131')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ131', 'Q13', 1, 'percentQ131')">
                             </Switch>
                             <TextView name="commentQ131" [(ngModel)]="q13TableValues.commentQ131" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -3517,7 +3553,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q13TableValues.statusQ132}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ132', 'Q13', 1, 'percentQ132')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ132', 'Q13', 1, 'percentQ132')">
                             </Switch>
                             <TextView name="commentQ132" [(ngModel)]="q13TableValues.commentQ132" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -3532,7 +3568,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q13TableValues.statusQ133}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ133', 'Q13', 1, 'percentQ133')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ133', 'Q13', 1, 'percentQ133')">
                             </Switch>
                             <TextView name="commentQ133" [(ngModel)]="q13TableValues.commentQ133" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -3547,7 +3583,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q13TableValues.statusQ134}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ134', 'Q13', 1, 'percentQ134')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ134', 'Q13', 1, 'percentQ134')">
                             </Switch>
                             <TextView name="commentQ134" [(ngModel)]="q13TableValues.commentQ134" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -3561,7 +3597,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q13TableValues.statusQ135}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ135', 'Q13', 1, 'percentQ135')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ135', 'Q13', 1, 'percentQ135')">
                             </Switch>
                             <TextView name="commentQ135" [(ngModel)]="q13TableValues.commentQ135" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -3575,7 +3611,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q13TableValues.statusQ136}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ136', 'Q13', 1, 'percentQ136')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ136', 'Q13', 1, 'percentQ136')">
                             </Switch>
                             <TextView name="commentQ136" [(ngModel)]="q13TableValues.commentQ136" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -3590,7 +3626,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q13TableValues.statusQ137}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ137', 'Q13', 1, 'percentQ137')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ137', 'Q13', 1, 'percentQ137')">
                             </Switch>
                             <TextView name="commentQ137" [(ngModel)]="q13TableValues.commentQ137" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -3604,7 +3640,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q13TableValues.statusQ138}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ138', 'Q13', 1, 'percentQ138')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ138', 'Q13', 1, 'percentQ138')">
                             </Switch>
                             <TextView name="commentQ138" [(ngModel)]="q13TableValues.commentQ138" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
@@ -3616,11 +3652,11 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="1%" width="100" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
-                            <Switch checked="{{q13TableValues.statusQ137}}" width="100" checked="false"
+                            <Switch checked="{{q13TableValues.statusQ139}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ137', 'Q13', 1, 'percentQ137')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ139', 'Q13', 1, 'percentQ139')">
                             </Switch>
-                            <TextView name="commentQ137" [(ngModel)]="q13TableValues.commentQ137" width="250" hint=""
+                            <TextView name="commentQ139" [(ngModel)]="q13TableValues.commentQ139" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
                                 style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
                         </FlexboxLayout>
@@ -3630,11 +3666,11 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="1%" width="100" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
-                            <Switch checked="{{q13TableValues.statusQ137}}" width="100" checked="false"
+                            <Switch checked="{{q13TableValues.statusQ1310}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ137', 'Q13', 1, 'percentQ137')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ1310', 'Q13', 1, 'percentQ1310')">
                             </Switch>
-                            <TextView name="commentQ137" [(ngModel)]="q13TableValues.commentQ137" width="250" hint=""
+                            <TextView name="commentQ1310" [(ngModel)]="q13TableValues.commentQ1310" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
                                 style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
                         </FlexboxLayout>
@@ -3644,11 +3680,11 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="1%" width="100" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
-                            <Switch checked="{{q13TableValues.statusQ137}}" width="100" checked="false"
+                            <Switch checked="{{q13TableValues.statusQ1311}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ137', 'Q13', 1, 'percentQ137')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ1311', 'Q13', 1, 'percentQ1311')">
                             </Switch>
-                            <TextView name="commentQ137" [(ngModel)]="q13TableValues.commentQ137" width="250" hint=""
+                            <TextView name="commentQ1311" [(ngModel)]="q13TableValues.commentQ1311" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
                                 style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
                         </FlexboxLayout>
@@ -3657,11 +3693,11 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="1%" width="100" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
-                            <Switch checked="{{q13TableValues.statusQ137}}" width="100" checked="false"
+                            <Switch checked="{{q13TableValues.statusQ1312}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'commentQ137', 'Q13', 1, 'percentQ137')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ1312', 'Q13', 1, 'percentQ1312')">
                             </Switch>
-                            <TextView name="commentQ137" [(ngModel)]="q13TableValues.commentQ137" width="250" hint=""
+                            <TextView name="commentQ1312" [(ngModel)]="q13TableValues.commentQ1312" width="250" hint=""
                                 class="input" lineHeight="5" height="100"
                                 style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
                         </FlexboxLayout>
@@ -3676,6 +3712,10 @@
                         </FlexboxLayout>
                     </FlexboxLayout>
                 </form>
+                <StackLayout class="item m-b-20">
+                    <Button text="Submit" width="150" (tap)="submit(f.form.valid)" horizontalAlignment="center"
+                        class="submit-button m-t-16"></Button>
+                </StackLayout>
             </StackLayout>
         </PreviousNextView>
     </ScrollView>

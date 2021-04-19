@@ -1266,7 +1266,7 @@ export class SettingsComponent implements OnInit {
         if (valid) {
             //console.log(this.formValues)
             //console.log(this.category, this.formValuesTwo)
-            console.log(this.documents)
+            console.log(this.q5TableValues)
 
             if (this.category == "Q1") { setString(this.category, JSON.stringify(this.formValues)); setString('Q1Percentages', JSON.stringify(this.q1TableValues)); }
             if (this.category == "Q2") { setString(this.category, JSON.stringify(this.formValuesTwo)); setString('Q2Percentages', JSON.stringify(this.q2TableValues)); }

@@ -93,6 +93,26 @@ export class HomeComponent implements OnInit, OnDestroy {
         "text": "Internal perimeter of the facility?",
         "answers": '',
         "selected": false
+    }, {
+        "index": 10,
+        "text": "Internal building of the facility?",
+        "answers": '',
+        "selected": false
+    }, {
+        "index": 11,
+        "text": "Protection and control system?",
+        "answers": '',
+        "selected": false
+    }, {
+        "index": 12,
+        "text": "Building insurance and inspection procedures?",
+        "answers": '',
+        "selected": false
+    }, {
+        "index": 13,
+        "text": "Security and Safety requirements?",
+        "answers": '',
+        "selected": false
     }];
     id: any;
     selected: boolean = false;
