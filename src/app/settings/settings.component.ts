@@ -22,99 +22,99 @@ interface RadioOption {
 class q1TableValues {
     commentQ11: string;
     statusQ11: boolean = true;
-    percentQ11: number = 0.5;
+    percentQ11: number = 1;
     commentQ12: string;
     statusQ12: boolean = true;
-    percentQ12: number = 0.5;
+    percentQ12: number = 1;
     commentQ13: string;
     statusQ13: boolean = true;
-    percentQ13: number = 0.25;
+    percentQ13: number = 0.5;
     commentQ14: string;
     statusQ14: boolean = true;
-    percentQ14: number = 0.25;
+    percentQ14: number = 0.5;
     commentQ15: string;
     statusQ15: boolean = true;
-    percentQ15: number = 0.25;
+    percentQ15: number = 0.5;
     commentQ16: string;
     statusQ16: boolean = true;
-    percentQ16: number = 0.25;
+    percentQ16: number = 0.5;
     total: number = 4;
 }
 
 class q2TableValues {
     commentQ21: string;
     statusQ21: boolean = true;
-    percentQ21: number = 0.5;
+    percentQ21: number = 1;
     commentQ22: string;
     statusQ22: boolean = true;
-    percentQ22: number = 0.5;
+    percentQ22: number = 1;
     commentQ23: string;
     statusQ23: boolean = true;
-    percentQ23: number = 0.5;
+    percentQ23: number = 1;
     commentQ24: string;
     statusQ24: boolean = true;
-    percentQ24: number = 0.5;
+    percentQ24: number = 1;
     commentQ25: string;
     statusQ25: boolean = true;
-    percentQ25: number = 0.5;
+    percentQ25: number = 1;
     commentQ26: string;
     statusQ26: boolean = true;
-    percentQ26: number = 0.5;
+    percentQ26: number = 1;
     commentQ27: string;
     statusQ27: boolean = true;
-    percentQ27: number = 0.5;
+    percentQ27: number = 1;
     commentQ28: string;
     statusQ28: boolean = true;
-    percentQ28: number = 0.5;
+    percentQ28: number = 1;
     commentQ29: string;
     statusQ29: boolean = true;
-    percentQ29: number = 0.5;
+    percentQ29: number = 1;
     total: number = 9;
 }
 
 class q3TableValues {
     commentQ31: string;
     statusQ31: boolean = true;
-    percentQ31: number = 0.5;
+    percentQ31: number = 1;
     commentQ32: string;
     statusQ32: boolean = true;
-    percentQ32: number = 0.25;
+    percentQ32: number = 0.5;
     commentQ33: string;
     statusQ33: boolean = true;
-    percentQ33: number = 0.25;
+    percentQ33: number = 0.5;
     commentQ34: string;
     statusQ34: boolean = true;
-    percentQ34: number = 0.25;
+    percentQ34: number = 0.5;
     commentQ35: string;
     statusQ35: boolean = true;
-    percentQ35: number = 0.25;
+    percentQ35: number = 0.5;
     commentQ36: string;
     statusQ36: boolean = true;
-    percentQ36: number = 0.25;
+    percentQ36: number = 0.5;
     commentQ37: string;
     statusQ37: boolean = true;
-    percentQ37: number = 0.5;
+    percentQ37: number = 1;
     commentQ38: string;
     statusQ38: boolean = true;
-    percentQ38: number = 0.25;
+    percentQ38: number = 0.5;
     commentQ39: string;
     statusQ39: boolean = true;
-    percentQ39: number = 0.25;
+    percentQ39: number = 0.5;
     commentQ310: string;
     statusQ310: boolean = true;
-    percentQ310: number = 0.5;
+    percentQ310: number = 1;
     commentQ311: string;
     statusQ311: boolean = true;
-    percentQ311: number = 0.5;
+    percentQ311: number = 1;
     commentQ312: string;
     statusQ312: boolean = true;
-    percentQ312: number = 0.25;
+    percentQ312: number = 0.5;
     commentQ313: string;
     statusQ313: boolean = true;
-    percentQ313: number = 0.25;
+    percentQ313: number = 0.5;
     commentQ314: string;
     statusQ314: boolean = true;
-    percentQ314: number = 0.25;
+    percentQ314: number = 0.5;
     total: number = 9;
 }
 
@@ -544,13 +544,104 @@ class formValuesNine {
     weakness: string;
 }
 
-class formValuesTen {}
+class formValuesTen {
+    cctvCameras: boolean = false;
+    cctvCamerasText: string;
+    buildingConnected: boolean = false;
+    buildingConnectedText: string;
+    dataRooms: boolean = false;
+    dataRoomsText: string;
+    internalPerformance: boolean = false;
+    internalPerformanceText: string;
+    buildingsOfElectricity: boolean = false;
+    buildingsOfElectricityText: string;
+    sensitiveSites: boolean = false;
+    sensitiveSitesText: string;
+    backupEnergy: boolean = false;
+    backupEnergyText: string;
+    weakness: string;
+}
 
-class formValuesEleven {}
+class formValuesEleven {
+    individualsAble: boolean = false;
+    individualsAbleText: string;
+    controlRoom : string;
+    evacuationProcedures: boolean = false;
+    evacuationProceduresText: string;
+    subsetBuilding: boolean = false;
+    subsetBuildingText: string;
+    recordDaily: boolean = false;
+    recordDailyText: string;
+    registrationPeriod: boolean = false;
+    registrationPeriodText: string;
+    printedContacts: boolean = false;
+    printedContactsText: string;
+    authority: boolean = false;
+    authorityText: string;
+    observers: boolean = false;
+    observersText: string;
+    monitoring: boolean = false;
+    monitoringText: string;
+    control: boolean = false;
+    controlText: string;
+    procedures: boolean = false;
+    proceduresText: string;
+    conditions: boolean = false;
+    conditionsText: string;
+    communicate: boolean = false;
+    communicateText: string;
+    electronic: boolean = false;
+    electronicText: string;
+}
 
-class formValuesTwelve {}
+class formValuesTwelve {
+    inspecting: string;
+    security: string;
+    localities: string;
+    citizens: string;
+    mechanism: string;
+    distributed: string;
+    checkpoints: boolean = false;
+    checkpointsText: string;
+    authorized: string;
+    inspection: boolean = false;
+    inspectionText: string;
+    procedures: string;
+    communicate: string;
+}
 
-class formValuesThirteen {}
+class formValuesThirteen {
+    extinguishers: boolean = false;
+    extinguishersText: string;
+    extensions: boolean = false;
+    extensionsText: string;
+    nozzles: boolean = false;
+    nozzlesText: string;
+    assembly: boolean = false;
+    assemblyText: string;
+    emergency: boolean = false;
+    emergencyText: string;
+    detectors: boolean = false;
+    detectorsText: string;
+    hoses: boolean = false;
+    hosesText: string;
+    maps: boolean = false;
+    mapsText: string;
+    evacuation: boolean = false;
+    evacuationText: string;
+    encirclement: boolean = false;
+    encirclementText: string;
+    gas: boolean = false;
+    gasText: string;
+    stores: boolean = false;
+    storesText: string;
+    internal: boolean = false;
+    internalText: string;
+    ambulance: boolean = false;
+    ambulanceText: string;
+    disposal: boolean = false;
+    disposalText: string;
+}
 
 @Component({
     selector: "Settings",
