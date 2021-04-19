@@ -25,7 +25,7 @@ export class BrowseComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.loaderService.show('Generating Report. Please wait...');
+       // this.loaderService.show('Generating Report. Please wait...');
        // console.log('getString', getString('Q1_images'))
         const questions = [{
             "question": getString('Q1') ? JSON.parse(getString('Q1')) : null,
@@ -135,16 +135,16 @@ export class BrowseComponent implements OnInit {
 
     onWebViewLoaded(args: LoadEventData) {
         webView = (<WebView>args.object).nativeView;
-        setTimeout(() => {
-            const located = this.createIosPdf(webView, 'report');
-            console.log("MyPdfFileName", located);
-            this.loaderService.hide();
-            alert({
-                title: "PDF stored at",
-                message: located,
-                okButtonText: "OK"
-            });
-        }, 2000)
+        // setTimeout(() => {
+        //     const located = this.createIosPdf(webView, 'report');
+        //     console.log("MyPdfFileName", located);
+        //     this.loaderService.hide();
+        //     alert({
+        //         title: "PDF stored at",
+        //         message: located,
+        //         okButtonText: "OK"
+        //     });
+        // }, 2000)
         // console.log("MyPdfFileName", this.createIosPdf(webView, 'report'));
     }
 

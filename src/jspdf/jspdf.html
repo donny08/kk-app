@@ -38,6 +38,34 @@
         span {
             background-color: rgb(237, 224, 50);
         }
+
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td,
+        #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #c2861d;
+            color: white;
+        }
     </style>
 </head>
 
@@ -73,6 +101,18 @@
                     <img :src="`data:image/png;base64,${image.image}`" style="width:99%;height:auto;">
                 </div>
             </div>
+            <table id="customers">
+                <tr>
+                    <th>Items</th>
+                    <th>Percentage</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td>1. Avoid sites near residential and tourist areas</td>
+                    <td>Maria Anders</td>
+                    <td>Germany</td>
+                </tr>
+            </table>
         </div>
         <div v-if="q2" style="margin-bottom: 40px;">
             <h2 style="margin-bottom: 20px;"><strong>2. Evaluate the external facility of the building?</strong></h2>
@@ -105,29 +145,32 @@
             <h2 style="margin-bottom: 20px;"><strong>3. Evaluate the perimeter of the building?</strong></h2>
             <h3><strong>3.1. What is the height of the outer wall?</strong></h3>
             <p class="answer">{{q3.heightOuterWall}}</p>
-            <h3><strong>3.2. Is the outer wall secured with live surveillance and alaram systems? <span>{{ q3.surveillanceAlarm ? 'Yes' : 'No'
-            }}</span></strong></h3>
+            <h3><strong>3.2. Is the outer wall secured with live surveillance and alaram systems? <span>{{
+                        q3.surveillanceAlarm ? 'Yes' : 'No'
+                        }}</span></strong></h3>
             <p class="answer">{{q3.surveillanceAlarmText}}</p>
             <h3><strong>3.3. Is the inner perimeter of the wall secured by cctv? <span>{{ q3.secureCCTV ? 'Yes' : 'No'
-            }}</span></strong></h3>
+                        }}</span></strong></h3>
             <p class="answer">{{q3.secureCCTVText}}</p>
             <h3><strong>3.4. Does the facility have more than one fence? <span>{{ q3.moreFence ? 'Yes' : 'No'
-            }}</span></strong></h3>
+                        }}</span></strong></h3>
             <p class="answer">{{q3.moreFenceText}}</p>
             <h3><strong>3.5. Is there enough lighting around the fence? <span>{{ q3.lighting ? 'Yes' : 'No'
-            }}</span></strong></h3>
+                        }}</span></strong></h3>
             <p class="answer">{{q3.lightingText}}</p>
-            <h3><strong>3.6. Is the facility fence adjacent to the walls of another facility? <span>{{ q3.adjacent ? 'Yes' : 'No'
-            }}</span></strong></h3>
+            <h3><strong>3.6. Is the facility fence adjacent to the walls of another facility? <span>{{ q3.adjacent ?
+                        'Yes' : 'No'
+                        }}</span></strong></h3>
             <p class="answer">{{q3.adjacentText}}</p>
-            <h3><strong>3.7. Are there any trees, height or objects that could help to climb the facility fence? <span>{{ q3.climbFacility ? 'Yes' : 'No'
-            }}</span></strong></h3>
+            <h3><strong>3.7. Are there any trees, height or objects that could help to climb the facility fence?
+                    <span>{{ q3.climbFacility ? 'Yes' : 'No'
+                        }}</span></strong></h3>
             <p class="answer">{{q3.climbFacilityText}}</p>
             <h3><strong>3.8. Are there barriers around the fence? <span>{{ q3.barrier ? 'Yes' : 'No'
-            }}</span></strong></h3>
+                        }}</span></strong></h3>
             <p class="answer">{{q3.barrierText}}</p>
             <h3><strong>3.9. Are there barbed wire on the fence? <span>{{ q3.barbedWire ? 'Yes' : 'No'
-            }}</span></strong></h3>
+                        }}</span></strong></h3>
             <p class="answer">{{q3.barbedWireText}}</p>
             <h3><strong>Weakness</strong></h3>
             <p class="answer">{{q3.weakness}}</p>
@@ -140,4 +183,5 @@
         </div>
     </div>
 </body>
+
 </html>
