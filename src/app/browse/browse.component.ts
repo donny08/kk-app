@@ -29,13 +29,56 @@ export class BrowseComponent implements OnInit {
        // console.log('getString', getString('Q1_images'))
         const questions = [{
             "question": getString('Q1') ? JSON.parse(getString('Q1')) : null,
-            "images": getString('Q1_images') ? JSON.parse(getString('Q1_images')) : null
+            "images": getString('Q1_images') ? JSON.parse(getString('Q1_images')) : null,
+            "percentages": getString('Q1Percentages') ? JSON.parse(getString('Q1Percentages')) : null
         }, {
             "question": getString('Q2') ? JSON.parse(getString('Q2')) : null,
-            "images": getString('Q2_images') ? JSON.parse(getString('Q2_images')) : null
+            "images": getString('Q2_images') ? JSON.parse(getString('Q2_images')) : null,
+            "percentages": getString('Q2Percentages') ? JSON.parse(getString('Q2Percentages')) : null
         }, {
             "question": getString('Q3') ? JSON.parse(getString('Q3')) : null,
-            "images": getString('Q3_images') ? JSON.parse(getString('Q3_images')) : null
+            "images": getString('Q3_images') ? JSON.parse(getString('Q3_images')) : null,
+            "percentages": getString('Q3Percentages') ? JSON.parse(getString('Q3Percentages')) : null
+        }, {
+            "question": getString('Q4') ? JSON.parse(getString('Q4')) : null,
+            "images": getString('Q4_images') ? JSON.parse(getString('Q4_images')) : null,
+            "percentages": getString('Q4Percentages') ? JSON.parse(getString('Q4Percentages')) : null
+        }, {
+            "question": getString('Q5') ? JSON.parse(getString('Q5')) : null,
+            "images": getString('Q5_images') ? JSON.parse(getString('Q5_images')) : null,
+            "percentages": getString('Q5Percentages') ? JSON.parse(getString('Q5Percentages')) : null
+        }, {
+            "question": getString('Q6') ? JSON.parse(getString('Q6')) : null,
+            "images": getString('Q6_images') ? JSON.parse(getString('Q6_images')) : null,
+            "percentages": getString('Q6Percentages') ? JSON.parse(getString('Q6Percentages')) : null
+        }, {
+            "question": getString('Q7') ? JSON.parse(getString('Q7')) : null,
+            "images": getString('Q7_images') ? JSON.parse(getString('Q7_images')) : null,
+            "percentages": getString('Q7Percentages') ? JSON.parse(getString('Q7Percentages')) : null
+        }, {
+            "question": getString('Q8') ? JSON.parse(getString('Q8')) : null,
+            "images": getString('Q8_images') ? JSON.parse(getString('Q8_images')) : null,
+            "percentages": getString('Q8Percentages') ? JSON.parse(getString('Q8Percentages')) : null
+        }, {
+            "question": getString('Q9') ? JSON.parse(getString('Q9')) : null,
+            "images": getString('Q9_images') ? JSON.parse(getString('Q9_images')) : null,
+            "percentages": getString('Q9Percentages') ? JSON.parse(getString('Q9Percentages')) : null
+        }, {
+            "question": getString('Q10') ? JSON.parse(getString('Q10')) : null,
+            "images": getString('Q10_images') ? JSON.parse(getString('Q10_images')) : null,
+            "percentages": getString('Q10Percentages') ? JSON.parse(getString('Q10Percentages')) : null
+        }, {
+            "question": getString('Q11') ? JSON.parse(getString('Q11')) : null,
+            "images": getString('Q11_images') ? JSON.parse(getString('Q11_images')) : null,
+            "percentages": getString('Q11Percentages') ? JSON.parse(getString('Q11Percentages')) : null
+        }, {
+            "question": getString('Q12') ? JSON.parse(getString('Q12')) : null,
+            "images": getString('Q12_images') ? JSON.parse(getString('Q12_images')) : null,
+            "percentages": getString('Q12Percentages') ? JSON.parse(getString('Q12Percentages')) : null
+        }, {
+            "question": getString('Q13') ? JSON.parse(getString('Q13')) : null,
+            "images": getString('Q13_images') ? JSON.parse(getString('Q13_images')) : null,
+            "percentages": getString('Q13Percentages') ? JSON.parse(getString('Q13Percentages')) : null
         }];
         //const images = JSON.parse(getString('Q1_images'));
         // const base64 = images[0].image;

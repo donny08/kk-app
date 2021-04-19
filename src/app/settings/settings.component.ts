@@ -576,8 +576,7 @@ class formValuesEleven {
     registrationPeriodText: string;
     printedContacts: boolean = false;
     printedContactsText: string;
-    authority: boolean = false;
-    authorityText: string;
+    authority: string;
     observers: boolean = false;
     observersText: string;
     monitoring: boolean = false;
@@ -592,6 +591,7 @@ class formValuesEleven {
     communicateText: string;
     electronic: boolean = false;
     electronicText: string;
+    weakness: string;
 }
 
 class formValuesTwelve {
@@ -603,11 +603,13 @@ class formValuesTwelve {
     distributed: string;
     checkpoints: boolean = false;
     checkpointsText: string;
-    authorized: string;
+    authorized: boolean = false;
+    authorizedText: string;
     inspection: boolean = false;
     inspectionText: string;
     procedures: string;
     communicate: string;
+    weakness: string;
 }
 
 class formValuesThirteen {
@@ -641,6 +643,7 @@ class formValuesThirteen {
     ambulanceText: string;
     disposal: boolean = false;
     disposalText: string;
+    weakness: string;
 }
 
 @Component({
@@ -738,7 +741,7 @@ export class SettingsComponent implements OnInit {
         // Init your component properties here.
         if (getString('questions')) {
             const questArr: Array<RadioOption> = JSON.parse(getString('questions'));
-            console.log(questArr);
+           // console.log(questArr);
             questArr.forEach((option, index) => {
                 if (option.selected) {
                     const q = "Q" + (index + 1);
@@ -913,7 +916,7 @@ export class SettingsComponent implements OnInit {
                                 this.signedApplication.push(item.image);
                             });
                         }
-                        this.formValuesNine = JSON.parse(getString(q));
+                        this.formValuesTen = JSON.parse(getString(q));
                         this.weakness = true;
                         this.q10TableValues = JSON.parse(getString('Q10Percentages'));
                     }
@@ -939,7 +942,8 @@ export class SettingsComponent implements OnInit {
                                 this.signedApplication.push(item.image);
                             });
                         }
-                        this.formValuesEleven = JSON.parse(getString(q));
+                        this.formValuesTwelve = JSON.parse(getString(q));
+                       console.log(this.formValuesTwelve)
                         this.weakness = true;
                         this.q12TableValues = JSON.parse(getString('Q12Percentages'));
                     }
@@ -978,7 +982,7 @@ export class SettingsComponent implements OnInit {
     }
 
     addMoreComments(id: number) {
-        console.log(this.comment)
+       // console.log(this.comment)
         this.commentList.push({
             "id": id + 1,
             "comment": ""
@@ -994,7 +998,7 @@ export class SettingsComponent implements OnInit {
                 this.q1TableValues[pMatch] = 0;
             }
             this.q1TableValues['total'] = this.q1TableValues['percentQ11'] + this.q1TableValues['percentQ12'] + this.q1TableValues['percentQ13'] + this.q1TableValues['percentQ14'] + this.q1TableValues['percentQ15'] + this.q1TableValues['percentQ16'];
-            console.log(this.q1TableValues);
+           // console.log(this.q1TableValues);
         }
 
         if (match == 'Q2') {
@@ -1005,7 +1009,7 @@ export class SettingsComponent implements OnInit {
                 this.q2TableValues[pMatch] = 0;
             }
             this.q2TableValues['total'] = this.q2TableValues['percentQ21'] + this.q2TableValues['percentQ22'] + this.q2TableValues['percentQ23'] + this.q2TableValues['percentQ24'] + this.q2TableValues['percentQ25'] + this.q2TableValues['percentQ26'] + this.q2TableValues['percentQ27'] + this.q2TableValues['percentQ28'] + this.q2TableValues['percentQ29'];
-            console.log(this.q2TableValues);
+           // console.log(this.q2TableValues);
         }
         //q3TableValues
 
@@ -1017,7 +1021,7 @@ export class SettingsComponent implements OnInit {
                 this.q3TableValues[pMatch] = 0;
             }
             this.q3TableValues['total'] = this.q3TableValues['percentQ31'] + this.q3TableValues['percentQ32'] + this.q3TableValues['percentQ33'] + this.q3TableValues['percentQ34'] + this.q3TableValues['percentQ35'] + this.q3TableValues['percentQ36'] + this.q3TableValues['percentQ37'] + this.q3TableValues['percentQ38'] + this.q3TableValues['percentQ39'] + this.q3TableValues['percentQ310'] + this.q3TableValues['percentQ311'] + this.q3TableValues['percentQ312'] + this.q3TableValues['percentQ313'] + this.q3TableValues['percentQ314'];
-            console.log(this.q3TableValues);
+           // console.log(this.q3TableValues);
         }
 
         if (match == 'Q4') {
@@ -1028,7 +1032,7 @@ export class SettingsComponent implements OnInit {
                 this.q4TableValues[pMatch] = 0;
             }
             this.q4TableValues['total'] = this.q4TableValues['percentQ41'] + this.q4TableValues['percentQ42'] + this.q4TableValues['percentQ43'] + this.q4TableValues['percentQ44'] + this.q4TableValues['percentQ45'] + this.q4TableValues['percentQ46'] + this.q4TableValues['percentQ47'];
-            console.log(this.q4TableValues);
+           // console.log(this.q4TableValues);
         }
 
         if (match == 'Q5') {
@@ -1039,7 +1043,7 @@ export class SettingsComponent implements OnInit {
                 this.q5TableValues[pMatch] = 0;
             }
             this.q5TableValues['total'] = this.q5TableValues['percentQ51'] + this.q5TableValues['percentQ52'] + this.q5TableValues['percentQ53'] + this.q5TableValues['percentQ54'] + this.q5TableValues['percentQ55'] + this.q5TableValues['percentQ56'] + this.q5TableValues['percentQ57'] + this.q5TableValues['percentQ58'] + this.q5TableValues['percentQ59'] + this.q5TableValues['percentQ510'] + this.q5TableValues['percentQ511'] + this.q5TableValues['percentQ512'] + this.q5TableValues['percentQ513'] + this.q5TableValues['percentQ514'] + this.q5TableValues['percentQ515'];
-            console.log(this.q5TableValues);
+           // console.log(this.q5TableValues);
         }
 
         if (match == 'Q6') {
@@ -1050,7 +1054,7 @@ export class SettingsComponent implements OnInit {
                 this.q6TableValues[pMatch] = 0;
             }
             this.q6TableValues['total'] = this.q6TableValues['percentQ61'] + this.q6TableValues['percentQ62'] + this.q6TableValues['percentQ63'] + this.q6TableValues['percentQ64'];
-            console.log(this.q6TableValues);
+           // console.log(this.q6TableValues);
         }
 
         if (match == 'Q7') {
@@ -1061,7 +1065,7 @@ export class SettingsComponent implements OnInit {
                 this.q7TableValues[pMatch] = 0;
             }
             this.q7TableValues['total'] = this.q7TableValues['percentQ71'] + this.q7TableValues['percentQ72'] + this.q7TableValues['percentQ73'] + this.q7TableValues['percentQ74'] + this.q7TableValues['percentQ75'] + this.q7TableValues['percentQ76'] + this.q7TableValues['percentQ77'] + this.q7TableValues['percentQ78'] + this.q7TableValues['percentQ79'] + this.q7TableValues['percentQ710'];
-            console.log(this.q7TableValues);
+           // console.log(this.q7TableValues);
         }
 
         if (match == 'Q8') {
@@ -1072,7 +1076,7 @@ export class SettingsComponent implements OnInit {
                 this.q8TableValues[pMatch] = 0;
             }
             this.q8TableValues['total'] = this.q8TableValues['percentQ81'] + this.q8TableValues['percentQ82'] + this.q8TableValues['percentQ83'] + this.q8TableValues['percentQ84'] + this.q8TableValues['percentQ85'] + this.q8TableValues['percentQ86'] + this.q8TableValues['percentQ87'] + this.q8TableValues['percentQ88'] + this.q8TableValues['percentQ89'];
-            console.log(this.q8TableValues);
+           // console.log(this.q8TableValues);
         }
 
         if (match == 'Q9') {
@@ -1083,7 +1087,7 @@ export class SettingsComponent implements OnInit {
                 this.q9TableValues[pMatch] = 0;
             }
             this.q9TableValues['total'] = this.q9TableValues['percentQ91'] + this.q9TableValues['percentQ92'] + this.q9TableValues['percentQ93'] + this.q9TableValues['percentQ94'] ;
-            console.log(this.q9TableValues);
+           // console.log(this.q9TableValues);
         }
 
         if (match == 'Q10') {
@@ -1094,7 +1098,7 @@ export class SettingsComponent implements OnInit {
                 this.q10TableValues[pMatch] = 0;
             }
             this.q10TableValues['total'] = this.q10TableValues['percentQ101'] + this.q10TableValues['percentQ102'] + this.q10TableValues['percentQ103'] + this.q10TableValues['percentQ104'] + this.q10TableValues['percentQ105'] + this.q10TableValues['percentQ106'] + this.q10TableValues['percentQ107'] + this.q10TableValues['percentQ108'] + this.q10TableValues['percentQ109'] + this.q10TableValues['percentQ1010'] + this.q10TableValues['percentQ1011'] + this.q10TableValues['percentQ1012'];
-            console.log(this.q10TableValues);
+           // console.log(this.q10TableValues);
         }
 
         if (match == 'Q11') {
@@ -1105,7 +1109,7 @@ export class SettingsComponent implements OnInit {
                 this.q11TableValues[pMatch] = 0;
             }
             this.q11TableValues['total'] = this.q11TableValues['percentQ111'] + this.q11TableValues['percentQ112'] + this.q11TableValues['percentQ113'] + this.q11TableValues['percentQ114'] + this.q11TableValues['percentQ115'];
-            console.log(this.q11TableValues);
+           // console.log(this.q11TableValues);
         }
 
         if (match == 'Q12') {
@@ -1116,7 +1120,7 @@ export class SettingsComponent implements OnInit {
                 this.q12TableValues[pMatch] = 0;
             }
             this.q12TableValues['total'] = this.q12TableValues['percentQ121'] + this.q12TableValues['percentQ122'] + this.q12TableValues['percentQ123'] + this.q12TableValues['percentQ124'] + this.q12TableValues['percentQ125'] + this.q12TableValues['percentQ126'] + this.q12TableValues['percentQ127'];
-            console.log(this.q12TableValues);
+           // console.log(this.q12TableValues);
         }
 
         if (match == 'Q13') {
@@ -1127,72 +1131,72 @@ export class SettingsComponent implements OnInit {
                 this.q13TableValues[pMatch] = 0;
             }
             this.q13TableValues['total'] = this.q13TableValues['percentQ131'] + this.q13TableValues['percentQ132'] + this.q13TableValues['percentQ133'] + this.q13TableValues['percentQ134'] + this.q13TableValues['percentQ135'] + this.q13TableValues['percentQ136'] + this.q13TableValues['percentQ137'] + this.q13TableValues['percentQ138'] + this.q13TableValues['percentQ139'] + this.q13TableValues['percentQ1310'] + this.q13TableValues['percentQ1311'] + this.q13TableValues['percentQ1312'];
-            console.log(this.q13TableValues);
+           // console.log(this.q13TableValues);
         }
     }
 
     onCheckedChange(args, key) {
-        console.log(args.value);
+       // console.log(args.value);
         this.formValues[key] = args.value;
     }
 
     onCheckedChangeTwo(args, key) {
-        console.log(args.value);
+       // console.log(args.value);
         this.formValuesTwo[key] = args.value;
     }
 
     onCheckedChangeThree(args, key) {
-        console.log(args.value);
+       // console.log(args.value);
         this.formValuesThree[key] = args.value;
     }
 
     onCheckedChangeFour(args, key) {
-        console.log(args.value);
+       // console.log(args.value);
         this.formValuesFour[key] = args.value;
     }
 
     onCheckedChangeFive(args, key) {
-        console.log(args.value);
+       // console.log(args.value);
         this.formValuesFive[key] = args.value;
     }
 
     onCheckedChangeSix(args, key) {
-        console.log(args.value);
+       // console.log(args.value);
         this.formValuesSix[key] = args.value;
     }
 
     onCheckedChangeSeven(args, key) {
-        console.log(args.value);
+       // console.log(args.value);
         this.formValuesSeven[key] = args.value;
     }
 
     onCheckedChangeEight(args, key) {
-        console.log(args.value);
+       // console.log(args.value);
         this.formValuesEight[key] = args.value;
     }
 
     onCheckedChangeNine(args, key) {
-        console.log(args.value);
+       // console.log(args.value);
         this.formValuesNine[key] = args.value;
     }
 
     onCheckedChangeTen(args, key) {
-        console.log(args.value);
+       // console.log(args.value);
         this.formValuesTen[key] = args.value;
     }
 
     onCheckedChangeEleven(args, key) {
-        console.log(args.value);
+       // console.log(args.value);
         this.formValuesEleven[key] = args.value;
     }
 
     onCheckedChangeTwelve(args, key) {
-        console.log(args.value);
+       // console.log(args.value);
         this.formValuesTwelve[key] = args.value;
     }
 
     onCheckedChangeThirteen(args, key) {
-        console.log(args.value);
+       // console.log(args.value);
         this.formValuesThirteen[key] = args.value;
     }
 
@@ -1229,12 +1233,12 @@ export class SettingsComponent implements OnInit {
                 //var image = new Image();
                 // image.src = imageAsset;
             }).catch((err) => {
-                console.log("Error -> " + err.message);
+               // console.log("Error -> " + err.message);
             });
     }
 
     cancelFilterableList() {
-        console.log('canceled');
+       // console.log('canceled');
     }
 
     deleteImage(type, index, imagearray) {
@@ -1249,7 +1253,7 @@ export class SettingsComponent implements OnInit {
         confirm(options).then((result: boolean) => {
             if (result) {
                 imagearray.splice(index, 1);
-                console.log(imagearray)
+               // console.log(imagearray)
 
                 for (var i = 0; i < this.documents.length; i++) {
                     if (this.documents[i]._id === type + "_" + (index + 1)) {
@@ -1262,11 +1266,11 @@ export class SettingsComponent implements OnInit {
     }
 
     submit(valid) {
-        console.log(valid)
+       // console.log(valid)
         if (valid) {
             //console.log(this.formValues)
             //console.log(this.category, this.formValuesTwo)
-            console.log(this.q5TableValues)
+           // console.log(this.formValuesTwelve)
 
             if (this.category == "Q1") { setString(this.category, JSON.stringify(this.formValues)); setString('Q1Percentages', JSON.stringify(this.q1TableValues)); }
             if (this.category == "Q2") { setString(this.category, JSON.stringify(this.formValuesTwo)); setString('Q2Percentages', JSON.stringify(this.q2TableValues)); }
@@ -1295,17 +1299,17 @@ export class SettingsComponent implements OnInit {
     showWeakness() { this.weakness = !this.weakness; }
 
     checkedChange(modelRef, key) {
-        console.log(modelRef.checked, key);
+       // console.log(modelRef.checked, key);
         if (this.availableItems.indexOf(key) != -1) {
             if (!modelRef.checked) this.availableItems.splice(this.availableItems.indexOf(key), 1);
         } else {
             this.availableItems.push(key);
         }
-        console.log(this.availableItems);
+       // console.log(this.availableItems);
     }
 
     itemTapped(args) {
-        console.log(args.selectedItem)
+       // console.log(args.selectedItem)
         this.reason = args.selectedItem.title;
     }
 

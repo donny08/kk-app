@@ -75,7 +75,7 @@
                             editable="true" returnKeyType="done" required></TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
-                        <Label textWrap="true" class="_subtitle" text="Upload images"></Label>
+                        <Label textWrap="true" class="_subtitle" text="Capture images"></Label>
                         <StackLayout width="100%" class="_card">
                             <WrapLayout orientation="horizontal" width="100%">
                                 <WrapLayout orientation="vertical" *ngFor="let image of signedApplication;let i = index"
@@ -286,7 +286,7 @@
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
-                        <Label textWrap="true" class="_subtitle" text="Upload images"></Label>
+                        <Label textWrap="true" class="_subtitle" text="Capture images"></Label>
                         <StackLayout width="100%" class="_card">
                             <WrapLayout orientation="horizontal" width="100%">
                                 <WrapLayout orientation="vertical" *ngFor="let image of signedApplication;let i = index"
@@ -579,7 +579,7 @@
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
-                        <Label textWrap="true" class="_subtitle" text="Upload images"></Label>
+                        <Label textWrap="true" class="_subtitle" text="Capture images"></Label>
                         <StackLayout width="100%" class="_card">
                             <WrapLayout orientation="horizontal" width="100%">
                                 <WrapLayout orientation="vertical" *ngFor="let image of signedApplication;let i = index"
@@ -902,7 +902,7 @@
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
-                        <Label textWrap="true" class="_subtitle" text="Upload images"></Label>
+                        <Label textWrap="true" class="_subtitle" text="Capture images"></Label>
                         <StackLayout width="100%" class="_card">
                             <WrapLayout orientation="horizontal" width="100%">
                                 <WrapLayout orientation="vertical" *ngFor="let image of signedApplication;let i = index"
@@ -1154,7 +1154,7 @@
                             required></TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
-                        <Label textWrap="true" class="_subtitle" text="Upload images"></Label>
+                        <Label textWrap="true" class="_subtitle" text="Capture images"></Label>
                         <StackLayout width="100%" class="_card">
                             <WrapLayout orientation="horizontal" width="100%">
                                 <WrapLayout orientation="vertical" *ngFor="let image of signedApplication;let i = index"
@@ -1493,7 +1493,7 @@
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
-                        <Label textWrap="true" class="_subtitle" text="Upload images"></Label>
+                        <Label textWrap="true" class="_subtitle" text="Capture images"></Label>
                         <StackLayout width="100%" class="_card">
                             <WrapLayout orientation="horizontal" width="100%">
                                 <WrapLayout orientation="vertical" *ngFor="let image of signedApplication;let i = index"
@@ -1679,7 +1679,7 @@
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
-                        <Label textWrap="true" class="_subtitle" text="Upload images"></Label>
+                        <Label textWrap="true" class="_subtitle" text="Capture images"></Label>
                         <StackLayout width="100%" class="_card">
                             <WrapLayout orientation="horizontal" width="100%">
                                 <WrapLayout orientation="vertical" *ngFor="let image of signedApplication;let i = index"
@@ -1953,7 +1953,7 @@
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
-                        <Label textWrap="true" class="_subtitle" text="Upload images"></Label>
+                        <Label textWrap="true" class="_subtitle" text="Capture images"></Label>
                         <StackLayout width="100%" class="_card">
                             <WrapLayout orientation="horizontal" width="100%">
                                 <WrapLayout orientation="vertical" *ngFor="let image of signedApplication;let i = index"
@@ -2224,7 +2224,7 @@
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
-                        <Label textWrap="true" class="_subtitle" text="Upload images"></Label>
+                        <Label textWrap="true" class="_subtitle" text="Capture images"></Label>
                         <StackLayout width="100%" class="_card">
                             <WrapLayout orientation="horizontal" width="100%">
                                 <WrapLayout orientation="vertical" *ngFor="let image of signedApplication;let i = index"
@@ -2348,14 +2348,12 @@
                         <FlexboxLayout>
                             <Label textWrap="true" class="_subtitle"
                                 text="1. Are all parts of the building(entrances, hallways, stairs, elevator etc). Furnished ith CCTV cameras?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesTen.cctvCameras}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'cctvCameras')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesTen.cctvCameras}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeTen($event, 'cctvCameras')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="cctvCamerasText"
-                            [(ngModel)]="formValuesTen.cctvCamerasText" editable="true" returnKeyType="done"
-                            required>
+                            [(ngModel)]="formValuesTen.cctvCamerasText" editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
@@ -2364,7 +2362,7 @@
                                 text="2. Are all the entrances to the building connected to the sensitive systems secured with points? search?"></Label>
                             <Switch checked="true" marginLeft="5" size="30"
                                 checked="{{formValuesTen.buildingConnected}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'buildingConnected')">
+                                (checkedChange)="onCheckedChangeTen($event, 'buildingConnected')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="buildingConnectedText"
@@ -2376,14 +2374,12 @@
                         <FlexboxLayout>
                             <Label textWrap="true" class="_subtitle"
                                 text="3. Are network and data rooms secured by protection systems?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesTen.dataRooms}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'dataRooms')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesTen.dataRooms}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeTen($event, 'dataRooms')">
                             </Switch>
                         </FlexboxLayout>
-                        <TextField hint="" class="input" name="dataRoomsText"
-                            [(ngModel)]="formValuesTen.dataRoomsText" editable="true" returnKeyType="done"
-                            required>
+                        <TextField hint="" class="input" name="dataRoomsText" [(ngModel)]="formValuesTen.dataRoomsText"
+                            editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
@@ -2392,7 +2388,7 @@
                                 text="4. All buildings? Is there an internal performance system do?"></Label>
                             <Switch checked="true" marginLeft="5" size="30"
                                 checked="{{formValuesTen.internalPerformance}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'internalPerformance')">
+                                (checkedChange)="onCheckedChangeTen($event, 'internalPerformance')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="internalPerformanceText"
@@ -2406,7 +2402,7 @@
                                 text="5. Are the buildings of electricity and water insured according to the conditions?"></Label>
                             <Switch checked="true" marginLeft="5" size="30"
                                 checked="{{formValuesTen.buildingsOfElectricity}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'buildingsOfElectricity')">
+                                (checkedChange)="onCheckedChangeTen($event, 'buildingsOfElectricity')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="buildingsOfElectricityText"
@@ -2418,9 +2414,9 @@
                         <FlexboxLayout>
                             <Label textWrap="true" class="_subtitle"
                                 text="6. Are sensitive sites in the building secured according to the requirements?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesTen.sensitiveSites}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'sensitiveSites')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesTen.sensitiveSites}}"
+                                backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeTen($event, 'sensitiveSites')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="sensitiveSitesText"
@@ -2430,20 +2426,18 @@
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <FlexboxLayout>
-                            <Label textWrap="true" class="_subtitle"
+                            <Label textWrap="true" width="700" class="_subtitle"
                                 text="7. Do buildings have a backup energy source in case the main source of energy is cutoff what type and how long as it operating?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesTen.backupEnergy}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'backupEnergy')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesTen.backupEnergy}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeTen($event, 'backupEnergy')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="backupEnergyText"
-                            [(ngModel)]="formValuesTen.backupEnergyText" editable="true" returnKeyType="done"
-                            required>
+                            [(ngModel)]="formValuesTen.backupEnergyText" editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
-                        <Label textWrap="true" class="_subtitle" text="Upload images"></Label>
+                        <Label textWrap="true" class="_subtitle" text="Capture images"></Label>
                         <StackLayout width="100%" class="_card">
                             <WrapLayout orientation="horizontal" width="100%">
                                 <WrapLayout orientation="vertical" *ngFor="let image of signedApplication;let i = index"
@@ -2683,7 +2677,7 @@
                                 text="1. An individuals able to deal with emergency systems and situations?"></Label>
                             <Switch checked="true" marginLeft="5" size="30"
                                 checked="{{formValuesEleven.individualsAble}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'individualsAble')">
+                                (checkedChange)="onCheckedChangeEleven($event, 'individualsAble')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="individualsAbleText"
@@ -2694,9 +2688,8 @@
                     <StackLayout class="item m-b-20" marginRight="10">
                         <Label textWrap="true" class="_subtitle"
                             text="2. What are the systems in detail, control room and are there among them (mention the system name)?"></Label>
-                        <TextField hint="" class="input" name="controlRoom"
-                            [(ngModel)]="formValuesEleven.controlRoom" editable="true" returnKeyType="done"
-                            required>
+                        <TextField hint="" class="input" name="controlRoom" [(ngModel)]="formValuesEleven.controlRoom"
+                            editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
@@ -2705,7 +2698,7 @@
                                 text="3. How complete the evacuation procedures? Are the operators on me?"></Label>
                             <Switch checked="true" marginLeft="5" size="30"
                                 checked="{{formValuesEleven.evacuationProcedures}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'evacuationProcedures')">
+                                (checkedChange)="onCheckedChangeEleven($event, 'evacuationProcedures')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="evacuationProceduresText"
@@ -2718,7 +2711,7 @@
                             <Label textWrap="true" class="_subtitle" text="4. Is there a subset-building room?"></Label>
                             <Switch checked="true" marginLeft="5" size="30"
                                 checked="{{formValuesEleven.subsetBuilding}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'subsetBuilding')">
+                                (checkedChange)="onCheckedChangeEleven($event, 'subsetBuilding')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="subsetBuildingText"
@@ -2730,9 +2723,9 @@
                         <FlexboxLayout>
                             <Label textWrap="true" class="_subtitle"
                                 text="5. Is there a record to record daily events?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesEleven.recordDaily}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'recordDaily')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesEleven.recordDaily}}"
+                                backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeEleven($event, 'recordDaily')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="recordDailyText"
@@ -2746,7 +2739,7 @@
                                 text="6. What are the numbers of cameras in the building? How long is the registration period?"></Label>
                             <Switch checked="true" marginLeft="5" size="30"
                                 checked="{{formValuesEleven.registrationPeriod}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'registrationPeriod')">
+                                (checkedChange)="onCheckedChangeEleven($event, 'registrationPeriod')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="registrationPeriodText"
@@ -2760,7 +2753,7 @@
                                 text="7. Are there printed contacts lists?"></Label>
                             <Switch checked="true" marginLeft="5" size="30"
                                 checked="{{formValuesEleven.printedContacts}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'printedContacts')">
+                                (checkedChange)="onCheckedChangeEleven($event, 'printedContacts')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="printedContactsText"
@@ -2771,88 +2764,77 @@
                     <StackLayout class="item m-b-20" marginRight="10">
                         <Label textWrap="true" class="_subtitle"
                             text="8. From the authority responsible for giving powers to the access control system?"></Label>
-                        <TextField hint="" class="input" name="authority"
-                            [(ngModel)]="formValuesEleven.authority" editable="true" returnKeyType="done"
-                            required>
+                        <TextField hint="" class="input" name="authority" [(ngModel)]="formValuesEleven.authority"
+                            editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <FlexboxLayout>
                             <Label textWrap="true" class="_subtitle"
                                 text="9. Is the environment control environment suitable for the work of observers?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesEleven.observers}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'observers')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesEleven.observers}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeEleven($event, 'observers')">
                             </Switch>
                         </FlexboxLayout>
-                        <TextField hint="" class="input" name="observers"
-                            [(ngModel)]="formValuesEleven.observers" editable="true" returnKeyType="done"
-                            required>
+                        <TextField hint="" class="input" name="observersText"
+                            [(ngModel)]="formValuesEleven.observersText" editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <FlexboxLayout>
-                            <Label textWrap="true" class="_subtitle"
+                            <Label textWrap="true" width="700" class="_subtitle"
                                 text="10. Who is responsible for monitoring the system in the control room (organization and numbers during the peak)?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesEleven.monitoring}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'monitoring')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesEleven.monitoring}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeEleven($event, 'monitoring')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="monitoringText"
-                            [(ngModel)]="formValuesEleven.monitoringText" editable="true" returnKeyType="done"
-                            required>
+                            [(ngModel)]="formValuesEleven.monitoringText" editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <FlexboxLayout>
                             <Label textWrap="true" class="_subtitle"
                                 text="11. Are the extensions in the control room ranked?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesEleven.control}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'control')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesEleven.control}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeEleven($event, 'control')">
                             </Switch>
                         </FlexboxLayout>
-                        <TextField hint="" class="input" name="controlText"
-                            [(ngModel)]="formValuesEleven.controlText" editable="true" returnKeyType="done"
-                            required>
+                        <TextField hint="" class="input" name="controlText" [(ngModel)]="formValuesEleven.controlText"
+                            editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <FlexboxLayout>
                             <Label textWrap="true" class="_subtitle"
                                 text="12. Are there clear procedures for running the control room?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesEleven.procedures}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'procedures')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesEleven.procedures}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeEleven($event, 'procedures')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="proceduresText"
-                            [(ngModel)]="formValuesEleven.proceduresText" editable="true" returnKeyType="done"
-                            required>
+                            [(ngModel)]="formValuesEleven.proceduresText" editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <FlexboxLayout>
                             <Label textWrap="true" class="_subtitle"
                                 text="13. According to the conditions? Are data rooms locked?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesEleven.conditions}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'conditions')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesEleven.conditions}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeEleven($event, 'conditions')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="conditionsText"
-                            [(ngModel)]="formValuesEleven.conditionsText" editable="true" returnKeyType="done"
-                            required>
+                            [(ngModel)]="formValuesEleven.conditionsText" editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <FlexboxLayout>
                             <Label textWrap="true" class="_subtitle"
                                 text="14. Are there ultrasounds to communicate?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesEleven.communicate}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'communicate')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesEleven.communicate}}"
+                                backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeEleven($event, 'communicate')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="communicateText"
@@ -2864,18 +2846,16 @@
                         <FlexboxLayout>
                             <Label textWrap="true" class="_subtitle"
                                 text="15. Is the control room secured according to the requirements (camera and electronic lock)?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesEleven.electronic}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'electronic')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesEleven.electronic}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeEleven($event, 'electronic')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="electronicText"
-                            [(ngModel)]="formValuesEleven.electronicText" editable="true" returnKeyType="done"
-                            required>
+                            [(ngModel)]="formValuesEleven.electronicText" editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
-                        <Label textWrap="true" class="_subtitle" text="Upload images"></Label>
+                        <Label textWrap="true" class="_subtitle" text="Capture images"></Label>
                         <StackLayout width="100%" class="_card">
                             <WrapLayout orientation="horizontal" width="100%">
                                 <WrapLayout orientation="vertical" *ngFor="let image of signedApplication;let i = index"
@@ -2963,8 +2943,7 @@
                                 style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
                         </FlexboxLayout>
                         <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
-                            <Label
-                                text="4. The registration period for the cameras must be at least 6 months"
+                            <Label text="4. The registration period for the cameras must be at least 6 months"
                                 width="250" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="1%" width="100" fontWeight="bold" textWrap="true"
@@ -2994,8 +2973,8 @@
                         <FlexboxLayout
                             style="color:black;padding: 10;background-image: linear-gradient(to right, #f7dd74, #f7dd74)"
                             justifyContent="space-between" flexDirection="row">
-                            <Label text="Percentage of matching protection system and control rooms" width="auto" fontWeight="bold"
-                                textWrap="true"
+                            <Label text="Percentage of matching protection system and control rooms" width="auto"
+                                fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;"></Label>
                             <Label text="{{q11TableValues.total}}%" width="auto" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 18;margin-right: 10%;"></Label>
@@ -3013,59 +2992,52 @@
                     <Label class="h3 m-b-20 c-black" [text]="title" textWrap="true"></Label>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <Label textWrap="true" class="_subtitle"
-                        text="1. What is the mechanism for inspecting companies (inspection site, equipment perimeter)?"></Label>
-                        <TextField hint="" class="input" name="inspecting"
-                            [(ngModel)]="formValuesTwelve.inspecting" editable="true" returnKeyType="done"
-                            required>
+                            text="1. What is the mechanism for inspecting companies (inspection site, equipment perimeter)?"></Label>
+                        <TextField hint="" class="input" name="inspecting" [(ngModel)]="formValuesTwelve.inspecting"
+                            editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <Label textWrap="true" class="_subtitle"
                             text="2. Who is responsible for security the building?"></Label>
-                        <TextField hint="" class="input" name="security"
-                            [(ngModel)]="formValuesTwelve.security" editable="true" returnKeyType="done"
-                            required>
+                        <TextField hint="" class="input" name="security" [(ngModel)]="formValuesTwelve.security"
+                            editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <Label textWrap="true" class="_subtitle"
                             text="3. What is the mechanism for inspecting localities (inspection site, equipment)?"></Label>
-                        <TextField hint="" class="input" name="localities"
-                            [(ngModel)]="formValuesTwelve.localities" editable="true" returnKeyType="done"
-                            required>
+                        <TextField hint="" class="input" name="localities" [(ngModel)]="formValuesTwelve.localities"
+                            editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <Label textWrap="true" class="_subtitle"
                             text="4. What is the number of guard members (citizens and foreigners) during the shift? The one?"></Label>
-                        <TextField hint="" class="input" name="citizens"
-                            [(ngModel)]="formValuesTwelve.citizens" editable="true" returnKeyType="done"
-                            required>
+                        <TextField hint="" class="input" name="citizens" [(ngModel)]="formValuesTwelve.citizens"
+                            editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <Label textWrap="true" class="_subtitle"
                             text="5. What is the vehicle inspection mechanism? (car bumper, concave women)"></Label>
-                        <TextField hint="" class="input" name="mechanism"
-                            [(ngModel)]="formValuesTwelve.mechanism" editable="true" returnKeyType="done"
-                            required>
+                        <TextField hint="" class="input" name="mechanism" [(ngModel)]="formValuesTwelve.mechanism"
+                            editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <Label textWrap="true" class="_subtitle"
                             text="6. What are the guard elements distributed"></Label>
-                        <TextField hint="" class="input" name="distributed"
-                            [(ngModel)]="formValuesTwelve.distributed" editable="true" returnKeyType="done"
-                            required>
+                        <TextField hint="" class="input" name="distributed" [(ngModel)]="formValuesTwelve.distributed"
+                            editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <FlexboxLayout>
-                            <Label textWrap="true" class="_subtitle"
-                                text="7. Are all checkpoints active?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesTwelve.checkpoints}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'checkpoints')">
+                            <Label textWrap="true" class="_subtitle" text="7. Are all checkpoints active?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesTwelve.checkpoints}}"
+                                backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeTwelve($event, 'checkpoints')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="checkpointsText"
@@ -3074,45 +3046,45 @@
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
-                        <Label textWrap="true" class="_subtitle"
-                            text="8. Were the guards authorized with weapons?"></Label>
-                        <TextField hint="" class="input" name="authorized"
-                            [(ngModel)]="formValuesTwelve.authorized" editable="true" returnKeyType="done"
-                            required>
+                        <FlexboxLayout>
+                            <Label textWrap="true" class="_subtitle"
+                                text="8. Are the guards authorized with weapons?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesTwelve.authorized}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeTwelve($event, 'authorized')">
+                            </Switch>
+                        </FlexboxLayout>
+                        <TextField hint="" class="input" name="TextText" [(ngModel)]="formValuesTwelve.authorizedText"
+                            editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <FlexboxLayout>
                             <Label textWrap="true" class="_subtitle"
                                 text="9. Are all individuals sufficiently familiar with the inspection and handling procedures devices?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesTwelve.inspection}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'inspection')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesTwelve.inspection}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeTwelve($event, 'inspection')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="inspectionText"
-                            [(ngModel)]="formValuesTwelve.inspectionText" editable="true" returnKeyType="done"
-                            required>
+                            [(ngModel)]="formValuesTwelve.inspectionText" editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <Label textWrap="true" class="_subtitle"
                             text="10. Who is the body responsible for inspection procedures?"></Label>
-                        <TextField hint="" class="input" name="procedures"
-                            [(ngModel)]="formValuesTwelve.procedures" editable="true" returnKeyType="done"
-                            required>
+                        <TextField hint="" class="input" name="procedures" [(ngModel)]="formValuesTwelve.procedures"
+                            editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <Label textWrap="true" class="_subtitle"
                             text="11. Are tetra devices available to communicate?"></Label>
-                        <TextField hint="" class="input" name="communicate"
-                            [(ngModel)]="formValuesTwelve.communicate" editable="true" returnKeyType="done"
-                            required>
+                        <TextField hint="" class="input" name="communicate" [(ngModel)]="formValuesTwelve.communicate"
+                            editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
-                        <Label textWrap="true" class="_subtitle" text="Upload images"></Label>
+                        <Label textWrap="true" class="_subtitle" text="Capture images"></Label>
                         <StackLayout width="100%" class="_card">
                             <WrapLayout orientation="horizontal" width="100%">
                                 <WrapLayout orientation="vertical" *ngFor="let image of signedApplication;let i = index"
@@ -3171,8 +3143,9 @@
                                 style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
                         </FlexboxLayout>
                         <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
-                            <Label text="2. Availability of numbers of inspection personnel to operate all personnel checkpoints and goods" width="250"
-                                fontWeight="bold" textWrap="true"
+                            <Label
+                                text="2. Availability of numbers of inspection personnel to operate all personnel checkpoints and goods"
+                                width="250" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="1%" width="100" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
@@ -3185,9 +3158,8 @@
                                 style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
                         </FlexboxLayout>
                         <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
-                            <Label
-                                text="3. Securing the guard presses with weapons?"
-                                width="250" fontWeight="bold" textWrap="true"
+                            <Label text="3. Securing the guard presses with weapons?" width="250" fontWeight="bold"
+                                textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="1%" width="100" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
@@ -3215,8 +3187,8 @@
                                 style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
                         </FlexboxLayout>
                         <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
-                            <Label text="5. Provide a mechanism for inspecting vehicles" width="250"
-                                fontWeight="bold" textWrap="true"
+                            <Label text="5. Provide a mechanism for inspecting vehicles" width="250" fontWeight="bold"
+                                textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="1%" width="100" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
@@ -3243,8 +3215,8 @@
                                 style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
                         </FlexboxLayout>
                         <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
-                            <Label text="7. Provide a mechanism for inspecting employees?" width="250"
-                                fontWeight="bold" textWrap="true"
+                            <Label text="7. Provide a mechanism for inspecting employees?" width="250" fontWeight="bold"
+                                textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="1%" width="100" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
@@ -3259,8 +3231,8 @@
                         <FlexboxLayout
                             style="color:black;padding: 10;background-image: linear-gradient(to right, #f7dd74, #f7dd74)"
                             justifyContent="space-between" flexDirection="row">
-                            <Label text="Percentage to match the building and inspection procedures" width="auto" fontWeight="bold"
-                                textWrap="true"
+                            <Label text="Percentage to match the building and inspection procedures" width="auto"
+                                fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;"></Label>
                             <Label text="{{q12TableValues.total}}%" width="auto" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 18;margin-right: 10%;"></Label>
@@ -3278,11 +3250,11 @@
                     <Label class="h3 m-b-20 c-black" [text]="title" textWrap="true"></Label>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <FlexboxLayout>
-                            <Label textWrap="true" class="_subtitle"
+                            <Label textWrap="true" width="700" class="_subtitle"
                                 text="1. Is fire extinguishers throught the building? Does the preservatory extinguishers are replaced?"></Label>
                             <Switch checked="true" marginLeft="5" size="30"
                                 checked="{{formValuesThirteen.extinguishers}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'extinguishers')">
+                                (checkedChange)="onCheckedChangeThirteen($event, 'extinguishers')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="extinguishersText"
@@ -3294,9 +3266,9 @@
                         <FlexboxLayout>
                             <Label textWrap="true" class="_subtitle"
                                 text="2. Are there extensions exposed in such a way that it is possible that? Do you test the font?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesThirteen.extensions}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'extensions')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesThirteen.extensions}}"
+                                backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeThirteen($event, 'extensions')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="extensionsText"
@@ -3306,39 +3278,34 @@
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <FlexboxLayout>
-                            <Label textWrap="true" class="_subtitle"
-                                text="3. Are fire nozzles available?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesThirteen.nozzles}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'nozzles')">
+                            <Label textWrap="true" class="_subtitle" text="3. Are fire nozzles available?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesThirteen.nozzles}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeThirteen($event, 'nozzles')">
                             </Switch>
                         </FlexboxLayout>
-                        <TextField hint="" class="input" name="nozzlesText"
-                            [(ngModel)]="formValuesThirteen.nozzlesText" editable="true" returnKeyType="done"
-                            required>
+                        <TextField hint="" class="input" name="nozzlesText" [(ngModel)]="formValuesThirteen.nozzlesText"
+                            editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <FlexboxLayout>
                             <Label textWrap="true" class="_subtitle"
                                 text="4. Do you provide assembly points for the building?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesThirteen.assembly}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'assembly')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesThirteen.assembly}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeThirteen($event, 'assembly')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="assemblyText"
-                            [(ngModel)]="formValuesThirteen.assemblyText" editable="true" returnKeyType="done"
-                            required>
+                            [(ngModel)]="formValuesThirteen.assemblyText" editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <FlexboxLayout>
                             <Label textWrap="true" class="_subtitle"
                                 text="5. Are there emergency exits for the building?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesThirteen.emergency}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'emergency')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesThirteen.emergency}}"
+                                backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeThirteen($event, 'emergency')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="emergencyText"
@@ -3350,9 +3317,9 @@
                         <FlexboxLayout>
                             <Label textWrap="true" class="_subtitle"
                                 text="6. Are there fire detectors in the building?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesThirteen.detectors}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'detectors')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesThirteen.detectors}}"
+                                backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeThirteen($event, 'detectors')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="detectorsText"
@@ -3364,37 +3331,33 @@
                         <FlexboxLayout>
                             <Label textWrap="true" class="_subtitle"
                                 text="7. Are there water hoses in the building?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesThirteen.hoses}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'hoses')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesThirteen.hoses}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeThirteen($event, 'hoses')">
                             </Switch>
                         </FlexboxLayout>
-                        <TextField hint="" class="input" name="hosesText"
-                            [(ngModel)]="formValuesThirteen.hosesText" editable="true" returnKeyType="done"
-                            required>
+                        <TextField hint="" class="input" name="hosesText" [(ngModel)]="formValuesThirteen.hosesText"
+                            editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <FlexboxLayout>
                             <Label textWrap="true" class="_subtitle"
                                 text="8. Are there guide maps in the building?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesThirteen.maps}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'maps')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesThirteen.maps}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeThirteen($event, 'maps')">
                             </Switch>
                         </FlexboxLayout>
-                        <TextField hint="" class="input" name="mapsText"
-                            [(ngModel)]="formValuesThirteen.mapsText" editable="true" returnKeyType="done"
-                            required>
+                        <TextField hint="" class="input" name="mapsText" [(ngModel)]="formValuesThirteen.mapsText"
+                            editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <FlexboxLayout>
                             <Label textWrap="true" class="_subtitle"
                                 text="9. Are there evacuation indications strobe signals, emergency exits?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesThirteen.evacuation}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'evacuation')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesThirteen.evacuation}}"
+                                backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeThirteen($event, 'evacuation')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="evacuationText"
@@ -3408,7 +3371,7 @@
                                 text="10. Are site encirclement tools available?"></Label>
                             <Switch checked="true" marginLeft="5" size="30"
                                 checked="{{formValuesThirteen.encirclement}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'encirclement')">
+                                (checkedChange)="onCheckedChangeThirteen($event, 'encirclement')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="encirclementText"
@@ -3420,51 +3383,45 @@
                         <FlexboxLayout>
                             <Label textWrap="true" class="_subtitle"
                                 text="11. Is there a gas (breaking glass) at the emergency exits?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesThirteen.gas}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'gas')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesThirteen.gas}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeThirteen($event, 'gas')">
                             </Switch>
                         </FlexboxLayout>
-                        <TextField hint="" class="input" name="gasText"
-                            [(ngModel)]="formValuesThirteen.gasText" editable="true" returnKeyType="done"
-                            required>
+                        <TextField hint="" class="input" name="gasText" [(ngModel)]="formValuesThirteen.gasText"
+                            editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <FlexboxLayout>
                             <Label textWrap="true" class="_subtitle"
                                 text="12. Are stores matching security and safety?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesThirteen.stores}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'stores')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesThirteen.stores}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeThirteen($event, 'stores')">
                             </Switch>
                         </FlexboxLayout>
-                        <TextField hint="" class="input" name="storesText"
-                            [(ngModel)]="formValuesThirteen.storesText" editable="true" returnKeyType="done"
-                            required>
+                        <TextField hint="" class="input" name="storesText" [(ngModel)]="formValuesThirteen.storesText"
+                            editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <FlexboxLayout>
                             <Label textWrap="true" class="_subtitle"
                                 text="13. Control room? Is internal activated? Is it an educator?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesThirteen.internal}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'internal')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesThirteen.internal}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeThirteen($event, 'internal')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="internalText"
-                            [(ngModel)]="formValuesThirteen.internalText" editable="true" returnKeyType="done"
-                            required>
+                            [(ngModel)]="formValuesThirteen.internalText" editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <FlexboxLayout>
                             <Label textWrap="true" class="_subtitle"
                                 text="14. Is there an ambulance in the building?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesThirteen.ambulance}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'ambulance')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesThirteen.ambulance}}"
+                                backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeThirteen($event, 'ambulance')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="ambulanceText"
@@ -3476,18 +3433,16 @@
                         <FlexboxLayout>
                             <Label textWrap="true" class="_subtitle"
                                 text="15. What is the mechanism of disposal of waste?"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesThirteen.disposal}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeEight($event, 'disposal')">
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesThirteen.disposal}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeThirteen($event, 'disposal')">
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="disposalText"
-                            [(ngModel)]="formValuesThirteen.disposalText" editable="true" returnKeyType="done"
-                            required>
+                            [(ngModel)]="formValuesThirteen.disposalText" editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
-                        <Label textWrap="true" class="_subtitle" text="Upload images"></Label>
+                        <Label textWrap="true" class="_subtitle" text="Capture images"></Label>
                         <StackLayout width="100%" class="_card">
                             <WrapLayout orientation="horizontal" width="100%">
                                 <WrapLayout orientation="vertical" *ngFor="let image of signedApplication;let i = index"
@@ -3512,7 +3467,8 @@
                         <Label *ngIf="weakness" textWrap="true" class="_subtitle"
                             text="Please specify the weakness here"></Label>
                         <TextView @fadeAndSlide *ngIf="weakness" name="weakness" hint=""
-                            [(ngModel)]="formValuesThirteen.weakness" class="input" lineHeight="5" height="100" required>
+                            [(ngModel)]="formValuesThirteen.weakness" class="input" lineHeight="5" height="100"
+                            required>
                         </TextView>
                     </StackLayout>
                     <FlexboxLayout class="table" marginRight="10" flexDirection="column">
@@ -3531,8 +3487,8 @@
                             </FlexboxLayout>
                         </FlexboxLayout>
                         <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
-                            <Label text="1. Availability of fire extinguishers in the building"
-                                width="250" fontWeight="bold" textWrap="true"
+                            <Label text="1. Availability of fire extinguishers in the building" width="250"
+                                fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="1%" width="100" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
@@ -3545,9 +3501,7 @@
                                 style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
                         </FlexboxLayout>
                         <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
-                            <Label
-                                text="2. Availability of fire nozzles"
-                                width="250" fontWeight="bold" textWrap="true"
+                            <Label text="2. Availability of fire nozzles" width="250" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="1%" width="100" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
@@ -3561,8 +3515,8 @@
                                 required></TextView>
                         </FlexboxLayout>
                         <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
-                            <Label text="3. Availability of emergency exits" width="250"
-                                fontWeight="bold" textWrap="true"
+                            <Label text="3. Availability of emergency exits" width="250" fontWeight="bold"
+                                textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="1%" width="100" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
@@ -3575,9 +3529,8 @@
                                 style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
                         </FlexboxLayout>
                         <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
-                            <Label
-                                text="4. Availability of gathering points"
-                                width="250" fontWeight="bold" textWrap="true"
+                            <Label text="4. Availability of gathering points" width="250" fontWeight="bold"
+                                textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="1%" width="100" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
@@ -3590,8 +3543,7 @@
                                 style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
                         </FlexboxLayout>
                         <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
-                            <Label text="5. Maps availability" width="250"
-                                fontWeight="bold" textWrap="true"
+                            <Label text="5. Maps availability" width="250" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="1%" width="100" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
@@ -3604,8 +3556,8 @@
                                 style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
                         </FlexboxLayout>
                         <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
-                            <Label text="6. Availability of indicative panels" width="250"
-                                fontWeight="bold" textWrap="true"
+                            <Label text="6. Availability of indicative panels" width="250" fontWeight="bold"
+                                textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="1%" width="100" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
@@ -3618,9 +3570,7 @@
                                 style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
                         </FlexboxLayout>
                         <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
-                            <Label
-                                text="7. Fire detectors are available"
-                                width="250" fontWeight="bold" textWrap="true"
+                            <Label text="7. Fire detectors are available" width="250" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="1%" width="100" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
@@ -3633,8 +3583,7 @@
                                 style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
                         </FlexboxLayout>
                         <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
-                            <Label text="8. Availability of water hoses"
-                                width="250" fontWeight="bold" textWrap="true"
+                            <Label text="8. Availability of water hoses" width="250" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="1%" width="100" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
@@ -3647,8 +3596,7 @@
                                 style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
                         </FlexboxLayout>
                         <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
-                            <Label text="9. Safety of extensions" width="250" fontWeight="bold"
-                                textWrap="true"
+                            <Label text="9. Safety of extensions" width="250" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="1%" width="100" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
@@ -3675,8 +3623,8 @@
                                 style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
                         </FlexboxLayout>
                         <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
-                            <Label text="11. Provide location surrounding tools" width="250"
-                                fontWeight="bold" textWrap="true"
+                            <Label text="11. Provide location surrounding tools" width="250" fontWeight="bold"
+                                textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="1%" width="100" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
@@ -3689,7 +3637,8 @@
                                 style="margin-left: 8%;font-size: 14;margin-top: 10%;" required></TextView>
                         </FlexboxLayout>
                         <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
-                            <Label text="12. Provide a paper disposal mechanism" width="250" fontWeight="bold" textWrap="true"
+                            <Label text="12. Provide a paper disposal mechanism" width="250" fontWeight="bold"
+                                textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="1%" width="100" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
@@ -3704,8 +3653,8 @@
                         <FlexboxLayout
                             style="color:black;padding: 10;background-image: linear-gradient(to right, #f7dd74, #f7dd74)"
                             justifyContent="space-between" flexDirection="row">
-                            <Label text="Percentage for the matching and safety requirements" width="auto" fontWeight="bold"
-                                textWrap="true"
+                            <Label text="Percentage for the matching and safety requirements" width="auto"
+                                fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 18; text-align: left;"></Label>
                             <Label text="{{q13TableValues.total}}%" width="auto" fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 18;margin-right: 10%;"></Label>
