@@ -1274,13 +1274,13 @@ export class SettingsComponent implements OnInit {
             if (this.category == "Q4") { setString(this.category, JSON.stringify(this.formValuesFour)); setString('Q4Percentages', JSON.stringify(this.q4TableValues)); }
             if (this.category == "Q5") { setString(this.category, JSON.stringify(this.formValuesFive)); setString('Q5Percentages', JSON.stringify(this.q5TableValues)); }
             if (this.category == "Q6") { setString(this.category, JSON.stringify(this.formValuesSix)); setString('Q6Percentages', JSON.stringify(this.q6TableValues)); }
-            if (this.category == "Q7") { setString(this.category, JSON.stringify(this.formValuesSix)); setString('Q7Percentages', JSON.stringify(this.q7TableValues)); }
-            if (this.category == "Q8") { setString(this.category, JSON.stringify(this.formValuesSix)); setString('Q8Percentages', JSON.stringify(this.q8TableValues)); }
-            if (this.category == "Q9") { setString(this.category, JSON.stringify(this.formValuesSix)); setString('Q9Percentages', JSON.stringify(this.q9TableValues)); }
-            if (this.category == "Q10") { setString(this.category, JSON.stringify(this.formValuesSix)); setString('Q10Percentages', JSON.stringify(this.q10TableValues)); }
-            if (this.category == "Q11") { setString(this.category, JSON.stringify(this.formValuesSix)); setString('Q11Percentages', JSON.stringify(this.q11TableValues)); }
-            if (this.category == "Q12") { setString(this.category, JSON.stringify(this.formValuesSix)); setString('Q12Percentages', JSON.stringify(this.q12TableValues)); }
-            if (this.category == "Q13") { setString(this.category, JSON.stringify(this.formValuesSix)); setString('Q13Percentages', JSON.stringify(this.q13TableValues)); }
+            if (this.category == "Q7") { setString(this.category, JSON.stringify(this.formValuesSeven)); setString('Q7Percentages', JSON.stringify(this.q7TableValues)); }
+            if (this.category == "Q8") { setString(this.category, JSON.stringify(this.formValuesEight)); setString('Q8Percentages', JSON.stringify(this.q8TableValues)); }
+            if (this.category == "Q9") { setString(this.category, JSON.stringify(this.formValuesNine)); setString('Q9Percentages', JSON.stringify(this.q9TableValues)); }
+            if (this.category == "Q10") { setString(this.category, JSON.stringify(this.formValuesTen)); setString('Q10Percentages', JSON.stringify(this.q10TableValues)); }
+            if (this.category == "Q11") { setString(this.category, JSON.stringify(this.formValuesEleven)); setString('Q11Percentages', JSON.stringify(this.q11TableValues)); }
+            if (this.category == "Q12") { setString(this.category, JSON.stringify(this.formValuesTwelve)); setString('Q12Percentages', JSON.stringify(this.q12TableValues)); }
+            if (this.category == "Q13") { setString(this.category, JSON.stringify(this.formValuesThirteen)); setString('Q13Percentages', JSON.stringify(this.q13TableValues)); }
 
             if (this.documents && this.documents.length > 0) setString(this.category + '_images', JSON.stringify(this.documents));
 
