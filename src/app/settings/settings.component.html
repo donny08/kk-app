@@ -1080,14 +1080,19 @@
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <Label textWrap="true" class="_subtitle"
-                            text="3. what types and numbers of protection system are in each portal?"></Label>
+                            text="3. What types and numbers of protection system are in each portal?"></Label>
                         <TextField hint="" class="input" name="protectionPortal"
                             [(ngModel)]="formValuesFive.protectionPortal" editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
-                        <Label textWrap="true" class="_subtitle" text="4. Guarding? Are all scoops locked"></Label>
-                        <TextField hint="" class="input" name="guarding" [(ngModel)]="formValuesFive.guarding"
+                        <FlexboxLayout>
+                            <Label textWrap="true" class="_subtitle" text="4. Guarding? Are all scoops locked?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesFive.guarding}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeFive($event, 'guarding')">
+                            </Switch>
+                        </FlexboxLayout>
+                        <TextField hint="" class="input" name="guardingText" [(ngModel)]="formValuesFive.guardingText"
                             editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
@@ -1141,16 +1146,10 @@
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
-                        <FlexboxLayout>
-                            <Label textWrap="true" width="700" class="_subtitle"
-                                text="9. What is the vehicle inspection mechanism? (car sweeper, cupped woman, police dog)"></Label>
-                            <Switch checked="true" marginLeft="5" size="30"
-                                checked="{{formValuesFive.vehicleInspection}}" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedChangeFive($event, 'vehicleInspection')">
-                            </Switch>
-                        </FlexboxLayout>
-                        <TextField hint="" class="input" name="vehicleInspectionText"
-                            [(ngModel)]="formValuesFive.vehicleInspectionText" editable="true" returnKeyType="done"
+                        <Label textWrap="true" width="700" class="_subtitle"
+                            text="9. What is the vehicle inspection mechanism? (car sweeper, cupped woman, police dog)?"></Label>
+                        <TextField hint="" class="input" name="vehicleInspection"
+                            [(ngModel)]="formValuesFive.vehicleInspection" editable="true" returnKeyType="done"
                             required></TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
@@ -1446,10 +1445,16 @@
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
-                        <Label textWrap="true" class="_subtitle"
-                            text="3. How many are the parking numbers? Are there positions?"></Label>
-                        <TextField hint="" class="input" name="parkingNumbers"
-                            [(ngModel)]="formValuesSix.parkingNumbers" editable="true" returnKeyType="done" required>
+                        <FlexboxLayout>
+                            <Label textWrap="true" class="_subtitle"
+                                text="3. How many are the parking numbers? Are there positions?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesSix.parkingNumbers}}"
+                                backgroundColor="#3a53ff"
+                                (checkedChange)="onCheckedChangeSix($event, 'parkingNumbers')">
+                            </Switch>
+                        </FlexboxLayout>
+                        <TextField hint="" class="input" name="parkingNumbersText"
+                            [(ngModel)]="formValuesSix.parkingNumbersText" editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
@@ -1723,7 +1728,7 @@
                             </FlexboxLayout>
                         </FlexboxLayout>
                         <FlexboxLayout style="color:black;margin-bottom:10;" flexDirection="row">
-                            <Label text="1. The reception building must be outside the building?" width="250"
+                            <Label text="1. The reception building must be outside the building" width="250"
                                 fontWeight="bold" textWrap="true"
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: left;margin-left: 5;margin-top: -30%;"></Label>
                             <Label text="1%" width="100" fontWeight="bold" textWrap="true"

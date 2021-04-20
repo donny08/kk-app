@@ -473,7 +473,8 @@ class formValuesFive {
     useGate: string;
     gateFacility: string;
     protectionPortal: string;
-    guarding: string;
+    guarding: boolean = false;
+    guardingText: string;
     unauthorizedText: string;
     unauthorized: boolean = false;
     warningSignsText: string;
@@ -482,8 +483,7 @@ class formValuesFive {
     emergencyPortal: boolean = false;
     eveningHourText: string;
     eveningHour: boolean = false;
-    vehicleInspectionText: string;
-    vehicleInspection: boolean = false;
+    vehicleInspection: string;
     weakness: string;
 }
 
@@ -491,7 +491,8 @@ class formValuesSix {
     visitorsParking: string;
     parkingSpaces: boolean = false;
     parkingSpacesText: string;
-    parkingNumbers: string;
+    parkingNumbers: boolean = false;
+    parkingNumbersText: string;
     outdoorParking: string;
     indoorParking: boolean = false;
     indoorParkingText: string;

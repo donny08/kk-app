@@ -52,7 +52,7 @@
         }
 
         #customers tr:nth-child(even) {
-            background-color: #f2f2f2;
+            background-color: #ffffff;
         }
 
         #customers tr:hover {
@@ -101,6 +101,7 @@
                     <img :src="`data:image/png;base64,${image.image}`" style="width:99%;height:auto;">
                 </div>
             </div>
+            <h3>Evaluation by percentage</h3>
             <table id="customers">
                 <tr>
                     <th>Items</th>
@@ -109,8 +110,37 @@
                 </tr>
                 <tr>
                     <td>1. Avoid sites near residential and tourist areas</td>
-                    <td>Maria Anders</td>
-                    <td>Germany</td>
+                    <td>{{percentageQ1.percentQ11}}%</td>
+                    <td width="40%">{{percentageQ1.commentQ11}}</td>
+                </tr>
+                <tr>
+                    <td>2. Avoid location near vital areas such as embassies and service institutions</td>
+                    <td>{{percentageQ1.percentQ12}}%</td>
+                    <td width="40%">{{percentageQ1.commentQ12}}</td>
+                </tr>
+                <tr>
+                    <td>3. Avoid sites surrounded by bridges, tunnels and tall buildings</td>
+                    <td>{{percentageQ1.percentQ13}}%</td>
+                    <td width="40%">{{percentageQ1.commentQ13}}</td>
+                </tr>
+                <tr>
+                    <td>4. Avoid locations near the main street</td>
+                    <td>{{percentageQ1.percentQ14}}%</td>
+                    <td width="40%">{{percentageQ1.commentQ14}}</td>
+                </tr>
+                <tr>
+                    <td>5. Avoid sites exposed to flooding and dust erosion hazards</td>
+                    <td>{{percentageQ1.percentQ15}}%</td>
+                    <td width="40%">{{percentageQ1.commentQ15}}</td>
+                </tr>
+                <tr>
+                    <td>6. Is cover available for the facility</td>
+                    <td>{{percentageQ1.percentQ16}}%</td>
+                    <td width="40%">{{percentageQ1.commentQ16}}</td>
+                </tr>
+                <tr style="background-color: #f2f2f2;">
+                    <td colspan="2">Percentage to match requirements of the site</td>
+                    <td style="text-align: center;">{{percentageQ1.total}}%</td>
                 </tr>
             </table>
         </div>
@@ -140,7 +170,66 @@
                     <img :src="`data:image/png;base64,${image.image}`" style="width:99%;height:auto;">
                 </div>
             </div>
+            <h3>Evaluation by percentage</h3>
+            <table id="customers">
+                <tr>
+                    <th>Items</th>
+                    <th>Percentage</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td>1. Availability of warning signs to prevent approaching</td>
+                    <td>{{percentageQ2.percentQ21}}%</td>
+                    <td width="40%">{{percentageQ2.commentQ21}}</td>
+                </tr>
+                <tr>
+                    <td>2. Availability of warning panels to prevent imaging</td>
+                    <td>{{percentageQ2.percentQ22}}%</td>
+                    <td width="40%">{{percentageQ2.commentQ22}}</td>
+                </tr>
+                <tr>
+                    <td>3. Provide speed bumps on the streets leading to the building</td>
+                    <td>{{percentageQ2.percentQ23}}%</td>
+                    <td width="40%">{{percentageQ2.commentQ23}}</td>
+                </tr>
+                <tr>
+                    <td>4. Provide the necessary lighting for the building during the evening period</td>
+                    <td>{{percentageQ2.percentQ24}}%</td>
+                    <td width="40%">{{percentageQ2.commentQ24}}</td>
+                </tr>
+                <tr>
+                    <td>5. Designing the entrance streets to prevent the entry of vehicles quickly exceeded 40 km/h</td>
+                    <td>{{percentageQ2.percentQ25}}%</td>
+                    <td width="40%">{{percentageQ2.commentQ25}}</td>
+                </tr>
+                <tr>
+                    <td>6. Entrance to gates should not be directly from street</td>
+                    <td>{{percentageQ2.percentQ26}}%</td>
+                    <td width="40%">{{percentageQ2.commentQ26}}</td>
+                </tr>
+                <tr>
+                    <td>7. Provide an external area for vehicles inspection</td>
+                    <td>{{percentageQ2.percentQ27}}%</td>
+                    <td width="40%">{{percentageQ2.commentQ27}}</td>
+                </tr>
+                <tr>
+                    <td>8. Availability of television surveillance cameras to cover the outside with provide night
+                        vision feature</td>
+                    <td>{{percentageQ2.percentQ28}}%</td>
+                    <td width="40%">{{percentageQ2.commentQ28}}</td>
+                </tr>
+                <tr>
+                    <td>9. Securing external power station, if any</td>
+                    <td>{{percentageQ2.percentQ29}}%</td>
+                    <td width="40%">{{percentageQ2.commentQ29}}</td>
+                </tr>
+                <tr style="background-color: #f2f2f2;">
+                    <td colspan="2">Percentage to match requirements of the site</td>
+                    <td style="text-align: center;">{{percentageQ2.total}}%</td>
+                </tr>
+            </table>
         </div>
+
         <div v-if="q3" style="margin-bottom: 40px;">
             <h2 style="margin-bottom: 20px;"><strong>3. Evaluate the perimeter of the building?</strong></h2>
             <h3><strong>3.1. What is the height of the outer wall?</strong></h3>
@@ -180,6 +269,730 @@
                     <img :src="`data:image/png;base64,${image.image}`" style="width:99%;height:auto;">
                 </div>
             </div>
+            <h3>Evaluation by percentage</h3>
+            <table id="customers">
+                <tr>
+                    <th>Items</th>
+                    <th>Percentage</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td>1. The rise of the fence must be atleast 52 meters</td>
+                    <td>{{percentageQ3.percentQ31}}%</td>
+                    <td width="40%">{{percentageQ3.commentQ31}}</td>
+                </tr>
+                <tr>
+                    <td>2. The wall thickness should be atleast 25 cm</td>
+                    <td>{{percentageQ3.percentQ32}}%</td>
+                    <td width="40%">{{percentageQ3.commentQ32}}</td>
+                </tr>
+                <tr>
+                    <td>3. It should not have any crevices or protrusion</td>
+                    <td>{{percentageQ3.percentQ33}}%</td>
+                    <td width="40%">{{percentageQ3.commentQ33}}</td>
+                </tr>
+                <tr>
+                    <td>4. The fences must be built using solid building</td>
+                    <td>{{percentageQ3.percentQ34}}%</td>
+                    <td width="40%">{{percentageQ3.commentQ34}}</td>
+                </tr>
+                <tr>
+                    <td>5. Use aesthetic barriers to add additional protection</td>
+                    <td>{{percentageQ3.percentQ35}}%</td>
+                    <td width="40%">{{percentageQ3.commentQ35}}</td>
+                </tr>
+                <tr>
+                    <td>6. The fences and barbed wires must be strengthened in isolated places</td>
+                    <td>{{percentageQ3.percentQ36}}%</td>
+                    <td width="40%">{{percentageQ3.commentQ36}}</td>
+                </tr>
+                <tr>
+                    <td>7. The fences must be dyed in light colors to facilitate any attempt approaching the fence</td>
+                    <td>{{percentageQ3.percentQ37}}%</td>
+                    <td width="40%">{{percentageQ3.commentQ37}}</td>
+                </tr>
+                <tr>
+                    <td>8. The caved road must be built for the inside for tours inspection</td>
+                    <td>{{percentageQ3.percentQ38}}%</td>
+                    <td width="40%">{{percentageQ3.commentQ38}}</td>
+                </tr>
+                <tr>
+                    <td>9. The fence must not touch the fence of other nearby structures</td>
+                    <td>{{percentageQ3.percentQ39}}%</td>
+                    <td width="40%">{{percentageQ3.commentQ39}}</td>
+                </tr>
+                <tr>
+                    <td>10. External fixe cameras are available every 50 meters</td>
+                    <td>{{percentageQ3.percentQ310}}%</td>
+                    <td width="40%">{{percentageQ3.commentQ310}}</td>
+                </tr>
+                <tr>
+                    <td>11. Moving Cameras available every 250 meters</td>
+                    <td>{{percentageQ3.percentQ311}}%</td>
+                    <td width="40%">{{percentageQ3.commentQ311}}</td>
+                </tr>
+                <tr>
+                    <td>12. Provide fixed cameras inside the perimeter of the inner wall. Distance 5</td>
+                    <td>{{percentageQ3.percentQ312}}%</td>
+                    <td width="40%">{{percentageQ3.commentQ312}}</td>
+                </tr>
+                <tr>
+                    <td>13. Fence to cover tracks. Indoor fixed cameras are available on vehicles</td>
+                    <td>{{percentageQ3.percentQ313}}%</td>
+                    <td width="40%">{{percentageQ3.commentQ313}}</td>
+                </tr>
+                <tr>
+                    <td>14. The lighting should be provided on the fence</td>
+                    <td>{{percentageQ3.percentQ314}}%</td>
+                    <td width="40%">{{percentageQ3.commentQ314}}</td>
+                </tr>
+                <tr style="background-color: #f2f2f2;">
+                    <td colspan="2">Percentage to match the requirement of the outer wall</td>
+                    <td style="text-align: center;">{{percentageQ3.total}}%</td>
+                </tr>
+            </table>
+        </div>
+
+        <div v-if="q4" style="margin-bottom: 40px;">
+            <h2 style="margin-bottom: 20px;"><strong>4. External fence for establishment?</strong></h2>
+            <h3><strong>4.1. What is the height of the fences?</strong></h3>
+            <p class="answer">{{q4.heightFenceText}}</p>
+            <h3><strong>4.2. Is the a fence facility? <span>{{
+                        q4.fenceFacility ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q4.fenceFacilityText}}</p>
+            <h3><strong>4.3. Is there adequate lighting to cover the perimeter of the fence? <span>{{ q4.lightingFence ?
+                        'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q4.lightingFenceText}}</p>
+            <h3><strong>4.4. What is the material for making your fence lanyards?</strong></h3>
+            <p class="answer">{{q4.fenceLanyardText}}</p>
+            <h3><strong>4.5. Are there alarm devices when approaching the fence? <span>{{ q4.alarmFence ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q4.alarmFenceText}}</p>
+            <h3><strong>4.6. Are there barriers to protect the fence from vehicles? <span>{{ q4.barrierFence ?
+                        'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q4.barrierFenceText}}</p>
+            <h3><strong>Weakness</strong></h3>
+            <p class="answer">{{q4.weakness}}</p>
+            <h3><strong>Uploaded images</strong></h3>
+            <div style="display: flex; flex-direction: column; flex-wrap: wrap;">
+                <div v-for="(image, index) in imagesQ3" :key="index" style="margin-bottom: 25px;">
+                    <img :src="`data:image/png;base64,${image.image}`" style="width:99%;height:auto;">
+                </div>
+            </div>
+            <h3>Evaluation by percentage</h3>
+            <table id="customers">
+                <tr>
+                    <th>Items</th>
+                    <th>Percentage</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td>1. The height should be atleast 3 meters</td>
+                    <td>{{percentageQ4.percentQ41}}%</td>
+                    <td width="40%">{{percentageQ4.commentQ41}}</td>
+                </tr>
+                <tr>
+                    <td>2. Tough items must be used in fence choice</td>
+                    <td>{{percentageQ4.percentQ42}}%</td>
+                    <td width="40%">{{percentageQ4.commentQ42}}</td>
+                </tr>
+                <tr>
+                    <td>3. The space must not be between fence slots greater than 5 cm</td>
+                    <td>{{percentageQ4.percentQ43}}%</td>
+                    <td width="40%">{{percentageQ4.commentQ43}}</td>
+                </tr>
+                <tr>
+                    <td>4. An iron wire fixed crosswire must be installed on the fence. The addition is durability and
+                        stability for cyan</td>
+                    <td>{{percentageQ4.percentQ44}}%</td>
+                    <td width="40%">{{percentageQ4.commentQ44}}</td>
+                </tr>
+                <tr>
+                    <td>5. Cement prevents drilling the fence must be fixed to the ground down the fence</td>
+                    <td>{{percentageQ4.percentQ45}}%</td>
+                    <td width="40%">{{percentageQ4.commentQ45}}</td>
+                </tr>
+                <tr>
+                    <td>6. Barbed wire should be installed at the top of the hedge and at an angle 45 towards the
+                        outside</td>
+                    <td>{{percentageQ4.percentQ46}}%</td>
+                    <td width="40%">{{percentageQ4.commentQ46}}</td>
+                </tr>
+                <tr>
+                    <td>7. The lighting should be available</td>
+                    <td>{{percentageQ4.percentQ47}}%</td>
+                    <td width="40%">{{percentageQ4.commentQ47}}</td>
+                </tr>
+                <tr style="background-color: #f2f2f2;">
+                    <td colspan="2">Percentage of matching the requirements of the fence</td>
+                    <td style="text-align: center;">{{percentageQ4.total}}%</td>
+                </tr>
+            </table>
+        </div>
+
+        <div v-if="q5" style="margin-bottom: 40px;">
+            <h2 style="margin-bottom: 20px;"><strong>5. Gates?</strong></h2>
+            <h3><strong>5.1. What are the uses of each gate?</strong></h3>
+            <p class="answer">{{q5.heightOuterWall}}</p>
+            <h3><strong>5.2. what are the number of gates in the facility? <span>{{
+                        q5.surveillanceAlarm ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q5.surveillanceAlarmText}}</p>
+            <h3><strong>5.3. What types and numbers of protection system are in each portal?</strong></h3>
+            <p class="answer">{{q5.protectionPortal}}</p>
+            <h3><strong>5.4. Guarding? Are all scoops locked? <span>{{ q5.guarding ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q5.guardingText}}</p>
+            <h3><strong>5.5. Is there a return path for unauthorized person to enter? <span>{{ q5.unauthorized ? 'Yes' :
+                        'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q5.unauthorizedText}}</p>
+            <h3><strong>5.6. Are there warning signs at the gate? <span>{{ q5.warningSigns ?
+                        'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q5.warningSignsText}}</p>
+            <h3><strong>5.7. Is there an emergency gateway to the facility? And what is the specification of the
+                    emergency portal?
+                    <span>{{ q5.emergencyPortal ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q5.emergencyPortalText}}</p>
+            <h3><strong>5.8. Is there good lighting for the gate during the evening hours? <span>{{ q5.eveningHour ?
+                        'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q5.eveningHourText}}</p>
+            <h3><strong>5.9. What is the vehicle inspection mechanism? (car sweeper, cupped woman, police dog)?
+                </strong></h3>
+            <p class="answer">{{q5.vehicleInspection}}</p>
+            <h3><strong>Weakness</strong></h3>
+            <p class="answer">{{q5.weakness}}</p>
+            <h3><strong>Uploaded images</strong></h3>
+            <div style="display: flex; flex-direction: column; flex-wrap: wrap;">
+                <div v-for="(image, index) in imagesQ5" :key="index" style="margin-bottom: 25px;">
+                    <img :src="`data:image/png;base64,${image.image}`" style="width:99%;height:auto;">
+                </div>
+            </div>
+            <h3>Evaluation by percentage</h3>
+            <table id="customers">
+                <tr>
+                    <th>Items</th>
+                    <th>Percentage</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td>1. The servants must be contacted with fences</td>
+                    <td>{{percentageQ5.percentQ51}}%</td>
+                    <td width="40%">{{percentageQ5.commentQ51}}</td>
+                </tr>
+                <tr>
+                    <td>2. A key gateway to enter and other emergency uses</td>
+                    <td>{{percentageQ5.percentQ52}}%</td>
+                    <td width="40%">{{percentageQ5.commentQ52}}</td>
+                </tr>
+                <tr>
+                    <td>3. The positionb of the booth should allow guard to expose the outdoor area for the
+                        establishment</td>
+                    <td>{{percentageQ5.percentQ53}}%</td>
+                    <td width="40%">{{percentageQ5.commentQ53}}</td>
+                </tr>
+                <tr>
+                    <td>4. Securing the guard rooms with bullet proof glass</td>
+                    <td>{{percentageQ5.percentQ54}}%</td>
+                    <td width="40%">{{percentageQ5.commentQ54}}</td>
+                </tr>
+                <tr>
+                    <td>5. The height of the gate must not be less than the height of the outer fence</td>
+                    <td>{{percentageQ5.percentQ55}}%</td>
+                    <td width="40%">{{percentageQ5.commentQ55}}</td>
+                </tr>
+                <tr>
+                    <td>6. The door must be opened to the inner side of the building</td>
+                    <td>{{percentageQ5.percentQ56}}%</td>
+                    <td width="40%">{{percentageQ5.commentQ56}}</td>
+                </tr>
+                <tr>
+                    <td>7. Entry and exit routes must be covered by surveillance cameras</td>
+                    <td>{{percentageQ5.percentQ57}}%</td>
+                    <td width="40%">{{percentageQ5.commentQ57}}</td>
+                </tr>
+                <tr>
+                    <td>8. Cameras must be installed in the guard room</td>
+                    <td>{{percentageQ5.percentQ58}}%</td>
+                    <td width="40%">{{percentageQ5.commentQ58}}</td>
+                </tr>
+                <tr>
+                    <td>9. Availability of vehicle bumpers</td>
+                    <td>{{percentageQ5.percentQ59}}%</td>
+                    <td width="40%">{{percentageQ5.commentQ59}}</td>
+                </tr>
+                <tr>
+                    <td>10. Availability of vehicle barriers</td>
+                    <td>{{percentageQ5.percentQ510}}%</td>
+                    <td width="40%">{{percentageQ5.commentQ510}}</td>
+                </tr>
+                <tr>
+                    <td>11. Availability of vehicle plate reader</td>
+                    <td>{{percentageQ5.percentQ511}}%</td>
+                    <td width="40%">{{percentageQ5.commentQ511}}</td>
+                </tr>
+                <tr>
+                    <td>12. Card reader availability</td>
+                    <td>{{percentageQ5.percentQ512}}%</td>
+                    <td width="40%">{{percentageQ5.commentQ512}}</td>
+                </tr>
+                <tr>
+                    <td>13. Availability of warning panels</td>
+                    <td>{{percentageQ5.percentQ513}}%</td>
+                    <td width="40%">{{percentageQ5.commentQ513}}</td>
+                </tr>
+                <tr>
+                    <td>14. There must be a return path for all its vehicles</td>
+                    <td>{{percentageQ5.percentQ514}}%</td>
+                    <td width="40%">{{percentageQ5.commentQ514}}</td>
+                </tr>
+                <tr>
+                    <td>15. Secure every gate with guard room</td>
+                    <td>{{percentageQ5.percentQ515}}%</td>
+                    <td width="40%">{{percentageQ5.commentQ515}}</td>
+                </tr>
+                <tr style="background-color: #f2f2f2;">
+                    <td colspan="2">Percentage of matched gates</td>
+                    <td style="text-align: center;">{{percentageQ5.total}}%</td>
+                </tr>
+            </table>
+        </div>
+
+        <div v-if="q6" style="margin-bottom: 40px;">
+            <h2 style="margin-bottom: 20px;"><strong>6. Positions?</strong></h2>
+            <h3><strong>6.1. What is the distance between visitors parking and building fence?</strong></h3>
+            <p class="answer">{{q6.visitorsParking}}</p>
+            <h3><strong>6.2. Are there external parking spaces for visitors? <span>{{
+                        q6.parkingSpaces ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q6.parkingSpacesText}}</p>
+            <h3><strong>6.3. How many are the parking numbers? Are there positions?<span>{{
+                        q6.parkingNumbers ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q6.parkingNumbersText}}</p>
+            <h3><strong>6.4. TV surveillance? Were the outdoor parking area covered by cameras?</strong></h3>
+            <p class="answer">{{q6.outdoorParking}}</p>
+            <h3><strong>6.6. Are the indoor parking spaces covered by TV surveillance cameras? <span>{{ q6.indoorParking
+                        ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q6.indoorParkingText}}</p>
+            <h3><strong>6.6. What is the distance between indoor parking spaces and indoor building? </strong></h3>
+            <p class="answer">{{q6.distanceIndoor}}</p>
+            <h3><strong>6.7. Is there good lighting inside the parking lots?
+                    <span>{{ q6.lightingParking ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q6.lightingParkingText}}</p>
+            <h3><strong>Weakness</strong></h3>
+            <p class="answer">{{q6.weakness}}</p>
+            <h3><strong>Uploaded images</strong></h3>
+            <div style="display: flex; flex-direction: column; flex-wrap: wrap;">
+                <div v-for="(image, index) in imagesQ6" :key="index" style="margin-bottom: 25px;">
+                    <img :src="`data:image/png;base64,${image.image}`" style="width:99%;height:auto;">
+                </div>
+            </div>
+            <h3>Evaluation by percentage</h3>
+            <table id="customers">
+                <tr>
+                    <th>Items</th>
+                    <th>Percentage</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td>1. The external positions must be far from the wall the establishment atleast 30 meters</td>
+                    <td>{{percentageQ6.percentQ61}}%</td>
+                    <td width="40%">{{percentageQ6.commentQ61}}</td>
+                </tr>
+                <tr>
+                    <td>2. Internal position must be far from major buildings including not less than 20 meters</td>
+                    <td>{{percentageQ6.percentQ62}}%</td>
+                    <td width="40%">{{percentageQ6.commentQ62}}</td>
+                </tr>
+                <tr>
+                    <td>3. TV surveillance cameras must be installed to cover positions of cars</td>
+                    <td>{{percentageQ6.percentQ63}}%</td>
+                    <td width="40%">{{percentageQ6.commentQ63}}</td>
+                </tr>
+                <tr>
+                    <td>4. The lighting should be available in the position</td>
+                    <td>{{percentageQ6.percentQ64}}%</td>
+                    <td width="40%">{{percentageQ6.commentQ64}}</td>
+                </tr>
+                <tr style="background-color: #f2f2f2;">
+                    <td colspan="2">Percentage of matched positions clauses</td>
+                    <td style="text-align: center;">{{percentageQ6.total}}%</td>
+                </tr>
+            </table>
+        </div>
+
+        <div v-if="q7" style="margin-bottom: 40px;">
+            <h2 style="margin-bottom: 20px;"><strong>7. Reception buildings?</strong></h2>
+            <h3><strong>7.1. Is the reception building secured with bullet proof glass?<span>{{
+                        q7.receptionBuildingSecured ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q7.receptionBuildingSecuredText}}</p>
+            <h3><strong>7.2. Does the facility have a building to receive vistors and auditors? <span>{{
+                        q7.buildingToReceive ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q7.buildingToReceiveText}}</p>
+            <h3><strong>7.3. Is there a system of entry and exit permits for visitors? <span>{{ q7.systemOfEntry ? 'Yes'
+                        : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q7.systemOfEntryText}}</p>
+            <h3><strong>7.4. Are there records of mall receiving and delivery? <span>{{ q7.recordsOfMall ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q7.recordsOfMallText}}</p>
+            <h3><strong>7.5. What is the mechanism for searching individuals, visitors and parcels?</strong></h3>
+            <p class="answer">{{q7.mechanismForSearching}}</p>
+            <h3><strong>Weakness</strong></h3>
+            <p class="answer">{{q7.weakness}}</p>
+            <h3><strong>Uploaded images</strong></h3>
+            <div style="display: flex; flex-direction: column; flex-wrap: wrap;">
+                <div v-for="(image, index) in imagesQ7" :key="index" style="margin-bottom: 25px;">
+                    <img :src="`data:image/png;base64,${image.image}`" style="width:99%;height:auto;">
+                </div>
+            </div>
+            <h3>Evaluation by percentage</h3>
+            <table id="customers">
+                <tr>
+                    <th>Items</th>
+                    <th>Percentage</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td>1. The reception building must be outside the building</td>
+                    <td>{{percentageQ7.percentQ71}}%</td>
+                    <td width="40%">{{percentageQ7.commentQ71}}</td>
+                </tr>
+                <tr>
+                    <td>2. The location of the reception hall for the guards should be a point of view of the area
+                        external for the facility</td>
+                    <td>{{percentageQ7.percentQ72}}%</td>
+                    <td width="40%">{{percentageQ7.commentQ72}}</td>
+                </tr>
+                <tr>
+                    <td>3. The glass shall be bulletproof at a level not lower than that of the PR6 LW</td>
+                    <td>{{percentageQ7.percentQ73}}%</td>
+                    <td width="40%">{{percentageQ7.commentQ73}}</td>
+                </tr>
+                <tr>
+                    <td>4. Doors with impenetrable security features must be installed</td>
+                    <td>{{percentageQ7.percentQ74}}%</td>
+                    <td width="40%">{{percentageQ7.commentQ74}}</td>
+                </tr>
+                <tr>
+                    <td>5. The entrance to the reception should be through two gates so that it does not the first door
+                        the second door opens unless you close</td>
+                    <td>{{percentageQ7.percentQ75}}%</td>
+                    <td width="40%">{{percentageQ7.commentQ75}}</td>
+                </tr>
+                <tr>
+                    <td>6. Inspection systems must be installed</td>
+                    <td>{{percentageQ7.percentQ76}}%</td>
+                    <td width="40%">{{percentageQ7.commentQ76}}</td>
+                </tr>
+                <tr>
+                    <td>7. Goods inspection systems must be installed</td>
+                    <td>{{percentageQ7.percentQ77}}%</td>
+                    <td width="40%">{{percentageQ7.commentQ77}}</td>
+                </tr>
+                <tr>
+                    <td>8. Video surveillance cameras must be installed in the reception building</td>
+                    <td>{{percentageQ7.percentQ78}}%</td>
+                    <td width="40%">{{percentageQ7.commentQ78}}</td>
+                </tr>
+                <tr>
+                    <td>9. A visitor permit system must be in place</td>
+                    <td>{{percentageQ7.percentQ79}}%</td>
+                    <td width="40%">{{percentageQ7.commentQ79}}</td>
+                </tr>
+                <tr>
+                    <td>10. Visitor records and mall are required</td>
+                    <td>{{percentageQ7.percentQ710}}%</td>
+                    <td width="40%">{{percentageQ7.commentQ710}}</td>
+                </tr>
+                <tr style="background-color: #f2f2f2;">
+                    <td colspan="2">Percentage of matched reception building</td>
+                    <td style="text-align: center;">{{percentageQ7.total}}%</td>
+                </tr>
+            </table>
+        </div>
+
+        <div v-if="q8" style="margin-bottom: 40px;">
+            <h2 style="margin-bottom: 20px;"><strong>8. External service buildings?</strong></h2>
+            <h3><strong>8.1. Is the external service building secured with bullet proof glass?<span>{{
+                        q8.externalService ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q8.externalServiceText}}</p>
+            <h3><strong>8.2. Does the facility have a building for external services? <span>{{
+                        q8.buildingForExternal ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q8.buildingForExternalText}}</p>
+            <h3><strong>8.3. The entry and exit of visitors? Is there a system? <span>{{ q8.entryAndExit ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q8.entryAndExitText}}</p>
+            <h3><strong>8.4. Material? Are there logs to enter? <span>{{ q8.material ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q8.materialText}}</p>
+            <h3><strong>8.5. Are people, goods and mall searched and what are the inspection procedures? <span>{{
+                        q8.mallSearched ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q8.mallSearchedText}}</p>
+            <h3><strong>Weakness</strong></h3>
+            <p class="answer">{{q8.weakness}}</p>
+            <h3><strong>Uploaded images</strong></h3>
+            <div style="display: flex; flex-direction: column; flex-wrap: wrap;">
+                <div v-for="(image, index) in imagesQ8" :key="index" style="margin-bottom: 25px;">
+                    <img :src="`data:image/png;base64,${image.image}`" style="width:99%;height:auto;">
+                </div>
+            </div>
+            <h3>Evaluation by percentage</h3>
+            <table id="customers">
+                <tr>
+                    <th>Items</th>
+                    <th>Percentage</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td>1. Allocating a room for inspecting auditors and company workers</td>
+                    <td>{{percentageQ8.percentQ81}}%</td>
+                    <td width="40%">{{percentageQ8.commentQ81}}</td>
+                </tr>
+                <tr>
+                    <td>2. Allocate a room for inspecting materials and equipment</td>
+                    <td>{{percentageQ8.percentQ82}}%</td>
+                    <td width="40%">{{percentageQ8.commentQ82}}</td>
+                </tr>
+                <tr>
+                    <td>3. Allocating an office for the entry permits system</td>
+                    <td>{{percentageQ8.percentQ83}}%</td>
+                    <td width="40%">{{percentageQ8.commentQ83}}</td>
+                </tr>
+                <tr>
+                    <td>4. Not penetrable. Installing doors with specification</td>
+                    <td>{{percentageQ8.percentQ84}}%</td>
+                    <td width="40%">{{percentageQ8.commentQ84}}</td>
+                </tr>
+                <tr>
+                    <td>5. Installation of personnel inspection systems</td>
+                    <td>{{percentageQ8.percentQ85}}%</td>
+                    <td width="40%">{{percentageQ8.commentQ85}}</td>
+                </tr>
+                <tr>
+                    <td>6. Cargo inspection systems must be installed</td>
+                    <td>{{percentageQ8.percentQ86}}%</td>
+                    <td width="40%">{{percentageQ8.commentQ86}}</td>
+                </tr>
+                <tr>
+                    <td>7. From me service TV surveillance cameras must be installed</td>
+                    <td>{{percentageQ8.percentQ87}}%</td>
+                    <td width="40%">{{percentageQ8.commentQ87}}</td>
+                </tr>
+                <tr>
+                    <td>8. A visitor permit system must be in place</td>
+                    <td>{{percentageQ8.percentQ88}}%</td>
+                    <td width="40%">{{percentageQ8.commentQ88}}</td>
+                </tr>
+                <tr>
+                    <td>9. Visitor records and mall must be provided</td>
+                    <td>{{percentageQ8.percentQ89}}%</td>
+                    <td width="40%">{{percentageQ8.commentQ89}}</td>
+                </tr>
+                <tr style="background-color: #f2f2f2;">
+                    <td colspan="2">Percentage of matched external service building</td>
+                    <td style="text-align: center;">{{percentageQ8.total}}%</td>
+                </tr>
+            </table>
+        </div>
+
+        <div v-if="q9" style="margin-bottom: 40px;">
+            <h2 style="margin-bottom: 20px;"><strong>9. Internal perimeter of the facility?</strong></h2>
+            <h3><strong>9.1. Was the internal perimeter secured by the TV surveillance cameras?<span>{{
+                        q9.perimeterSecured ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q9.perimeterSecuredText}}</p>
+            <h3><strong>9.2. Has adequate lighting been provided to secure the facility internal perimeter? <span>{{
+                        q9.adequateLighting ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q9.adequateLightingText}}</p>
+            <h3><strong>9.3. Are the internal paths of the vehicles of the CCTV cameras secured? Fixed and moving?
+                    <span>{{ q9.internalPath ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q9.internalPathText}}</p>
+            <h3><strong>9.4. Are the internal paths of the vehicles secured by TV surveillance cameras? <span>{{
+                        q9.vehiclesSecured ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q9.vehiclesSecuredText}}</p>
+            <h3><strong>9.5. Is the right vision feature available in the cameras?<span>{{ q9.rightVision ? 'Yes' :
+                        'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q9.rightVisionText}}</p>
+            <h3><strong>9.6. Are the assembly points secured by TV surveillance cameras?<span>{{ q9.assemblyPoint ?
+                        'Yes' :
+                        'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q9.assemblyPointText}}</p>
+            <p class="answer">{{q9.weakness}}</p>
+            <h3><strong>Uploaded images</strong></h3>
+            <div style="display: flex; flex-direction: column; flex-wrap: wrap;">
+                <div v-for="(image, index) in imagesQ9" :key="index" style="margin-bottom: 25px;">
+                    <img :src="`data:image/png;base64,${image.image}`" style="width:99%;height:auto;">
+                </div>
+            </div>
+            <h3>Evaluation by percentage</h3>
+            <table id="customers">
+                <tr>
+                    <th>Items</th>
+                    <th>Percentage</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td>1. Provide the appropriate lighting to secure the internal environment</td>
+                    <td>{{percentageQ9.percentQ91}}%</td>
+                    <td width="40%">{{percentageQ9.commentQ91}}</td>
+                </tr>
+                <tr>
+                    <td>2. Securing the indoor environment with TV surveillance cameras</td>
+                    <td>{{percentageQ9.percentQ92}}%</td>
+                    <td width="40%">{{percentageQ9.commentQ92}}</td>
+                </tr>
+                <tr>
+                    <td>3. Rears with TV surveillance cameras securing internal paths</td>
+                    <td>{{percentageQ9.percentQ93}}%</td>
+                    <td width="40%">{{percentageQ9.commentQ93}}</td>
+                </tr>
+                <tr>
+                    <td>4. By the TV securing assembly points with cameras</td>
+                    <td>{{percentageQ9.percentQ94}}%</td>
+                    <td width="40%">{{percentageQ9.commentQ94}}</td>
+                </tr>
+                <tr style="background-color: #f2f2f2;">
+                    <td colspan="2">Percentage of matched perimeter outside</td>
+                    <td style="text-align: center;">{{percentageQ9.total}}%</td>
+                </tr>
+            </table>
+        </div>
+
+        <div v-if="q10" style="margin-bottom: 40px;">
+            <h2 style="margin-bottom: 20px;"><strong>10. Internal building of the facility?</strong></h2>
+            <h3><strong>10.1. Are all parts of the building(entrances, hallways, stairs, elevator etc). Furnished ith
+                    CCTV cameras?<span>{{
+                        q10.cctvCameras ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q10.cctvCamerasText}}</p>
+            <h3><strong>10.2. Are all the entrances to the building connected to the sensitive systems secured with
+                    points? search? <span>{{
+                        q10.buildingConnected ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q10.buildingConnectedText}}</p>
+            <h3><strong>10.3. Are network and data rooms secured by protection systems? <span>{{
+                        q10.dataRooms ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q10.dataRoomsText}}</p>
+            <h3><strong>10.4. All buildings? Is there an internal performance system do? <span>{{ q10.internalPerformance ? 'Yes' :
+                        'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q10.internalPerformanceText}}</p>
+            <h3><strong>10.5. Are the buildings of electricity and water insured according to the conditions? <span>{{
+                        q10.buildingsOfElectricity ? 'Yes' :
+                        'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q10.buildingsOfElectricityText}}</p>
+            <h3><strong>10.6. Are sensitive sites in the building secured according to the requirements? <span>{{
+                        q10.sensitiveSites ?
+                        'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q10.sensitiveSitesText}}</p>
+            <h3><strong>10.7. Do buildings have a backup energy source in case the main source of energy is cutoff what
+                    type and how long as it operating?
+                    <span>{{ q10.backupEnergy ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q10.backupEnergyText}}</p>
+            <h3><strong>Weakness</strong></h3>
+            <p class="answer">{{q10.weakness}}</p>
+            <h3><strong>Uploaded images</strong></h3>
+            <div style="display: flex; flex-direction: column; flex-wrap: wrap;">
+                <div v-for="(image, index) in imagesQ5" :key="index" style="margin-bottom: 25px;">
+                    <img :src="`data:image/png;base64,${image.image}`" style="width:99%;height:auto;">
+                </div>
+            </div>
+            <h3>Evaluation by percentage</h3>
+            <table id="customers">
+                <tr>
+                    <th>Items</th>
+                    <th>Percentage</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td>1. The buildings must be atleast from the wall of the building 80 meters</td>
+                    <td>{{percentageQ10.percentQ101}}%</td>
+                    <td width="40%">{{percentageQ10.commentQ101}}</td>
+                </tr>
+                <tr>
+                    <td>2. The building should have a main entrance gate as well as exits the emergency</td>
+                    <td>{{percentageQ10.percentQ102}}%</td>
+                    <td width="40%">{{percentageQ10.commentQ102}}</td>
+                </tr>
+                <tr>
+                    <td>3. Piping and water installations must be internal</td>
+                    <td>{{percentageQ10.percentQ103}}%</td>
+                    <td width="40%">{{percentageQ10.commentQ103}}</td>
+                </tr>
+                <tr>
+                    <td>4. Windows must be 1) Visibility from outside 2) Do not open completely 3) Indoor building glass double glazed window</td>
+                    <td>{{percentageQ10.percentQ104}}%</td>
+                    <td width="40%">{{percentageQ10.commentQ104}}</td>
+                </tr>
+                <tr>
+                    <td>5. The entire building must be covered by TV cameras</td>
+                    <td>{{percentageQ10.percentQ105}}%</td>
+                    <td width="40%">{{percentageQ10.commentQ105}}</td>
+                </tr>
+                <tr>
+                    <td>6. Installing a camera on the root of a remote building</td>
+                    <td>{{percentageQ10.percentQ106}}%</td>
+                    <td width="40%">{{percentageQ10.commentQ106}}</td>
+                </tr>
+                <tr>
+                    <td>7. An access control system must be installed at all entrance exits and facilitates for the building</td>
+                    <td>{{percentageQ10.percentQ107}}%</td>
+                    <td width="40%">{{percentageQ10.commentQ107}}</td>
+                </tr>
+                <tr>
+                    <td>8. Electronic locks must be installed on all administrative offices</td>
+                    <td>{{percentageQ10.percentQ108}}%</td>
+                    <td width="40%">{{percentageQ10.commentQ108}}</td>
+                </tr>
+                <tr>
+                    <td>9. The internal call system must be installed</td>
+                    <td>{{percentageQ10.percentQ109}}%</td>
+                    <td width="40%">{{percentageQ10.commentQ109}}</td>
+                </tr>
+                <tr>
+                    <td>10. An intercom system must be installed</td>
+                    <td>{{percentageQ10.percentQ1010}}%</td>
+                    <td width="40%">{{percentageQ10.commentQ1010}}</td>
+                </tr>
+                <tr>
+                    <td>11. Entrances to buildings must be secured with checkpoints</td>
+                    <td>{{percentageQ10.percentQ1011}}%</td>
+                    <td width="40%">{{percentageQ10.commentQ1011}}</td>
+                </tr>
+                <tr>
+                    <td>12. A backup is provided</td>
+                    <td>{{percentageQ10.percentQ1012}}%</td>
+                    <td width="40%">{{percentageQ10.commentQ1012}}</td>
+                </tr>
+                <tr style="background-color: #f2f2f2;">
+                    <td colspan="2">Percentage of matched indoor building</td>
+                    <td style="text-align: center;">{{percentageQ10.total}}%</td>
+                </tr>
+            </table>
         </div>
     </div>
 </body>
