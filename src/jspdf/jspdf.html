@@ -72,7 +72,7 @@
 <body>
     <div id="app">
         <img src="uae.png" class="img-logo">
-        <h1 class="head">MOI Feedback Survey</h1>
+        <h1 class="head">MOI Building Feedback Survey</h1>
         <div v-if="q1" style="margin-bottom: 40px;">
             <h2 style="margin-bottom: 20px;"><strong>1. Evaluate the location of the building?</strong></h2>
             <h3><strong>1.1. Name of the location?</strong></h3>
@@ -1038,7 +1038,7 @@
                     numbers during the peak)? <span>{{ q11.monitoring ? 'Yes' : 'No'
                         }}</span></strong></h3>
             <p class="answer">{{q11.monitoringText}}</p>
-            <h3><strong>11.11. Are the extensions in the control room ranked? <span>{{ q11.controlText ?
+            <h3><strong>11.11. Are the extensions in the control room ranked? <span>{{ q11.control ?
                         'Yes' :
                         'No'
                         }}</span></strong></h3>
@@ -1120,9 +1120,11 @@
             <p class="answer">{{q12.inspectingText}}</p>
             <h3><strong>12.2. Who is responsible for security the building?</strong></h3>
             <p class="answer">{{q12.security}}</p>
-            <h3><strong>12.3. What is the mechanism for inspecting localities (inspection site, equipment)? </strong></h3>
+            <h3><strong>12.3. What is the mechanism for inspecting localities (inspection site, equipment)? </strong>
+            </h3>
             <p class="answer">{{q12.localities}}</p>
-            <h3><strong>12.4. What is the number of guard members (citizens and foreigners) during the shift? The one?</strong></h3>
+            <h3><strong>12.4. What is the number of guard members (citizens and foreigners) during the shift? The
+                    one?</strong></h3>
             <p class="answer">{{q12.citizens}}</p>
             <h3><strong>12.5. What is the vehicle inspection mechanism? (car bumper, concave women)?</strong></h3>
             <p class="answer">{{q12.mechanism}}</p>
@@ -1132,7 +1134,7 @@
                         }}</span></strong></h3>
             <p class="answer">{{q12.checkpointsText}}</p>
             <h3><strong>12.8. Are the guards authorized with weapons? <span>{{ q12.authorized ? 'Yes' : 'No'
-            }}</span></strong></h3>
+                        }}</span></strong></h3>
             <p class="answer">{{q12.authorizedText}}</p>
             <h3><strong>12.9. Are all individuals sufficiently familiar with the inspection and handling procedures
                     devices? <span>{{
@@ -1162,126 +1164,123 @@
                     <th>Notes</th>
                 </tr>
                 <tr>
-                    <td>1. The servants must be contacted with fences</td>
-                    <td>{{percentageQ5.percentQ51}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ51}}</td>
+                    <td>1. Provide the appropriate counting of guardians to do all tasks insurance required</td>
+                    <td>{{percentageQ12.percentQ121}}%</td>
+                    <td width="40%">{{percentageQ12.commentQ121}}</td>
                 </tr>
                 <tr>
-                    <td>2. A key gateway to enter and other emergency uses</td>
-                    <td>{{percentageQ5.percentQ52}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ52}}</td>
+                    <td>2. Availability of numbers of inspection personnel to operate all personnel checkpoints and
+                        goods</td>
+                    <td>{{percentageQ12.percentQ122}}%</td>
+                    <td width="40%">{{percentageQ12.commentQ122}}</td>
                 </tr>
                 <tr>
-                    <td>3. The positionb of the booth should allow guard to expose the outdoor area for the
-                        establishment</td>
-                    <td>{{percentageQ5.percentQ53}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ53}}</td>
+                    <td>3. Securing the guard presses with weapons?</td>
+                    <td>{{percentageQ12.percentQ123}}%</td>
+                    <td width="40%">{{percentageQ12.commentQ123}}</td>
                 </tr>
                 <tr>
-                    <td>4. Securing the guard rooms with bullet proof glass</td>
-                    <td>{{percentageQ5.percentQ54}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ54}}</td>
+                    <td>4. Familiarity with the inspection elements of the inspection procedures and dealing devices?
+                    </td>
+                    <td>{{percentageQ12.percentQ124}}%</td>
+                    <td width="40%">{{percentageQ12.commentQ124}}</td>
                 </tr>
                 <tr>
-                    <td>5. The height of the gate must not be less than the height of the outer fence</td>
-                    <td>{{percentageQ5.percentQ55}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ55}}</td>
+                    <td>5. Provide a mechanism for inspecting vehicles</td>
+                    <td>{{percentageQ12.percentQ125}}%</td>
+                    <td width="40%">{{percentageQ12.commentQ125}}</td>
                 </tr>
                 <tr>
-                    <td>6. The door must be opened to the inner side of the building</td>
-                    <td>{{percentageQ5.percentQ56}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ56}}</td>
+                    <td>6. Provide a mechanism for searching vistors and companies</td>
+                    <td>{{percentageQ12.percentQ126}}%</td>
+                    <td width="40%">{{percentageQ12.commentQ126}}</td>
                 </tr>
                 <tr>
-                    <td>7. Entry and exit routes must be covered by surveillance cameras</td>
-                    <td>{{percentageQ5.percentQ57}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ57}}</td>
+                    <td>7. Provide a mechanism for inspecting employees</td>
+                    <td>{{percentageQ12.percentQ127}}%</td>
+                    <td width="40%">{{percentageQ12.commentQ127}}</td>
                 </tr>
-                <tr>
-                    <td>8. Cameras must be installed in the guard room</td>
-                    <td>{{percentageQ5.percentQ58}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ58}}</td>
-                </tr>
-                <tr>
-                    <td>9. Availability of vehicle bumpers</td>
-                    <td>{{percentageQ5.percentQ59}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ59}}</td>
-                </tr>
-                <tr>
-                    <td>10. Availability of vehicle barriers</td>
-                    <td>{{percentageQ5.percentQ510}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ510}}</td>
-                </tr>
-                <tr>
-                    <td>11. Availability of vehicle plate reader</td>
-                    <td>{{percentageQ5.percentQ511}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ511}}</td>
-                </tr>
-                <tr>
-                    <td>12. Card reader availability</td>
-                    <td>{{percentageQ5.percentQ512}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ512}}</td>
-                </tr>
-                <tr>
-                    <td>13. Availability of warning panels</td>
-                    <td>{{percentageQ5.percentQ513}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ513}}</td>
-                </tr>
-                <tr>
-                    <td>14. There must be a return path for all its vehicles</td>
-                    <td>{{percentageQ5.percentQ514}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ514}}</td>
-                </tr>
-                <tr>
-                    <td>15. Secure every gate with guard room</td>
-                    <td>{{percentageQ5.percentQ515}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ515}}</td>
-                </tr>
+
                 <tr style="background-color: #f2f2f2;">
-                    <td colspan="2">Percentage of matched gates</td>
-                    <td style="text-align: center;">{{percentageQ5.total}}%</td>
+                    <td colspan="2">Percentage to match the building and inspection procedures</td>
+                    <td style="text-align: center;">{{percentageQ12.total}}%</td>
                 </tr>
             </table>
         </div>
 
         <div v-if="q13" style="margin-bottom: 40px;">
-            <h2 style="margin-bottom: 20px;"><strong>5. Gates?</strong></h2>
-            <h3><strong>5.1. What are the uses of each gate?</strong></h3>
-            <p class="answer">{{q5.heightOuterWall}}</p>
-            <h3><strong>5.2. what are the number of gates in the facility? <span>{{
-                        q5.surveillanceAlarm ? 'Yes' : 'No'
+            <h2 style="margin-bottom: 20px;"><strong>13. Security and Safety requirements?</strong></h2>
+            <h3><strong>13.1. Is fire extinguishers throught the building? Does the preservatory extinguishers are
+                    replaced? <span>{{
+                        q13.extinguishers ? 'Yes' : 'No'
                         }}</span></strong></h3>
-            <p class="answer">{{q5.surveillanceAlarmText}}</p>
-            <h3><strong>5.3. What types and numbers of protection system are in each portal?</strong></h3>
-            <p class="answer">{{q5.protectionPortal}}</p>
-            <h3><strong>5.4. Guarding? Are all scoops locked? <span>{{ q5.guarding ? 'Yes' : 'No'
+            <p class="answer">{{q13.extinguishersText}}</p>
+            <h3><strong>13.2. Are there extensions exposed in such a way that it is possible that? Do you test the font?
+                    <span>{{
+                        q13.extensions ? 'Yes' : 'No'
                         }}</span></strong></h3>
-            <p class="answer">{{q5.guardingText}}</p>
-            <h3><strong>5.5. Is there a return path for unauthorized person to enter? <span>{{ q5.unauthorized ? 'Yes' :
+            <p class="answer">{{q13.extensionsText}}</p>
+            <h3><strong>13.3. Are fire nozzles available? <span>{{
+                        q13.nozzles ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q13.nozzlesText}}</p>
+            <h3><strong>13.4. Do you provide assembly points for the building? <span>{{ q13.assembly ? 'Yes' :
                         'No'
                         }}</span></strong></h3>
-            <p class="answer">{{q5.unauthorizedText}}</p>
-            <h3><strong>5.6. Are there warning signs at the gate? <span>{{ q5.warningSigns ?
+            <p class="answer">{{q13.assemblyText}}</p>
+            <h3><strong>13.5. Are there emergency exits for the building? <span>{{ q13.emergency ?
+                        'Yes' :
+                        'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q13.emergencyText}}</p>
+            <h3><strong>13.6. Are there fire detectors in the building?
+                    <span>{{ q13.detectors ?
                         'Yes' : 'No'
                         }}</span></strong></h3>
-            <p class="answer">{{q5.warningSignsText}}</p>
-            <h3><strong>5.7. Is there an emergency gateway to the facility? And what is the specification of the
-                    emergency portal?
-                    <span>{{ q5.emergencyPortal ? 'Yes' : 'No'
+            <p class="answer">{{q13.detectorsText}}</p>
+            <h3><strong>13.7. Are there water hoses in the building? <span>{{ q13.hoses ? 'Yes' : 'No'
                         }}</span></strong></h3>
-            <p class="answer">{{q5.emergencyPortalText}}</p>
-            <h3><strong>5.8. Is there good lighting for the gate during the evening hours? <span>{{ q5.eveningHour ?
+            <p class="answer">{{q13.hosesText}}</p>
+            <h3><strong>13.8. Are there guide maps in the building? <span>{{ q13.maps ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q13.mapsText}}</p>
+            <h3><strong>13.9. Are there evacuation indications strobe signals, emergency exits? <span>{{
+                        q13.evacuation ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q13.evacuationText}}</p>
+            <h3><strong>13.10. Are site encirclement tools available? <span>{{ q13.encirclement ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q13.encirclementText}}</p>
+            <h3><strong>13.11. Is there a gas (breaking glass) at the emergency exits? <span>{{ q13.gas ?
+                        'Yes' :
+                        'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q13.gasText}}</p>
+            <h3><strong>13.12. Are stores matching security and safety?
+                    <span>{{ q13.stores ?
                         'Yes' : 'No'
                         }}</span></strong></h3>
-            <p class="answer">{{q5.eveningHourText}}</p>
-            <h3><strong>5.9. What is the vehicle inspection mechanism? (car sweeper, cupped woman, police dog)?
-                </strong></h3>
-            <p class="answer">{{q5.vehicleInspection}}</p>
+            <p class="answer">{{q13.storesText}}</p>
+            <h3><strong>13.13. Control room? Is internal activated? Is it an educator?
+                    <span>{{ q13.internal ? 'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q13.internalText}}</p>
+            <h3><strong>13.14. Is there an ambulance in the building? <span>{{
+                        q13.ambulance ?
+                        'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q13.ambulanceText}}</p>
+            <h3><strong>13.15. What is the mechanism of disposal of waste?
+                    <span>{{
+                        q13.disposal ?
+                        'Yes' : 'No'
+                        }}</span></strong></h3>
+            <p class="answer">{{q13.disposalText}}</p>
             <h3><strong>Weakness</strong></h3>
-            <p class="answer">{{q5.weakness}}</p>
+            <p class="answer">{{q13.weakness}}</p>
             <h3><strong>Uploaded images</strong></h3>
             <div style="display: flex; flex-direction: column; flex-wrap: wrap;">
-                <div v-for="(image, index) in imagesQ5" :key="index" style="margin-bottom: 25px;">
+                <div v-for="(image, index) in imagesQ13" :key="index" style="margin-bottom: 25px;">
                     <img :src="`data:image/png;base64,${image.image}`" style="width:99%;height:auto;">
                 </div>
             </div>
@@ -1293,84 +1292,68 @@
                     <th>Notes</th>
                 </tr>
                 <tr>
-                    <td>1. The servants must be contacted with fences</td>
-                    <td>{{percentageQ5.percentQ51}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ51}}</td>
+                    <td>1. Availability of fire extinguishers in the building</td>
+                    <td>{{percentageQ13.percentQ131}}%</td>
+                    <td width="40%">{{percentageQ13.commentQ131}}</td>
                 </tr>
                 <tr>
-                    <td>2. A key gateway to enter and other emergency uses</td>
-                    <td>{{percentageQ5.percentQ52}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ52}}</td>
+                    <td>2. Availability of fire nozzles</td>
+                    <td>{{percentageQ13.percentQ132}}%</td>
+                    <td width="40%">{{percentageQ13.commentQ132}}</td>
                 </tr>
                 <tr>
-                    <td>3. The positionb of the booth should allow guard to expose the outdoor area for the
-                        establishment</td>
-                    <td>{{percentageQ5.percentQ53}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ53}}</td>
+                    <td>3. Availability of emergency exits</td>
+                    <td>{{percentageQ13.percentQ133}}%</td>
+                    <td width="40%">{{percentageQ13.commentQ133}}</td>
                 </tr>
                 <tr>
-                    <td>4. Securing the guard rooms with bullet proof glass</td>
-                    <td>{{percentageQ5.percentQ54}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ54}}</td>
+                    <td>4. Availability of gathering points</td>
+                    <td>{{percentageQ13.percentQ134}}%</td>
+                    <td width="40%">{{percentageQ13.commentQ134}}</td>
                 </tr>
                 <tr>
-                    <td>5. The height of the gate must not be less than the height of the outer fence</td>
-                    <td>{{percentageQ5.percentQ55}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ55}}</td>
+                    <td>5. Maps availability</td>
+                    <td>{{percentageQ13.percentQ135}}%</td>
+                    <td width="40%">{{percentageQ13.commentQ135}}</td>
                 </tr>
                 <tr>
-                    <td>6. The door must be opened to the inner side of the building</td>
-                    <td>{{percentageQ5.percentQ56}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ56}}</td>
+                    <td>6. Availability of indicative panels</td>
+                    <td>{{percentageQ13.percentQ136}}%</td>
+                    <td width="40%">{{percentageQ13.commentQ136}}</td>
                 </tr>
                 <tr>
-                    <td>7. Entry and exit routes must be covered by surveillance cameras</td>
-                    <td>{{percentageQ5.percentQ57}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ57}}</td>
+                    <td>7. Fire detectors are available</td>
+                    <td>{{percentageQ13.percentQ137}}%</td>
+                    <td width="40%">{{percentageQ13.commentQ137}}</td>
                 </tr>
                 <tr>
-                    <td>8. Cameras must be installed in the guard room</td>
-                    <td>{{percentageQ5.percentQ58}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ58}}</td>
+                    <td>8. Availability of water hoses</td>
+                    <td>{{percentageQ13.percentQ138}}%</td>
+                    <td width="40%">{{percentageQ13.commentQ138}}</td>
                 </tr>
                 <tr>
-                    <td>9. Availability of vehicle bumpers</td>
-                    <td>{{percentageQ5.percentQ59}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ59}}</td>
+                    <td>9. Safety of extensions</td>
+                    <td>{{percentageQ13.percentQ139}}%</td>
+                    <td width="40%">{{percentageQ13.commentQ139}}</td>
                 </tr>
                 <tr>
-                    <td>10. Availability of vehicle barriers</td>
-                    <td>{{percentageQ5.percentQ510}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ510}}</td>
+                    <td>10. Jazz (breaking glass) at the emergency exit</td>
+                    <td>{{percentageQ13.percentQ1310}}%</td>
+                    <td width="40%">{{percentageQ13.commentQ1310}}</td>
                 </tr>
                 <tr>
-                    <td>11. Availability of vehicle plate reader</td>
-                    <td>{{percentageQ5.percentQ511}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ511}}</td>
+                    <td>11. Provide location surrounding tools</td>
+                    <td>{{percentageQ13.percentQ1311}}%</td>
+                    <td width="40%">{{percentageQ13.commentQ1311}}</td>
                 </tr>
                 <tr>
-                    <td>12. Card reader availability</td>
-                    <td>{{percentageQ5.percentQ512}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ512}}</td>
-                </tr>
-                <tr>
-                    <td>13. Availability of warning panels</td>
-                    <td>{{percentageQ5.percentQ513}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ513}}</td>
-                </tr>
-                <tr>
-                    <td>14. There must be a return path for all its vehicles</td>
-                    <td>{{percentageQ5.percentQ514}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ514}}</td>
-                </tr>
-                <tr>
-                    <td>15. Secure every gate with guard room</td>
-                    <td>{{percentageQ5.percentQ515}}%</td>
-                    <td width="40%">{{percentageQ5.commentQ515}}</td>
+                    <td>12. Provide a paper disposal mechanism</td>
+                    <td>{{percentageQ13.percentQ1312}}%</td>
+                    <td width="40%">{{percentageQ13.commentQ1312}}</td>
                 </tr>
                 <tr style="background-color: #f2f2f2;">
-                    <td colspan="2">Percentage of matched gates</td>
-                    <td style="text-align: center;">{{percentageQ5.total}}%</td>
+                    <td colspan="2">Percentage for the matching and safety requirements</td>
+                    <td style="text-align: center;">{{percentageQ13.total}}%</td>
                 </tr>
             </table>
         </div>
