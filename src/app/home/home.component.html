@@ -24,8 +24,8 @@
                     <Label [text]="option.text" fontSize="16" textWrap="true" (tap)="changeCheckedRadio(option)"></Label>
             </StackLayout>
             <Button text="Next" width="150" (tap)="goNext()" class="next-button m-t-16"></Button>
-            <Button text="Clear" width="150" (tap)="clear()" marginBottom="60" class="clear-button m-t-16"></Button>
-            <Button text="Generate PDF" width="150" (tap)="storeDataServer()" class="online-button m-t-16"></Button>
+            <Button text="Clear" width="150" (tap)="clearData()" marginBottom="60" class="clear-button m-t-16"></Button>
+            <Button *ngIf="pdfButton" text="Generate PDF" width="150" (tap)="storeDataServer()" class="online-button m-t-16"></Button>
         </StackLayout>
         <!-- <StackLayout>
             <WebView height="500" (loadFinished)="onWebViewLoaded($event)" #webview></WebView>

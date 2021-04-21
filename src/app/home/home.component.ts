@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
-import { Application, Image, alert, ImageSource, Page } from "@nativescript/core";
+import { Application, Image, alert, ImageSource, Page, confirm } from "@nativescript/core";
 import { openFile } from "@nativescript/core/utils";
 import { knownFolders } from "@nativescript/core/file-system";
 import { Accuracy } from "@nativescript/core/ui/enums";
@@ -11,7 +11,8 @@ import { take } from 'rxjs/operators';
 import { LoaderService } from '../utils/index';
 import {
     getString,
-    setString
+    setString,
+    clear,
 } from "@nativescript/core/application-settings";
 import { RouterExtensions } from "@nativescript/angular";
 //import { ReferralStore } from '../store/referral/referral.store';
@@ -116,6 +117,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     }];
     id: any;
     selected: boolean = false;
+    pdfButton: boolean = false;
 
     constructor(private page: Page, private router2: Router, private homeService: HomeService, private loaderService: LoaderService, private router: RouterExtensions, private store: QuestionnaireStore) {
         // Use the component constructor to inject providers.
@@ -160,11 +162,12 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
+        if (getString('Q1')) this.pdfButton = true;
         // setTimeout(() => {
 
         // }, 5000)
-       // const graphwebview: WebView = this.webview.nativeElement;
-       // graphwebview.src = `~/jspdf/jspdf.html`;
+        // const graphwebview: WebView = this.webview.nativeElement;
+        // graphwebview.src = `~/jspdf/jspdf.html`;
         // let fileName = '/assets/jspdf/jspdf.html';
         // let documents = knownFolders.currentApp().getFile('jspdf.html');
         // console.log(documents)
@@ -284,7 +287,28 @@ export class HomeComponent implements OnInit, OnDestroy {
         });
     }
 
-    clear(){ console.log("clear"); }
+    clearData() {
+        console.log("clear");
+        const _this = this;
+        let options = {
+            title: "Warning",
+            message: "Are you sure you want to clear data? This cannot be undone",
+            okButtonText: "Yes",
+            cancelButtonText: "No",
+            neutralButtonText: "Cancel"
+        };
+       
+        confirm(options).then((result: boolean) => {
+            if (result) {
+                const user = getString('user');
+                _this.pdfButton = false;
+                console.log(user)
+                clear();
+                setString('user', user);
+            }
+        });
+
+    }
 
     goNext() {
         // const questions = [{
