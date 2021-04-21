@@ -1033,7 +1033,7 @@ export class SettingsComponent implements OnInit {
                 this.q4TableValues[pMatch] = 0;
             }
             this.q4TableValues['total'] = this.q4TableValues['percentQ41'] + this.q4TableValues['percentQ42'] + this.q4TableValues['percentQ43'] + this.q4TableValues['percentQ44'] + this.q4TableValues['percentQ45'] + this.q4TableValues['percentQ46'] + this.q4TableValues['percentQ47'];
-           // console.log(this.q4TableValues);
+           console.log(this.q4TableValues);
         }
 
         if (match == 'Q5') {
@@ -1271,7 +1271,7 @@ export class SettingsComponent implements OnInit {
         if (valid) {
             //console.log(this.formValues)
             //console.log(this.category, this.formValuesTwo)
-           // console.log(this.formValuesTwelve)
+           console.log(this.q10TableValues)
 
             if (this.category == "Q1") { setString(this.category, JSON.stringify(this.formValues)); setString('Q1Percentages', JSON.stringify(this.q1TableValues)); }
             if (this.category == "Q2") { setString(this.category, JSON.stringify(this.formValuesTwo)); setString('Q2Percentages', JSON.stringify(this.q2TableValues)); }
