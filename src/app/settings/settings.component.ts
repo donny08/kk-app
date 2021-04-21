@@ -682,7 +682,7 @@ export class SettingsComponent implements OnInit {
     //externalInstallatioinsFoundText: string;
     waterBody: boolean = false;
     waterBodyText: string;
-    weakness: boolean = false;
+    weakness: boolean = true;
     formValues: formValues = new formValues();
     formValuesTwo: formValuesTwo = new formValuesTwo();
     formValuesThree: formValuesThree = new formValuesThree();
