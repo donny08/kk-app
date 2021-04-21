@@ -1454,7 +1454,8 @@
                             </Switch>
                         </FlexboxLayout>
                         <TextField hint="" class="input" name="parkingNumbersText"
-                            [(ngModel)]="formValuesSix.parkingNumbersText" editable="true" returnKeyType="done" required>
+                            [(ngModel)]="formValuesSix.parkingNumbersText" editable="true" returnKeyType="done"
+                            required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
@@ -3025,14 +3026,14 @@
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <Label textWrap="true" class="_subtitle"
-                            text="5. What is the vehicle inspection mechanism? (car bumper, concave women)"></Label>
+                            text="5. What is the vehicle inspection mechanism? (car bumper, concave women)?"></Label>
                         <TextField hint="" class="input" name="mechanism" [(ngModel)]="formValuesTwelve.mechanism"
                             editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
                         <Label textWrap="true" class="_subtitle"
-                            text="6. What are the guard elements distributed"></Label>
+                            text="6. What are the guard elements distributed?"></Label>
                         <TextField hint="" class="input" name="distributed" [(ngModel)]="formValuesTwelve.distributed"
                             editable="true" returnKeyType="done" required>
                         </TextField>
@@ -3082,9 +3083,14 @@
                         </TextField>
                     </StackLayout>
                     <StackLayout class="item m-b-20" marginRight="10">
-                        <Label textWrap="true" class="_subtitle"
-                            text="11. Are tetra devices available to communicate?"></Label>
-                        <TextField hint="" class="input" name="communicate" [(ngModel)]="formValuesTwelve.communicate"
+                        <FlexboxLayout>
+                            <Label textWrap="true" class="_subtitle"
+                                text="11. Are tetra devices available to communicate?"></Label>
+                            <Switch checked="true" marginLeft="5" size="30" checked="{{formValuesTwelve.communicate}}"
+                                backgroundColor="#3a53ff" (checkedChange)="onCheckedChangeTwelve($event, 'communicate')">
+                            </Switch>
+                        </FlexboxLayout>
+                        <TextField hint="" class="input" name="communicateText" [(ngModel)]="formValuesTwelve.communicateText"
                             editable="true" returnKeyType="done" required>
                         </TextField>
                     </StackLayout>
@@ -3227,7 +3233,7 @@
                                 style="text-decoration: none;text-decoration-color: white;font-size: 16; text-align: center;margin-top: -30%;"></Label>
                             <Switch checked="{{q12TableValues.statusQ127}}" width="100" checked="false"
                                 style="margin-left: 6.8%;margin-top: 20%;" backgroundColor="#3a53ff"
-                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ127', 'Q7', 2, 'percentQ127')">
+                                (checkedChange)="onCheckedSummaryChange($event, 'statusQ127', 'Q12', 2, 'percentQ127')">
                             </Switch>
                             <TextView name="commentQ127" [(ngModel)]="q12TableValues.commentQ127" width="250" hint=""
                                 class="input" lineHeight="5" height="100"

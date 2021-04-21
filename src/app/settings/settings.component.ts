@@ -609,7 +609,8 @@ class formValuesTwelve {
     inspection: boolean = false;
     inspectionText: string;
     procedures: string;
-    communicate: string;
+    communicate: boolean = false;
+    communicateText: string;
     weakness: string;
 }
 
