@@ -144,7 +144,7 @@ export class BrowseComponent implements OnInit {
                 message: located,
                 okButtonText: "OK"
             });
-        }, 1000)
+        }, 1000);
         // console.log("MyPdfFileName", this.createIosPdf(webView, 'report'));
     }
 

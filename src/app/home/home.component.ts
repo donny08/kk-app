@@ -307,7 +307,6 @@ export class HomeComponent implements OnInit, OnDestroy {
                 setString('user', user);
             }
         });
-
     }
 
     goNext() {

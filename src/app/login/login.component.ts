@@ -53,13 +53,11 @@ export class LoginComponent implements OnInit {
                     const data = {
                         "userInfo": user
                     };
-
                     setString('user', JSON.stringify(data));
                     this.router.navigate(['home']);
                 } else {
                     alert("Invalid username and password");
                 }
-
                 this.loaderService.hide();
             }, 2000);
             // this.apiService.login(this.user.username, this.user.password).pipe(take(1)).subscribe(
