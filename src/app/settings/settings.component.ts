@@ -189,7 +189,7 @@ class q5TableValues {
     commentQ515: string;
     statusQ515: boolean = true;
     percentQ515: number = 1;
-    total: number = 9;
+    total: number = 10;
 }
 
 class q6TableValues {
