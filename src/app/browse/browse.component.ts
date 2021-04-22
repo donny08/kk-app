@@ -25,8 +25,8 @@ export class BrowseComponent implements OnInit {
     }
 
     ngOnInit(): void {
-       this.loaderService.show('Generating Report. Please wait...');
-       // console.log('getString', getString('Q1_images'))
+        this.loaderService.show('Generating Report. Please wait...');
+        // console.log('getString', getString('Q1_images'))
         const questions = [{
             "question": getString('Q1') ? JSON.parse(getString('Q1')) : null,
             "images": getString('Q1_images') ? JSON.parse(getString('Q1_images')) : null,
@@ -79,12 +79,34 @@ export class BrowseComponent implements OnInit {
             "question": getString('Q13') ? JSON.parse(getString('Q13')) : null,
             "images": getString('Q13_images') ? JSON.parse(getString('Q13_images')) : null,
             "percentages": getString('Q13Percentages') ? JSON.parse(getString('Q13Percentages')) : null
+        }, {
+            "total": 0
         }];
+
+        questions[13]['total'] = this.calculateTotal(questions);
         //const images = JSON.parse(getString('Q1_images'));
         // const base64 = images[0].image;
         // Init your component properties here.
         const graphwebview: WebView = this.webview.nativeElement;
         graphwebview.src = `~/jspdf/jspdf.html?${JSON.stringify(questions)}`;
+    }
+
+    calculateTotal(data) {
+        let total = 0;
+        if (data[0].percentages) { total += data[0].percentages.total; }
+        if (data[1].percentages) { total += data[1].percentages.total; }
+        if (data[2].percentages) { total += data[2].percentages.total; }
+        if (data[3].percentages) { total += data[3].percentages.total; }
+        if (data[4].percentages) { total += data[4].percentages.total; }
+        if (data[5].percentages) { total += data[5].percentages.total; }
+        if (data[6].percentages) { total += data[6].percentages.total; }
+        if (data[7].percentages) { total += data[7].percentages.total; }
+        if (data[8].percentages) { total += data[8].percentages.total; }
+        if (data[9].percentages) { total += data[9].percentages.total; }
+        if (data[10].percentages) { total += data[10].percentages.total; }
+        if (data[11].percentages) { total += data[11].percentages.total; }
+        if (data[12].percentages) { total += data[12].percentages.total; }
+        return total;
     }
 
     createIosPdf(webView, fileName) {

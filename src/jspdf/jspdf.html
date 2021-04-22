@@ -1357,6 +1357,67 @@
                 </tr>
             </table>
         </div>
+        <div v-if="total">
+            <h3>Results of the final matching of the building</h3>
+            <table id="customers">
+                <tr>
+                    <td width="90%" style="background-color: #ba7253;">1. Percentage to match requirements of the site</td>
+                    <td>{{percentageQ1 ? percentageQ1.total : 0}}%</td>
+                </tr>
+                <tr>
+                    <td width="90%" style="background-color: #ba7253;">2. Percentage to match external requirements</td>
+                    <td>{{percentageQ2 ? percentageQ2.total : 0}}%</td>
+                </tr>
+                <tr>
+                    <td width="90%" style="background-color: #ba7253;">3. Percentage to match the requirement of the outer wall</td>
+                    <td>{{percentageQ3 ? percentageQ3.total : 0}}%</td>
+                </tr>
+                <tr>
+                    <td width="90%" style="background-color: #ba7253;">4. Percentage of matching the requirements of the fence</td>
+                    <td>{{percentageQ4 ? percentageQ4.total : 0}}%</td>
+                </tr>
+                <tr>
+                    <td width="90%" style="background-color: #ba7253;">5. Percentage of matched gates</td>
+                    <td>{{percentageQ5 ? percentageQ5.total : 0}}%</td>
+                </tr>
+                <tr>
+                    <td width="90%" style="background-color: #ba7253;">6. Percentage of matched positions clauses</td>
+                    <td>{{percentageQ6 ? percentageQ6.total : 0}}%</td>
+                </tr>
+                <tr>
+                    <td width="90%" style="background-color: #ba7253;">7. Percentage of matched reception building</td>
+                    <td>{{percentageQ7 ? percentageQ7.total : 0}}%</td>
+                </tr>
+                <tr>
+                    <td width="90%" style="background-color: #ba7253;">8. Percentage of matched external service building</td>
+                    <td>{{percentageQ8 ? percentageQ8.total : 0}}%</td>
+                </tr>
+                <tr>
+                    <td width="90%" style="background-color: #ba7253;">9. Percentage of matched perimeter outside</td>
+                    <td>{{percentageQ9 ? percentageQ9.total : 0}}%</td>
+                </tr>
+                <tr>
+                    <td width="90%" style="background-color: #ba7253;">10. Percentage of matched indoor building</td>
+                    <td>{{percentageQ10 ? percentageQ10.total : 0}}%</td>
+                </tr>
+                <tr>
+                    <td width="90%" style="background-color: #ba7253;">11. Percentage of matching protection system and control rooms</td>
+                    <td>{{percentageQ11 ? percentageQ11.total : 0}}%</td>
+                </tr>
+                <tr>
+                    <td width="90%" style="background-color: #ba7253;">12. Percentage to match the building and inspection procedures</td>
+                    <td>{{percentageQ12 ? percentageQ12.total : 0}}%</td>
+                </tr>
+                <tr>
+                    <td width="90%" style="background-color: #ba7253;">13. Percentage for the matching and safety requirements</td>
+                    <td>{{percentageQ13 ? percentageQ13.total : 0}}%</td>
+                </tr>
+                <tr>
+                    <td width="90%" style="background-color: #ba7253;">The overall percentage of the building insurance match</td>
+                    <td>{{total}}%</td>
+                </tr>
+            </table>
+        </div>
     </div>
 </body>
 
